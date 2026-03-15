@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://bakghp62hgoue"]
+
+[ext_resource type="PackedScene" uid="uid://tdycf8js5qly" path="res://scenes/sun_beam.tscn" id="1_0f027"]
+[ext_resource type="Script" uid="uid://c5t0npgmo2llt" path="res://scripts/homes.gd" id="2_gyfs4"]
+[ext_resource type="PackedScene" uid="uid://cjn8o2hnn8qne" path="res://scenes/people.tscn" id="3_d5x1h"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2c62f"]
+albedo_color = Color(0.57262725, 0.3647529, 0.21566135, 1)
+
+[sub_resource type="PrismMesh" id="PrismMesh_gyfs4"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d5x1h"]
+albedo_color = Color(0.05490196, 0.047058824, 0, 1)
+roughness = 0.71
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_8mm7a"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0f027"]
+size = Vector3(1.9907227, 0.1694336, 2.0049438)
+
+[node name="Node3D" type="Node3D" unique_id=621533097]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=704493747]
+transform = Transform3D(1, 0, 0, 0, 0.17364824, 0.9848078, 0, -0.9848078, 0.17364824, 0, 30.998795, 13.381229)
+current = true
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2018347354]
+transform = Transform3D(0.8687266, -0.49529195, 3.2362588e-09, 0.04036811, 0.07080441, 0.99667305, -0.49364412, -0.8658364, 0.081503674, 3.2019587, 34.72558, 0)
+light_energy = 5.228
+
+[node name="Sun_beam" parent="." unique_id=487210576 instance=ExtResource("1_0f027")]
+transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, 0, 0.5873184, 11.508905)
+
+[node name="homes" type="MeshInstance3D" parent="." unique_id=426813030]
+transform = Transform3D(5.937893, 0, 0.5740396, 0, 6, 0, -0.8610592, 0, 3.9585953, -31.509018, 0, 11.57262)
+material_override = SubResource("StandardMaterial3D_2c62f")
+mesh = SubResource("PrismMesh_gyfs4")
+script = ExtResource("2_gyfs4")
+person_scene = ExtResource("3_d5x1h")
+
+[node name="spawnPoint" type="Marker3D" parent="homes" unique_id=846470103]
+
+[node name="homes2" type="MeshInstance3D" parent="." unique_id=239078224]
+transform = Transform3D(5.949296, 0, 0.5189199, 0, 5.9999995, 0, -0.77838004, 0, 3.9661973, -30.139606, 0, 20.762556)
+material_override = SubResource("StandardMaterial3D_2c62f")
+mesh = SubResource("PrismMesh_gyfs4")
+
+[node name="spawnPoint" type="Marker3D" parent="homes2" unique_id=1236623091]
+
+[node name="land" type="MeshInstance3D" parent="." unique_id=1259494477]
+transform = Transform3D(60, 0, 0, 0, 30, 0, 0, 0, 30, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_d5x1h")
+mesh = SubResource("PlaneMesh_8mm7a")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="land" unique_id=1981321868]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="land/StaticBody3D" unique_id=426016993]
+transform = Transform3D(0.9999986, 0, 0, 0, 0.9999986, 0, 0, 0, 0.9999986, -0.0021971546, -0.08129871, -0.0052795373)
+shape = SubResource("BoxShape3D_0f027")
+
+[node name="targetPosition" type="Marker3D" parent="." unique_id=950759872]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.14465642, 4.8935566)

@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://tdycf8js5qly"]
+
+[ext_resource type="Script" uid="uid://b1w3vphf0r4s0" path="res://scripts/sun_beam.gd" id="1_7fjmw"]
+[ext_resource type="Script" uid="uid://dkn4e13ku0hio" path="res://scripts/sun_area.gd" id="2_v1xhp"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8sq13"]
+albedo_color = Color(1.5762671, 1.4853126, 0.18769662, 0.7294118)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_7fjmw"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_v1xhp"]
+
+[node name="Sun_beam" type="CharacterBody3D" unique_id=487210576]
+script = ExtResource("1_7fjmw")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1918587509]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.98078424, 0)
+material_override = SubResource("StandardMaterial3D_8sq13")
+mesh = SubResource("CylinderMesh_7fjmw")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1396898719]
+script = ExtResource("2_v1xhp")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1265890902]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+shape = SubResource("SphereShape3D_v1xhp")
+
+[connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area3D" to="Area3D" method="_on_body_exited"]
