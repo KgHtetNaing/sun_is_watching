@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://bakghp62hgoue"]
 
 [ext_resource type="PackedScene" uid="uid://tdycf8js5qly" path="res://scenes/sun_beam.tscn" id="1_0f027"]
+[ext_resource type="Script" uid="uid://da68qdy3jwfnd" path="res://scripts/main_scene.gd" id="1_gubc5"]
 [ext_resource type="Script" uid="uid://c5t0npgmo2llt" path="res://scripts/homes.gd" id="2_gyfs4"]
 [ext_resource type="PackedScene" uid="uid://cjn8o2hnn8qne" path="res://scenes/people.tscn" id="3_d5x1h"]
+[ext_resource type="PackedScene" uid="uid://cddnl525thr57" path="res://scenes/win_screen.tscn" id="5_gubc5"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2c62f"]
 albedo_color = Color(0.57262725, 0.3647529, 0.21566135, 1)
@@ -18,7 +20,34 @@ roughness = 0.71
 [sub_resource type="BoxShape3D" id="BoxShape3D_0f027"]
 size = Vector3(1.9907227, 0.1694336, 2.0049438)
 
-[node name="Node3D" type="Node3D" unique_id=621533097]
+[node name="MainScene" type="Node3D" unique_id=621533097]
+script = ExtResource("1_gubc5")
+
+[node name="Ui" type="CanvasLayer" parent="." unique_id=1121260561]
+process_mode = 3
+
+[node name="WinScreen" parent="Ui" unique_id=1488543200 instance=ExtResource("5_gubc5")]
+process_mode = 3
+
+[node name="Start" type="Button" parent="Ui" unique_id=286935616]
+process_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -23.0
+offset_top = -15.5
+offset_right = 23.0
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Start"
+
+[node name="Timer" type="Timer" parent="." unique_id=971018918]
+process_mode = 3
+wait_time = 5.0
+one_shot = true
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=704493747]
 transform = Transform3D(1, 0, 0, 0, 0.17364824, 0.9848078, 0, -0.9848078, 0.17364824, 0, 30.998795, 13.381229)
@@ -61,3 +90,6 @@ shape = SubResource("BoxShape3D_0f027")
 
 [node name="targetPosition" type="Marker3D" parent="." unique_id=950759872]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.14465642, 4.8935566)
+
+[connection signal="pressed" from="Ui/Start" to="." method="_on_start_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

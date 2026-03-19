@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://wltf47321evx"]
+
+[ext_resource type="Script" uid="uid://hvmlihh8hx8e" path="res://shop.gd" id="1_viryw"]
+
+[node name="Shop" type="CanvasLayer" unique_id=929681098]
+process_mode = 3
+script = ExtResource("1_viryw")
+
+[node name="ShopPanel" type="Control" parent="." unique_id=434905232]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="ShopPanel" unique_id=288446089]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ShopPanel" unique_id=1873546862]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -39.5
+offset_top = -77.5
+offset_right = 39.5
+offset_bottom = 77.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SHOP" type="Label" parent="ShopPanel/VBoxContainer" unique_id=1803893175]
+layout_mode = 2
+text = "SHOP"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="ShopPanel/VBoxContainer" unique_id=1688328738]
+layout_mode = 2
+
+[node name="MONEY" type="Label" parent="ShopPanel/VBoxContainer" unique_id=267387667]
+layout_mode = 2
+text = "MONEY"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator2" type="HSeparator" parent="ShopPanel/VBoxContainer" unique_id=693944580]
+layout_mode = 2
+
+[node name="ButtonDmg" type="Button" parent="ShopPanel/VBoxContainer" unique_id=1122643621]
+layout_mode = 2
+text = "+DMG"
+
+[node name="ButtonSize" type="Button" parent="ShopPanel/VBoxContainer" unique_id=741618541]
+layout_mode = 2
+text = "+Size"
+
+[node name="HSeparator3" type="HSeparator" parent="ShopPanel/VBoxContainer" unique_id=491044152]
+layout_mode = 2
+
+[node name="ButtonContinue" type="Button" parent="ShopPanel/VBoxContainer" unique_id=288483829]
+layout_mode = 2
+text = "Continue"

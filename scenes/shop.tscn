@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://bgbuap2hnj78u"]
+
+[ext_resource type="Texture2D" uid="uid://c7rkdiq743a0p" path="res://icon.svg" id="2_032fp"]
+[ext_resource type="Script" uid="uid://6pbbqp6vjhnn" path="res://scripts/upgrade_button.gd" id="3_2fc2m"]
+
+[node name="Shop" type="Control" unique_id=1227722593]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=275518949]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer" unique_id=1898892178]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -98.5
+offset_top = -225.5
+offset_right = 98.5
+offset_bottom = 225.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="UpgradeDmg" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=1749467096]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "+DMG"
+icon = ExtResource("2_032fp")
+script = ExtResource("3_2fc2m")
+upgrade_type = "damage"
+
+[node name="UpgradeSize" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=1628898795]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "+Size"
+icon = ExtResource("2_032fp")
+script = ExtResource("3_2fc2m")
+upgrade_type = "size"
+amount = 0.5
+
+[node name="UpgradeSpeed" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=904903480]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "+Speed"
+icon = ExtResource("2_032fp")
+script = ExtResource("3_2fc2m")
+upgrade_type = "speed"
+
+[node name="Continue" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=186943761]
+layout_mode = 2
+text = "Continue"
+
+[connection signal="mouse_entered" from="CanvasLayer/VBoxContainer/UpgradeDmg" to="CanvasLayer/VBoxContainer/UpgradeDmg" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/VBoxContainer/UpgradeDmg" to="CanvasLayer/VBoxContainer/UpgradeDmg" method="_on_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/UpgradeDmg" to="CanvasLayer/VBoxContainer/UpgradeDmg" method="_on_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer/VBoxContainer/UpgradeSize" to="CanvasLayer/VBoxContainer/UpgradeSize" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/VBoxContainer/UpgradeSize" to="CanvasLayer/VBoxContainer/UpgradeSize" method="_on_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/UpgradeSize" to="CanvasLayer/VBoxContainer/UpgradeSize" method="_on_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer/VBoxContainer/UpgradeSpeed" to="CanvasLayer/VBoxContainer/UpgradeSpeed" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/VBoxContainer/UpgradeSpeed" to="CanvasLayer/VBoxContainer/UpgradeSpeed" method="_on_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/UpgradeSpeed" to="CanvasLayer/VBoxContainer/UpgradeSpeed" method="_on_pressed"]
