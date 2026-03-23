@@ -4,6 +4,7 @@ extends MeshInstance3D
 @export var person_scene : PackedScene
 
 
+
 func _ready():
 	while true:
 		spawn_person()
@@ -11,6 +12,7 @@ func _ready():
 	
 func spawn_person():
 	var person = person_scene.instantiate()
+	person.escape_point = $"../../escape_point"
 	get_parent().add_child.call_deferred(person)
 	person.global_position = spawn_point.global_position
 	person.home_position = spawn_point.global_position

@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://da68qdy3jwfnd" path="res://scripts/main_scene.gd" id="1_gubc5"]
 [ext_resource type="PackedScene" uid="uid://1hyjr1t1utcx" path="res://scenes/homes.tscn" id="4_pu3yx"]
 [ext_resource type="PackedScene" uid="uid://cddnl525thr57" path="res://scenes/win_screen.tscn" id="5_gubc5"]
+[ext_resource type="Script" uid="uid://dd0xrfbjiqaif" path="res://scenes/escape_point.gd" id="5_rt2n2"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d5x1h"]
 albedo_color = Color(0.05490196, 0.047058824, 0, 1)
@@ -91,6 +92,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.14465642, 4.8935566)
 
 [node name="escape_point" type="Node3D" parent="." unique_id=96602533]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 29.28072)
+script = ExtResource("5_rt2n2")
 
 [node name="Area3D" type="Area3D" parent="escape_point" unique_id=2035122529]
 
@@ -100,3 +102,4 @@ shape = SubResource("BoxShape3D_pu3yx")
 
 [connection signal="pressed" from="Ui/Start" to="." method="_on_start_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="escape_point/Area3D" to="escape_point" method="_on_area_3d_body_entered"]
