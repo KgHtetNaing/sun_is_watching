@@ -13,8 +13,14 @@ func _ready() -> void:
 func _on_win_continue():
 	print("Go to shop")
 	win_screen.hide()
-	var shop_scene = preload("res://scenes/shop.tscn").instantiate()
-	$Ui.add_child(shop_scene)
+	# Clean up any existing shop first!
+	var old_shop = $Ui.get_node_or_null("Shop")
+	if old_shop:
+		old_shop.queue_free()
+		
+	var shop_instance = preload("res://scenes/shop.tscn").instantiate()
+	shop_instance.name = "Shop" # Give it a name so we can find it to delete it later
+	$Ui.add_child(shop_instance)
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -24,7 +30,12 @@ func _process(delta: float) -> void:
 func _on_timer_timeout() -> void:
 	print("Day Ended")
 	get_tree().paused = true
+	if has_node("Ui/Shop"):
+		$Ui/Shop.queue_free()
 	win_screen.visible = true
+	
+	if not win_screen.continue_pressed.is_connected(_on_win_continue):
+		win_screen.continue_pressed.connect(_on_win_continue)
 
 
 

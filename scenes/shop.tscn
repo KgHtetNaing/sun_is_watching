@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://6pbbqp6vjhnn" path="res://scripts/upgrade_button.gd" id="3_2fc2m"]
 
 [node name="Shop" type="Control" unique_id=1227722593]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

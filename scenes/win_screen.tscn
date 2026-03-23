@@ -6,6 +6,7 @@
 font_size = 60
 
 [node name="WinScreen" type="CanvasLayer" unique_id=1488543200]
+process_mode = 3
 script = ExtResource("1_wv5lq")
 
 [node name="Control" type="Control" parent="." unique_id=2144213873]
