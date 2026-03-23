@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://1hyjr1t1utcx"]
+
+[ext_resource type="Script" uid="uid://c5t0npgmo2llt" path="res://scripts/homes.gd" id="1_nd5jc"]
+[ext_resource type="PackedScene" uid="uid://cjn8o2hnn8qne" path="res://scenes/people.tscn" id="2_wlbe3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2c62f"]
+albedo_color = Color(0.57262725, 0.3647529, 0.21566135, 1)
+
+[sub_resource type="PrismMesh" id="PrismMesh_gyfs4"]
+
+[node name="homes" type="MeshInstance3D" unique_id=1353727017]
+transform = Transform3D(5.937893, 0, 0.5740396, 0, 6, 0, -0.8610592, 0, 3.9585953, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_2c62f")
+mesh = SubResource("PrismMesh_gyfs4")
+script = ExtResource("1_nd5jc")
+person_scene = ExtResource("2_wlbe3")
+
+[node name="spawnPoint" type="Marker3D" parent="." unique_id=1634484428]
