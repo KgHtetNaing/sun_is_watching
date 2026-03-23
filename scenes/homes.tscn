@@ -16,3 +16,9 @@ script = ExtResource("1_nd5jc")
 person_scene = ExtResource("2_wlbe3")
 
 [node name="spawnPoint" type="Marker3D" parent="." unique_id=1634484428]
+
+[node name="spawn_timer" type="Timer" parent="." unique_id=2012562378]
+wait_time = 0.342
+autostart = true
+
+[connection signal="timeout" from="spawn_timer" to="." method="_on_spawn_timer_timeout"]

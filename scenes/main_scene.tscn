@@ -48,7 +48,7 @@ wait_time = 60.0
 one_shot = true
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=704493747]
-transform = Transform3D(1, 0, 0, 0, 0.28911537, 0.9572942, 0, -0.9572942, 0.28911537, 0, 30.998795, 13.381229)
+transform = Transform3D(1, 0, 0, 0, 0.28911537, 0.9572942, 0, -0.9572942, 0.28911537, -0.2062149, 27.689829, 10.394953)
 current = true
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2018347354]
