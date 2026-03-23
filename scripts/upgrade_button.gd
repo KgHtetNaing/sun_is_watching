@@ -21,5 +21,20 @@ func _on_pressed() -> void:
 		"speed":
 			GameManager.speed += amount
 	print("Upgraded:", upgrade_type)
-	self.queue_free()
+	
+	#remove the UI and increase the level in gamemanager
+	get_parent().queue_free() 
+	GameManager.current_level += 1
+	remove_people()
+	
+	#unpause and go back to the game scene
+	get_tree().paused = false
+	get_tree().change_scene_to_file("res://scenes/main_game.tscn")
+	
+func remove_people():
+	#people.tscn is added to group("enemies")
+	var people =  get_tree().get_nodes_in_group("enemies")
+	for i in people:
+		i.queue_free()
+	
 	

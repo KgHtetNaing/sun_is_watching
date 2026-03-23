@@ -4,7 +4,6 @@
 [ext_resource type="Script" uid="uid://6pbbqp6vjhnn" path="res://scripts/upgrade_button.gd" id="3_2fc2m"]
 
 [node name="Shop" type="Control" unique_id=1227722593]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -68,3 +67,4 @@ text = "Continue"
 [connection signal="mouse_entered" from="CanvasLayer/VBoxContainer/UpgradeSpeed" to="CanvasLayer/VBoxContainer/UpgradeSpeed" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer/VBoxContainer/UpgradeSpeed" to="CanvasLayer/VBoxContainer/UpgradeSpeed" method="_on_mouse_exited"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/UpgradeSpeed" to="CanvasLayer/VBoxContainer/UpgradeSpeed" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/Continue" to="CanvasLayer/VBoxContainer/Continue" method="_on_pressed"]
