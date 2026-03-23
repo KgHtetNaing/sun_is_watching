@@ -22,9 +22,13 @@ func _on_pressed() -> void:
 			GameManager.speed += amount
 	print("Upgraded:", upgrade_type)
 	
+	#send signal to gamemanager to restart the timer
+	GameManager.emit_signal("start_game_requested")
+	
 	#remove the UI and increase the level in gamemanager
 	get_parent().queue_free() 
 	GameManager.current_level += 1
+	print (GameManager.current_level)
 	remove_people()
 	
 	#unpause and go back to the game scene

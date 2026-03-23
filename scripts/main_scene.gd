@@ -5,10 +5,9 @@ extends Node3D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	win_screen.hide()
-
-	get_tree().paused = true
-	
+	get_tree().paused = true	
 	win_screen.continue_pressed.connect(_on_win_continue)
+	GameManager.start_game_requested.connect(_on_start_pressed)
 
 	
 func _on_win_continue():
