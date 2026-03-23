@@ -13,7 +13,7 @@ func _ready():
 	pick_new_target()
 
 func _physics_process(delta):
-	target_position = escape_point.global_position
+	
 	var direction = target_position - global_position
 	if going_home:
 		var new_dir = home_position - global_position
@@ -23,7 +23,7 @@ func _physics_process(delta):
 			
 	else:		
 		if direction.length() < 1:
-			pick_new_target()
+			finding_escape()
 		
 	velocity = direction.normalized() * speed	
 	move_and_slide()
@@ -34,6 +34,9 @@ func pick_new_target():
 		global_position.y,
 		randf_range(-10, 10)
 	)
+
+func finding_escape():
+	target_position = escape_point.global_position
 	
 func take_damage(amount):
 	if going_home:
