@@ -43,7 +43,7 @@ func take_damage(amount):
 		return
 		
 	healthpoint -= amount
-	print ("health ", healthpoint)
+	
 	
 	if healthpoint <= 0:
 		run_back()
@@ -53,7 +53,6 @@ func run_back():
 	target_position = home_position
 	
 func destroy_body():
-	print ("reached home")
 	queue_free()
 
 func sucessfully_escape():

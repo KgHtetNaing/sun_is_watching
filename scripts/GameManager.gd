@@ -13,3 +13,4 @@ func add_escape():
 	escapee += 1
 	if escapee >= 10:
 		print("Too many escape, you lose")
+		
