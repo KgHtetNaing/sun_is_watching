@@ -1,7 +1,10 @@
 [gd_scene format=3 uid="uid://1hyjr1t1utcx"]
 
 [ext_resource type="Script" uid="uid://c5t0npgmo2llt" path="res://scripts/homes.gd" id="1_nd5jc"]
-[ext_resource type="PackedScene" uid="uid://cjn8o2hnn8qne" path="res://scenes/people.tscn" id="2_wlbe3"]
+[ext_resource type="PackedScene" uid="uid://cjn8o2hnn8qne" path="res://scenes/peep.tscn" id="2_ef8kr"]
+[ext_resource type="PackedScene" uid="uid://ht6p73u07v31" path="res://scenes/peep_skater.tscn" id="3_3fvtq"]
+[ext_resource type="PackedScene" uid="uid://ddq48m0bp3gtu" path="res://scenes/peep_umbrella.tscn" id="4_fosq0"]
+[ext_resource type="PackedScene" uid="uid://cf0303dgkfs3r" path="res://scenes/peep_sunscreen.tscn" id="5_vc128"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2c62f"]
 albedo_color = Color(0.57262725, 0.3647529, 0.21566135, 1)
@@ -13,7 +16,7 @@ transform = Transform3D(5.937893, 0, 0.5740396, 0, 6, 0, -0.8610592, 0, 3.958595
 material_override = SubResource("StandardMaterial3D_2c62f")
 mesh = SubResource("PrismMesh_gyfs4")
 script = ExtResource("1_nd5jc")
-person_scene = ExtResource("2_wlbe3")
+enemy_scene = Array[PackedScene]([ExtResource("3_3fvtq"), ExtResource("5_vc128"), ExtResource("4_fosq0"), ExtResource("2_ef8kr")])
 
 [node name="spawnPoint" type="Marker3D" parent="." unique_id=1634484428]
 

@@ -2,7 +2,10 @@ extends MeshInstance3D
 
 @onready var spawn_point = $spawnPoint
 @onready var spawn_timer = $spawn_timer
-@export var person_scene : PackedScene
+
+#enemy scenes are put into array in home -> inspector -> enemy_scene array
+@export var enemy_scene : Array[PackedScene] = []
+
 
 
 
@@ -13,7 +16,12 @@ func _ready():
 
 	
 func spawn_person():
-	var person = person_scene.instantiate()
+	if enemy_scene.is_empty():
+		return
+		
+	var random_enemy =  randi() % enemy_scene.size()
+	var person = enemy_scene[random_enemy].instantiate()
+	print (random_enemy)
 	person.escape_point = $"../../escape_point"
 	get_parent().add_child.call_deferred(person)
 	person.global_position = spawn_point.global_position

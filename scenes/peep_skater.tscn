@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://ht6p73u07v31"]
+
+[ext_resource type="Script" uid="uid://on8em6lo3id2" path="res://scenes/peep_skater.gd" id="1_8y4dk"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jdfiw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8y4dk"]
+albedo_color = Color(0.6534986, 0.5130703, 0.88465047, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_8wchj"]
+material = SubResource("StandardMaterial3D_8y4dk")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_m5luo"]
+
+[node name="People" type="CharacterBody3D" unique_id=131521429 groups=["enemies"]]
+collision_mask = 0
+script = ExtResource("1_8y4dk")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1103394298]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.90509033, 0)
+shape = SubResource("CapsuleShape3D_jdfiw")
+debug_color = Color(0.5914993, 0.42202383, 0.89505714, 0.41960785)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1549086241]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0081022, 0)
+mesh = SubResource("CapsuleMesh_8wchj")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=474214701]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0081022, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=821928012]
+shape = SubResource("CapsuleShape3D_m5luo")
