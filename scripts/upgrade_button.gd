@@ -1,7 +1,9 @@
 extends Button
 
 @export var upgrade_type: String
-@export var amount: float = 20
+@export var amount_dmg: float = 10
+@export var amount_size: float = 0.5
+@export var amount_speed: float = 0.5
 
 func _ready():
 	pivot_offset = size / 2
@@ -15,11 +17,14 @@ func _on_mouse_exited() -> void:
 func _on_pressed() -> void:
 	match upgrade_type:
 		"damage":
-			GameManager.damage += amount
+			GameManager.damage += amount_dmg
+			print ("new damage", GameManager.damage)
 		"size":
-			GameManager.size += amount
+			GameManager.size += amount_size
+			print("new size" , GameManager.size)
 		"speed":
-			GameManager.speed += amount
+			GameManager.speed += amount_speed
+			print("new speed" , GameManager.speed)
 	
 	
 	#send signal to gamemanager to restart the timer
