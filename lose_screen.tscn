@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://bendp87acl1u7"]
+
+[ext_resource type="Script" uid="uid://byia5cs8sx82r" path="res://lose_screen.gd" id="1_cbtnu"]
+
+[node name="loseScreen" type="Control" unique_id=1415134976]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cbtnu")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=301688729]
+layout_mode = 0
+offset_top = 9.0
+offset_right = 1149.0
+offset_bottom = 653.0
+alignment = 1
+
+[node name="title" type="Label" parent="VBoxContainer" unique_id=172314139]
+layout_mode = 2
+text = "YOU LOSE!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="subtitle" type="Label" parent="VBoxContainer" unique_id=737949822]
+layout_mode = 2
+text = "You are not hot enough"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=661381660]
+layout_mode = 2
+alignment = 1
+
+[node name="HighestLvl" type="Label" parent="VBoxContainer/HBoxContainer" unique_id=522799083]
+layout_mode = 2
+text = "Highest Level Reached :"
+
+[node name="current_lvl" type="Label" parent="VBoxContainer/HBoxContainer" unique_id=1376813108]
+layout_mode = 2
+text = "0"
+
+[node name="ButtonContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1660438703]
+layout_mode = 2
+alignment = 1
+
+[node name="Retry" type="Button" parent="VBoxContainer/ButtonContainer" unique_id=1345793513]
+layout_mode = 2
+text = "Retry"
+
+[node name="Menu" type="Button" parent="VBoxContainer/ButtonContainer" unique_id=198608306]
+layout_mode = 2
+text = "Main Menu"
+
+[connection signal="pressed" from="VBoxContainer/ButtonContainer/Retry" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="VBoxContainer/ButtonContainer/Menu" to="." method="_on_menu_pressed"]
