@@ -6,17 +6,24 @@ var running_speed = 10
 var target_position
 var going_home = false
 var home_position: Vector3
-
+@onready var sprite = $peephat
 @export var escape_point : Node3D
 
 func _ready():
 	pick_new_target()
-
+	sprite.play("2walk")
+	
 func _physics_process(delta):
 	
 	var direction = target_position - global_position
+	if direction.x > 0.1:
+		sprite.flip_h = true
+	elif direction.x < 0.1:
+		sprite.flip_h = false
+
 	if going_home:
 		var new_dir = home_position - global_position
+		sprite.play("2walk_back")
 		speed = running_speed
 		if new_dir.length() < 0.5:
 			destroy_body()			

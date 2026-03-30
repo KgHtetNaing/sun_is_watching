@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="sun_is_watching"
-run/main_scene="uid://cxcwvmdnls5d7"
+run/main_scene="uid://bakghp62hgoue"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 

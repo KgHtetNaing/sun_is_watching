@@ -1,8 +1,61 @@
 [gd_scene format=3 uid="uid://ddq48m0bp3gtu"]
 
 [ext_resource type="Script" uid="uid://dig2k8js5ueir" path="res://scripts/peep_umbrella.gd" id="1_0xwbd"]
+[ext_resource type="Texture2D" uid="uid://dei0oq054bi6g" path="res://art/peepumbrella/Umbrellapeep-1.png" id="2_6nk78"]
+[ext_resource type="Texture2D" uid="uid://b0ofne7xnnubq" path="res://art/peepumbrella/Umbrellapeep-2.png" id="3_7ttfu"]
+[ext_resource type="Texture2D" uid="uid://dgprnuhdyoqtb" path="res://art/peepumbrella/Umbrellapeep-3.png" id="4_52h73"]
+[ext_resource type="Texture2D" uid="uid://dlupewafic3si" path="res://art/peepumbrella/Umbrellapeep-4.png" id="5_ai8wv"]
+[ext_resource type="Texture2D" uid="uid://casb1u6ofde01" path="res://art/peepumbrella/Umbrellapeep-5.png" id="6_dv5py"]
+[ext_resource type="Texture2D" uid="uid://d02df0l56bgwo" path="res://art/peepumbrella/Umbrellapeep-6.png" id="7_2xko0"]
+[ext_resource type="Texture2D" uid="uid://c4tl6gfynshts" path="res://art/peepumbrella/Umbrellapeep-7.png" id="8_eiuiq"]
+[ext_resource type="Texture2D" uid="uid://dhqdtoms1nuco" path="res://art/peepumbrella/Umbrellapeep-8.png" id="9_omnur"]
+[ext_resource type="Texture2D" uid="uid://c0a0rn3yiqqk5" path="res://art/peepumbrella/Umbrellapeep-9.png" id="10_3og0o"]
+[ext_resource type="Texture2D" uid="uid://dbqy0xpy0whxv" path="res://art/peepumbrella/Umbrellapeep-10.png" id="11_fwkrx"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jdfiw"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2xko0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_6nk78")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_7ttfu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_52h73")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ai8wv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_dv5py")
+}],
+"loop": true,
+"name": &"1walk",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_2xko0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_eiuiq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_omnur")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_3og0o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_fwkrx")
+}],
+"loop": true,
+"name": &"1walk_back",
+"speed": 5.0
+}]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m5luo"]
 albedo_color = Color(0.2872827, 0.76707834, 0.4172198, 1)
@@ -12,15 +65,21 @@ albedo_color = Color(0.2872827, 0.76707834, 0.4172198, 1)
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_m5luo"]
 
 [node name="People" type="CharacterBody3D" unique_id=131521429 groups=["enemies"]]
-collision_mask = 0
+collision_mask = 2
 script = ExtResource("1_0xwbd")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1103394298]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.90509033, 0)
 shape = SubResource("CapsuleShape3D_jdfiw")
 
+[node name="peepumbrella" type="AnimatedSprite3D" parent="." unique_id=1167380551]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 1.671936, 0)
+sprite_frames = SubResource("SpriteFrames_2xko0")
+animation = &"1walk_back"
+
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1549086241]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0081022, 0)
+visible = false
 material_override = SubResource("StandardMaterial3D_m5luo")
 mesh = SubResource("CapsuleMesh_jdfiw")
 

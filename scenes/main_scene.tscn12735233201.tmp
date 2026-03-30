@@ -1,0 +1,104 @@
+[gd_scene format=3 uid="uid://bakghp62hgoue"]
+
+[ext_resource type="PackedScene" uid="uid://tdycf8js5qly" path="res://scenes/sun_beam.tscn" id="1_0f027"]
+[ext_resource type="Script" uid="uid://da68qdy3jwfnd" path="res://scripts/main_scene.gd" id="1_gubc5"]
+[ext_resource type="PackedScene" uid="uid://1hyjr1t1utcx" path="res://scenes/homes.tscn" id="4_pu3yx"]
+[ext_resource type="PackedScene" uid="uid://cddnl525thr57" path="res://scenes/win_screen.tscn" id="5_gubc5"]
+[ext_resource type="Script" uid="uid://dd0xrfbjiqaif" path="res://scenes/escape_point.gd" id="5_rt2n2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d5x1h"]
+albedo_color = Color(0.05490196, 0.047058824, 0, 1)
+roughness = 0.71
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_8mm7a"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0f027"]
+size = Vector3(1.9907227, 0.1694336, 2.0049438)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pu3yx"]
+size = Vector3(80.38086, 1.5234375, 2.28833)
+
+[node name="MainScene" type="Node3D" unique_id=621533097]
+script = ExtResource("1_gubc5")
+
+[node name="Ui" type="CanvasLayer" parent="." unique_id=1121260561]
+process_mode = 3
+
+[node name="WinScreen" parent="Ui" unique_id=1488543200 instance=ExtResource("5_gubc5")]
+
+[node name="Start" type="Button" parent="Ui" unique_id=286935616]
+process_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -23.0
+offset_top = -15.5
+offset_right = 23.0
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Start"
+
+[node name="Timer" type="Timer" parent="." unique_id=971018918]
+process_mode = 3
+wait_time = 10.0
+one_shot = true
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=704493747]
+transform = Transform3D(1, 0, 0, 0, 0.65795374, 0.75305843, 0, -0.75305843, 0.65795374, -0.2062149, 11.051006, 12.008526)
+current = true
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2018347354]
+transform = Transform3D(0.8687266, -0.49529195, 3.2362588e-09, 0.04036811, 0.07080441, 0.99667305, -0.49364412, -0.8658364, 0.081503674, 3.2019587, 42.586918, 0)
+light_energy = 5.228
+
+[node name="Sun_beam" parent="." unique_id=487210576 instance=ExtResource("1_0f027")]
+transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, 0, 0.5873184, 11.508905)
+
+[node name="Homes" type="Node" parent="." unique_id=406738710]
+
+[node name="homes" parent="Homes" unique_id=1353727017 instance=ExtResource("4_pu3yx")]
+transform = Transform3D(-0.22111797, 0, -3.997282, 0, 5.9999995, 0, 5.995923, 0, -0.14741206, -31.509018, 0, -20.876392)
+
+[node name="homes2" parent="Homes" unique_id=1440411430 instance=ExtResource("4_pu3yx")]
+transform = Transform3D(-0.23336154, 0, 3.9969726, 0, 5.9999995, 0, -5.9954596, 0, -0.15557444, -15.241633, 0, -21.47843)
+
+[node name="homes3" parent="Homes" unique_id=1459252020 instance=ExtResource("4_pu3yx")]
+transform = Transform3D(-0.14627922, 0, 3.9988103, 0, 5.9999995, 0, -5.9982157, 0, -0.09751955, 0, 0, -21.524073)
+
+[node name="homes4" parent="Homes" unique_id=978068549 instance=ExtResource("4_pu3yx")]
+transform = Transform3D(-0.18061441, 0, 3.9981863, 0, 5.9999995, 0, -5.99728, 0, -0.1204097, 15.83951, 0, -21.750767)
+
+[node name="homes5" parent="Homes" unique_id=570072887 instance=ExtResource("4_pu3yx")]
+transform = Transform3D(0.3756978, 0, 3.9921498, 0, 5.9999995, 0, -5.988225, 0, 0.25046515, 32.14942, 0, -20.878403)
+
+[node name="land" type="MeshInstance3D" parent="." unique_id=1259494477]
+transform = Transform3D(60, 0, 0, 0, 30, 0, 0, 0, 30, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_d5x1h")
+mesh = SubResource("PlaneMesh_8mm7a")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="land" unique_id=1981321868]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="land/StaticBody3D" unique_id=426016993]
+transform = Transform3D(0.9999986, 0, 0, 0, 0.9999986, 0, 0, 0, 0.9999986, -0.0021971546, -0.08129871, -0.0052795373)
+shape = SubResource("BoxShape3D_0f027")
+
+[node name="targetPosition" type="Marker3D" parent="." unique_id=950759872]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.14465642, 4.8935566)
+
+[node name="escape_point" type="Node3D" parent="." unique_id=96602533]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 29.28072)
+script = ExtResource("5_rt2n2")
+
+[node name="Area3D" type="Area3D" parent="escape_point" unique_id=2035122529]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="escape_point/Area3D" unique_id=1322436401]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3955078, -0.26171875, 0.08239746)
+shape = SubResource("BoxShape3D_pu3yx")
+
+[connection signal="pressed" from="Ui/Start" to="." method="_on_start_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="escape_point/Area3D" to="escape_point" method="_on_area_3d_body_entered"]

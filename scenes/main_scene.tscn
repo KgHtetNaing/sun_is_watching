@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://dd0xrfbjiqaif" path="res://scenes/escape_point.gd" id="5_rt2n2"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d5x1h"]
-albedo_color = Color(0.05490196, 0.047058824, 0, 1)
+albedo_color = Color(0, 0.19664721, 0.024216332, 1)
 roughness = 0.71
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_8mm7a"]
@@ -43,36 +43,36 @@ text = "Start"
 
 [node name="Timer" type="Timer" parent="." unique_id=971018918]
 process_mode = 3
-wait_time = 60.0
+wait_time = 20.0
 one_shot = true
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=704493747]
-transform = Transform3D(1, 0, 0, 0, 0.28911537, 0.9572942, 0, -0.9572942, 0.28911537, -0.2062149, 27.689829, 10.394953)
+transform = Transform3D(1, 0, 0, 0, 0.6556901, 0.7550302, 0, -0.7550302, 0.6556901, -0.2062149, 12.778051, 13.269487)
 current = true
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2018347354]
-transform = Transform3D(0.8687266, -0.49529195, 3.2362588e-09, 0.04036811, 0.07080441, 0.99667305, -0.49364412, -0.8658364, 0.081503674, 3.2019587, 34.72558, 0)
+transform = Transform3D(0.8687266, -0.49529195, 3.2362588e-09, 0.04036811, 0.07080441, 0.99667305, -0.49364412, -0.8658364, 0.081503674, 3.2019587, 42.586918, -13.665234)
 light_energy = 5.228
 
 [node name="Sun_beam" parent="." unique_id=487210576 instance=ExtResource("1_0f027")]
-transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, 0, 0.5873184, 11.508905)
+transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, 0, -0.142663, 11.508905)
 
 [node name="Homes" type="Node" parent="." unique_id=406738710]
 
 [node name="homes" parent="Homes" unique_id=1353727017 instance=ExtResource("4_pu3yx")]
-transform = Transform3D(-0.22111797, 0, -3.997282, 0, 5.9999995, 0, 5.995923, 0, -0.14741206, -31.509018, 0, -20.876392)
+transform = Transform3D(4.023569, 0, -2.9672942, 0, 5.999999, 0, 4.450941, 0, 2.6823792, -31.509018, 0.25, -12.974687)
 
 [node name="homes2" parent="Homes" unique_id=1440411430 instance=ExtResource("4_pu3yx")]
-transform = Transform3D(-0.23336154, 0, 3.9969726, 0, 5.9999995, 0, -5.9954596, 0, -0.15557444, -15.241633, 0, -21.47843)
+transform = Transform3D(1.1091632, 0, -3.9310582, 0, 5.999999, 0, 5.896588, 0, 0.7394419, -15.241633, 0.25, -16.911146)
 
 [node name="homes3" parent="Homes" unique_id=1459252020 instance=ExtResource("4_pu3yx")]
-transform = Transform3D(-0.14627922, 0, 3.9988103, 0, 5.9999995, 0, -5.9982157, 0, -0.09751955, 0, 0, -21.524073)
+transform = Transform3D(7.154927e-08, 0, -3.999999, 0, 5.9999995, 0, 5.999999, 0, 4.7699512e-08, 0, 0.25, -16.956789)
 
 [node name="homes4" parent="Homes" unique_id=978068549 instance=ExtResource("4_pu3yx")]
-transform = Transform3D(-0.18061441, 0, 3.9981863, 0, 5.9999995, 0, -5.99728, 0, -0.1204097, 15.83951, 0, -21.750767)
+transform = Transform3D(-1.993658, 0, -3.7727273, 0, 5.999999, 0, 5.6590915, 0, -1.329105, 15.83951, 0.25, -17.183483)
 
 [node name="homes5" parent="Homes" unique_id=570072887 instance=ExtResource("4_pu3yx")]
-transform = Transform3D(0.3756978, 0, 3.9921498, 0, 5.9999995, 0, -5.988225, 0, 0.25046515, 32.14942, 0, -20.878403)
+transform = Transform3D(-5.1083293, 0, -2.0981426, 0, 5.999999, 0, 3.1472135, 0, -3.4055526, 32.14942, 0.25, -12.976697)
 
 [node name="land" type="MeshInstance3D" parent="." unique_id=1259494477]
 transform = Transform3D(60, 0, 0, 0, 30, 0, 0, 0, 30, 0, 0, 0)

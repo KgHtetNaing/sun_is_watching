@@ -1,8 +1,45 @@
 [gd_scene format=3 uid="uid://ht6p73u07v31"]
 
 [ext_resource type="Script" uid="uid://on8em6lo3id2" path="res://scenes/peep_skater.gd" id="1_8y4dk"]
+[ext_resource type="Texture2D" uid="uid://dy7dq40lvbm2c" path="res://art/peepskate/Peepskate-1.png" id="2_ywc33"]
+[ext_resource type="Texture2D" uid="uid://nh0ggfxn0fkq" path="res://art/peepskate/Peepskate-2.png" id="3_me4cu"]
+[ext_resource type="Texture2D" uid="uid://dkvjorpm8bqyj" path="res://art/peepskate/Peepskate-3.png" id="4_qdcje"]
+[ext_resource type="Texture2D" uid="uid://bhymt5dkin5s5" path="res://art/peepskate/Peepskate-4.png" id="5_lcewc"]
+[ext_resource type="Texture2D" uid="uid://dk4u4c86s62et" path="res://art/peepskate/Peepskate-5.png" id="6_xqnea"]
+[ext_resource type="Texture2D" uid="uid://dl8mi4bj5h875" path="res://art/peepskate/Peepskate-6.png" id="7_et050"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jdfiw"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_412ky"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ywc33")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_me4cu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_qdcje")
+}],
+"loop": true,
+"name": &"1walk",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_lcewc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_xqnea")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_et050")
+}],
+"loop": true,
+"name": &"1walk_back",
+"speed": 5.0
+}]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8y4dk"]
 albedo_color = Color(0.6534986, 0.5130703, 0.88465047, 1)
@@ -13,7 +50,7 @@ material = SubResource("StandardMaterial3D_8y4dk")
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_m5luo"]
 
 [node name="People" type="CharacterBody3D" unique_id=131521429 groups=["enemies"]]
-collision_mask = 0
+collision_mask = 2
 script = ExtResource("1_8y4dk")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1103394298]
@@ -21,8 +58,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.90509033, 0)
 shape = SubResource("CapsuleShape3D_jdfiw")
 debug_color = Color(0.5914993, 0.42202383, 0.89505714, 0.41960785)
 
+[node name="peepskate" type="AnimatedSprite3D" parent="." unique_id=1060110159]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 1.346473, 0)
+sprite_frames = SubResource("SpriteFrames_412ky")
+animation = &"1walk_back"
+
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1549086241]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0081022, 0)
+visible = false
 mesh = SubResource("CapsuleMesh_8wchj")
 
 [node name="Area3D" type="Area3D" parent="." unique_id=474214701]
