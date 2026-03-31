@@ -8,6 +8,7 @@ func _ready() -> void:
 	get_tree().paused = true	
 	win_screen.continue_pressed.connect(_on_win_continue)
 	GameManager.start_game_requested.connect(_on_start_pressed)
+	MusicManager.play_music()
 
 	
 func _on_win_continue():

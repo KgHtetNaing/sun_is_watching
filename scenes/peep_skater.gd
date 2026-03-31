@@ -51,6 +51,7 @@ func take_damage(amount):
 		
 	healthpoint -= amount
 	print ("health ", healthpoint)
+	SfxManager.play_ouch()
 	
 	if healthpoint <= 0:
 		run_back()

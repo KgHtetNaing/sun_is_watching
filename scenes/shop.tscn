@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://bgbuap2hnj78u"]
 
+[ext_resource type="Script" uid="uid://dhft0n2s4nctd" path="res://scenes/shop.gd" id="1_1l46r"]
 [ext_resource type="Texture2D" uid="uid://c7rkdiq743a0p" path="res://icon.svg" id="2_032fp"]
 [ext_resource type="Script" uid="uid://6pbbqp6vjhnn" path="res://scripts/upgrade_button.gd" id="3_2fc2m"]
 
@@ -11,6 +12,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_1l46r")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=275518949]
 
@@ -44,7 +46,6 @@ text = "+Size"
 icon = ExtResource("2_032fp")
 script = ExtResource("3_2fc2m")
 upgrade_type = "size"
-amount = 0.5
 
 [node name="UpgradeSpeed" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=904903480]
 layout_mode = 2
@@ -55,10 +56,6 @@ icon = ExtResource("2_032fp")
 script = ExtResource("3_2fc2m")
 upgrade_type = "speed"
 
-[node name="Continue" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=186943761]
-layout_mode = 2
-text = "Continue"
-
 [connection signal="mouse_entered" from="CanvasLayer/VBoxContainer/UpgradeDmg" to="CanvasLayer/VBoxContainer/UpgradeDmg" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer/VBoxContainer/UpgradeDmg" to="CanvasLayer/VBoxContainer/UpgradeDmg" method="_on_mouse_exited"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/UpgradeDmg" to="CanvasLayer/VBoxContainer/UpgradeDmg" method="_on_pressed"]
@@ -68,4 +65,3 @@ text = "Continue"
 [connection signal="mouse_entered" from="CanvasLayer/VBoxContainer/UpgradeSpeed" to="CanvasLayer/VBoxContainer/UpgradeSpeed" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer/VBoxContainer/UpgradeSpeed" to="CanvasLayer/VBoxContainer/UpgradeSpeed" method="_on_mouse_exited"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/UpgradeSpeed" to="CanvasLayer/VBoxContainer/UpgradeSpeed" method="_on_pressed"]
-[connection signal="pressed" from="CanvasLayer/VBoxContainer/Continue" to="CanvasLayer/VBoxContainer/Continue" method="_on_pressed"]

@@ -48,7 +48,7 @@ func finding_escape():
 func take_damage(amount):
 	if going_home:
 		return
-		
+	SfxManager.play_ouch()
 	healthpoint -= amount
 	print ("health ", healthpoint)
 	

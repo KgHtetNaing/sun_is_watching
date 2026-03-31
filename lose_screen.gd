@@ -7,6 +7,8 @@ func _ready():
 		
 	var level = GameManager.current_level
 	current_lvl.text = str(level)
+	MusicManager.get_node("BGM_music").stop()
+	
 
 
 func _on_retry_pressed() -> void:

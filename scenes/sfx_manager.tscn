@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://b8se4t8m5krfj"]
+
+[ext_resource type="Script" uid="uid://b7uf1ymbf2jjb" path="res://scenes/sfx_manager.gd" id="1_5cwpb"]
+[ext_resource type="AudioStream" uid="uid://cock1c73nvsah" path="res://sound/sfx/sfx_ouch.mp3" id="1_wd8mt"]
+
+[node name="SFX_manager" type="Node2D" unique_id=1807097866]
+script = ExtResource("1_5cwpb")
+
+[node name="ouch" type="AudioStreamPlayer" parent="." unique_id=360832843]
+stream = ExtResource("1_wd8mt")

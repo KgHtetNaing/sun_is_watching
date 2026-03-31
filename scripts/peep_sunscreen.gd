@@ -13,6 +13,7 @@ func _ready():
 	pick_new_target()
 	sprite.play("2walk")
 	
+	
 func _physics_process(delta):
 	
 	var direction = target_position - global_position
@@ -49,6 +50,7 @@ func take_damage(amount):
 	if going_home:
 		return
 		
+	SfxManager.play_ouch()
 	healthpoint -= amount
 	print ("health ", healthpoint)
 	

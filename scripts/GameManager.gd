@@ -1,6 +1,6 @@
 extends Node
 
-var damage := 100
+var damage := 60
 var size := 1.0
 var speed := 1.0
 var escapee = 0

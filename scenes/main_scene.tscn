@@ -2,6 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://tdycf8js5qly" path="res://scenes/sun_beam.tscn" id="1_0f027"]
 [ext_resource type="Script" uid="uid://da68qdy3jwfnd" path="res://scripts/main_scene.gd" id="1_gubc5"]
+[ext_resource type="PackedScene" uid="uid://b8se4t8m5krfj" path="res://scenes/sfx_manager.tscn" id="2_c16ls"]
+[ext_resource type="PackedScene" uid="uid://cflkp351lhtpt" path="res://scenes/music_manager.tscn" id="2_rt2n2"]
 [ext_resource type="PackedScene" uid="uid://1hyjr1t1utcx" path="res://scenes/homes.tscn" id="4_pu3yx"]
 [ext_resource type="PackedScene" uid="uid://cddnl525thr57" path="res://scenes/win_screen.tscn" id="5_gubc5"]
 [ext_resource type="Script" uid="uid://dd0xrfbjiqaif" path="res://scenes/escape_point.gd" id="5_rt2n2"]
@@ -20,6 +22,10 @@ size = Vector3(80.38086, 1.5234375, 2.28833)
 
 [node name="MainScene" type="Node3D" unique_id=621533097]
 script = ExtResource("1_gubc5")
+
+[node name="SFX_manager" parent="." unique_id=1807097866 instance=ExtResource("2_c16ls")]
+
+[node name="MusicManager" parent="." unique_id=1444917415 instance=ExtResource("2_rt2n2")]
 
 [node name="Ui" type="CanvasLayer" parent="." unique_id=1121260561]
 process_mode = 3
