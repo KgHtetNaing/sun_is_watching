@@ -1,8 +1,8 @@
 extends Node
 
 var damage := 60
-var size := 1.0
-var speed := 1.0
+var size := 0.6
+var speed := 0.6
 var escapee = 0
 var current_level = 1
 

@@ -31,8 +31,8 @@ func spawn_person():
 
 func _on_spawn_timer_timeout() -> void:
 	spawn_person()
-	var current_wait =  6.0 - (GameManager.current_level * 0.4)
-	spawn_timer.wait_time = clamp(current_wait , 1.5 ,6.0)
+	var current_wait =  10.0 - (GameManager.current_level * 0.5)
+	spawn_timer.wait_time = clamp(current_wait , 1.5 ,10.0)
 	print ("current_wait" , current_wait)
 	
 	update_difficulity()
