@@ -21,7 +21,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.85882354, 0.87058824, 0.7529412, 1)
+color = Color(0.8392157, 0.7411765, 0.25882354, 1)
 
 [node name="CenterContainer" type="CenterContainer" parent="ColorRect" unique_id=480637296]
 layout_mode = 1
@@ -39,15 +39,15 @@ grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=236424911]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -159.0
-offset_top = -3.0
-offset_right = 6.9050293
-offset_bottom = 151.0
+anchors_preset = -1
+anchor_left = 0.388
+anchor_top = 0.36600003
+anchor_right = 0.62100005
+anchor_bottom = 0.75100005
+offset_left = 0.023956299
+offset_top = -0.16802979
+offset_right = -102.48706
+offset_bottom = -95.64804
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.62, 1.62)
