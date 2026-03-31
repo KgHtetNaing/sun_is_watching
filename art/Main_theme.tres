@@ -1,0 +1,14 @@
+[gd_resource type="Theme" format=3 uid="uid://okkchddtxnpv"]
+
+[ext_resource type="Texture2D" uid="uid://bmmwtmxfgk5vm" path="res://art/Ui/1x/Asset 7.png" id="1_qc3y6"]
+
+[sub_resource type="SystemFont" id="SystemFont_5d7ra"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bqqt6"]
+texture = ExtResource("1_qc3y6")
+
+[resource]
+Button/colors/font_color = Color(0.9607843, 0.57254905, 0, 1)
+Button/font_sizes/font_size = 20
+Button/fonts/font = SubResource("SystemFont_5d7ra")
+Button/styles/normal = SubResource("StyleBoxTexture_bqqt6")
