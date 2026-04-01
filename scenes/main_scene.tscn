@@ -7,10 +7,14 @@
 [ext_resource type="PackedScene" uid="uid://1hyjr1t1utcx" path="res://scenes/homes.tscn" id="4_pu3yx"]
 [ext_resource type="PackedScene" uid="uid://cddnl525thr57" path="res://scenes/win_screen.tscn" id="5_gubc5"]
 [ext_resource type="Script" uid="uid://dd0xrfbjiqaif" path="res://scenes/escape_point.gd" id="5_rt2n2"]
+[ext_resource type="Texture2D" uid="uid://ufke3niphgyo" path="res://art/Envi/ground.png" id="7_c1pb6"]
+[ext_resource type="Texture2D" uid="uid://oflr6i4vsgs4" path="res://art/Envi/bigbush.png" id="8_18nlu"]
+[ext_resource type="Texture2D" uid="uid://1svievppf4fk" path="res://art/Envi/exit.png" id="9_e1cbu"]
+[ext_resource type="PackedScene" uid="uid://cdvw2b43hrl8i" path="res://bush1.tscn" id="10_6wevv"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d5x1h"]
-albedo_color = Color(0, 0.19664721, 0.024216332, 1)
-roughness = 0.71
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6wevv"]
+shading_mode = 0
+albedo_texture = ExtResource("7_c1pb6")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_8mm7a"]
 
@@ -53,7 +57,7 @@ wait_time = 20.0
 one_shot = true
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=704493747]
-transform = Transform3D(1, 0, 0, 0, 0.6556901, 0.7550302, 0, -0.7550302, 0.6556901, -0.2062149, 12.778051, 13.269487)
+transform = Transform3D(1, 0, 0, 0, 0.7584756, 0.65170157, 0, -0.65170157, 0.7584756, -0.2062149, 10.400873, 8.6769905)
 current = true
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2018347354]
@@ -66,7 +70,7 @@ transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, 0, -0.142663, 11.508905)
 [node name="Homes" type="Node" parent="." unique_id=406738710]
 
 [node name="homes" parent="Homes" unique_id=1353727017 instance=ExtResource("4_pu3yx")]
-transform = Transform3D(4.023569, 0, -2.9672942, 0, 5.999999, 0, 4.450941, 0, 2.6823792, -31.509018, 0.25, -12.974687)
+transform = Transform3D(4.023569, 0, -2.9672942, 0, 5.999999, 0, 4.450941, 0, 2.6823792, -27.237524, 0.25, -12.974687)
 
 [node name="homes2" parent="Homes" unique_id=1440411430 instance=ExtResource("4_pu3yx")]
 transform = Transform3D(1.1091632, 0, -3.9310582, 0, 5.999999, 0, 5.896588, 0, 0.7394419, -15.241633, 0.25, -16.911146)
@@ -78,11 +82,11 @@ transform = Transform3D(7.154927e-08, 0, -3.999999, 0, 5.9999995, 0, 5.999999, 0
 transform = Transform3D(-1.993658, 0, -3.7727273, 0, 5.999999, 0, 5.6590915, 0, -1.329105, 15.83951, 0.25, -17.183483)
 
 [node name="homes5" parent="Homes" unique_id=570072887 instance=ExtResource("4_pu3yx")]
-transform = Transform3D(-5.1083293, 0, -2.0981426, 0, 5.999999, 0, 3.1472135, 0, -3.4055526, 32.14942, 0.25, -12.976697)
+transform = Transform3D(-5.1083293, 0, -2.0981426, 0, 5.999999, 0, 3.1472135, 0, -3.4055526, 27.228493, 0.25, -12.976697)
 
 [node name="land" type="MeshInstance3D" parent="." unique_id=1259494477]
-transform = Transform3D(60, 0, 0, 0, 30, 0, 0, 0, 30, 0, 0, 0)
-material_override = SubResource("StandardMaterial3D_d5x1h")
+transform = Transform3D(17.14, 0, 0, 0, 17.14, 0, 0, 0, 17.14, -16.87795, 0, -3.6031132)
+material_override = SubResource("StandardMaterial3D_6wevv")
 mesh = SubResource("PlaneMesh_8mm7a")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="land" unique_id=1981321868]
@@ -92,18 +96,117 @@ transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0,
 transform = Transform3D(0.9999986, 0, 0, 0, 0.9999986, 0, 0, 0, 0.9999986, -0.0021971546, -0.08129871, -0.0052795373)
 shape = SubResource("BoxShape3D_0f027")
 
+[node name="land2" type="MeshInstance3D" parent="." unique_id=74227504]
+transform = Transform3D(17.14, 0, 0, 0, 17.14, 0, 0, 0, 17.14, 16.99198, 0, -3.6031132)
+material_override = SubResource("StandardMaterial3D_6wevv")
+mesh = SubResource("PlaneMesh_8mm7a")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="land2" unique_id=1713320291]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="land2/StaticBody3D" unique_id=1904136064]
+transform = Transform3D(0.9999986, 0, 0, 0, 0.9999986, 0, 0, 0, 0.9999986, -0.0021971546, -0.08129871, -0.0052795373)
+shape = SubResource("BoxShape3D_0f027")
+
 [node name="targetPosition" type="Marker3D" parent="." unique_id=950759872]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.14465642, 4.8935566)
 
 [node name="escape_point" type="Node3D" parent="." unique_id=96602533]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 29.28072)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 10.727788)
 script = ExtResource("5_rt2n2")
 
 [node name="Area3D" type="Area3D" parent="escape_point" unique_id=2035122529]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1968994, 1.9180841)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="escape_point/Area3D" unique_id=1322436401]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3955078, -0.26171875, 0.08239746)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3955078, -3.6079369, 1.5332775)
 shape = SubResource("BoxShape3D_pu3yx")
+
+[node name="exit" type="Sprite3D" parent="." unique_id=654392101]
+transform = Transform3D(-0.80000013, -4.431173e-08, 6.600236e-15, 0, -1.282769e-08, -1, 1.2079666e-07, -0.29346332, 4.371139e-08, -24.392136, 0.18229198, 5.3943396)
+layers = 2
+texture = ExtResource("9_e1cbu")
+
+[node name="exit2" type="Sprite3D" parent="." unique_id=411968698]
+transform = Transform3D(-0.80000013, -4.431173e-08, 6.600236e-15, 0, -1.282769e-08, -1, 1.2079666e-07, -0.29346332, 4.371139e-08, -7.995083, 0.18229198, 5.3943396)
+layers = 2
+texture = ExtResource("9_e1cbu")
+
+[node name="exit3" type="Sprite3D" parent="." unique_id=1141718028]
+transform = Transform3D(-0.80000013, -4.431173e-08, 6.600236e-15, 0, -1.282769e-08, -1, 1.2079666e-07, -0.29346332, 4.371139e-08, 8.351551, 0.18229198, 5.3943396)
+layers = 2
+texture = ExtResource("9_e1cbu")
+
+[node name="exit4" type="Sprite3D" parent="." unique_id=1403145407]
+transform = Transform3D(-0.80000013, -4.431173e-08, 6.600236e-15, 0, -1.282769e-08, -1, 1.2079666e-07, -0.29346332, 4.371139e-08, 24.765182, 0.18229198, 5.3943396)
+layers = 2
+texture = ExtResource("9_e1cbu")
+
+[node name="Bg1" type="Sprite3D" parent="." unique_id=235761513]
+transform = Transform3D(0.32763124, 0, 0, 0, 0.32763124, 0, 0, 0, 0.5, -9.423143, 2.424749, -20.773384)
+texture = ExtResource("8_18nlu")
+
+[node name="Bg2" type="Sprite3D" parent="." unique_id=129109396]
+transform = Transform3D(0.32763124, 0, 0, 0, 0.32763124, 0, 0, 0, 0.5, -3.0942264, 2.424749, -20.773384)
+texture = ExtResource("8_18nlu")
+
+[node name="Bg3" type="Sprite3D" parent="." unique_id=546886858]
+transform = Transform3D(0.32763124, 0, 0, 0, 0.32763124, 0, 0, 0, 0.5, 3.1612031, 2.424749, -20.773384)
+texture = ExtResource("8_18nlu")
+
+[node name="Bg4" type="Sprite3D" parent="." unique_id=353473432]
+transform = Transform3D(0.32763124, 0, 0, 0, 0.32763124, 0, 0, 0, 0.5, 9.490121, 2.424749, -20.773384)
+texture = ExtResource("8_18nlu")
+
+[node name="Bg5" type="Sprite3D" parent="." unique_id=981153875]
+transform = Transform3D(0.32763124, 0, 0, 0, 0.32763124, 0, 0, 0, 0.5, -34.600727, 2.424749, -20.773384)
+texture = ExtResource("8_18nlu")
+
+[node name="Bg6" type="Sprite3D" parent="." unique_id=1916062987]
+transform = Transform3D(0.32763124, 0, 0, 0, 0.32763124, 0, 0, 0, 0.5, -28.27181, 2.424749, -20.773384)
+texture = ExtResource("8_18nlu")
+
+[node name="Bg7" type="Sprite3D" parent="." unique_id=2028024752]
+transform = Transform3D(0.32763124, 0, 0, 0, 0.32763124, 0, 0, 0, 0.5, -22.01638, 2.424749, -20.773384)
+texture = ExtResource("8_18nlu")
+
+[node name="Bg8" type="Sprite3D" parent="." unique_id=1637671915]
+transform = Transform3D(0.32763124, 0, 0, 0, 0.32763124, 0, 0, 0, 0.5, -15.687461, 2.424749, -20.773384)
+texture = ExtResource("8_18nlu")
+
+[node name="Bg9" type="Sprite3D" parent="." unique_id=1839284798]
+transform = Transform3D(0.32763124, 0, 0, 0, 0.32763124, 0, 0, 0, 0.5, 15.636472, 2.424749, -20.773384)
+texture = ExtResource("8_18nlu")
+
+[node name="Bg10" type="Sprite3D" parent="." unique_id=80221489]
+transform = Transform3D(0.32763124, 0, 0, 0, 0.32763124, 0, 0, 0, 0.5, 21.965387, 2.424749, -20.773384)
+texture = ExtResource("8_18nlu")
+
+[node name="Bg11" type="Sprite3D" parent="." unique_id=255141865]
+transform = Transform3D(0.32763124, 0, 0, 0, 0.32763124, 0, 0, 0, 0.5, 28.220818, 2.424749, -20.773384)
+texture = ExtResource("8_18nlu")
+
+[node name="Bg12" type="Sprite3D" parent="." unique_id=851720217]
+transform = Transform3D(0.32763124, 0, 0, 0, 0.32763124, 0, 0, 0, 0.5, 34.549736, 2.424749, -20.773384)
+texture = ExtResource("8_18nlu")
+
+[node name="Bush1" parent="." unique_id=598733252 instance=ExtResource("10_6wevv")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -9, 0, -16)
+
+[node name="Bush2" parent="." unique_id=323357545 instance=ExtResource("10_6wevv")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 21, 0, -16)
+
+[node name="Bush3" parent="." unique_id=529166113 instance=ExtResource("10_6wevv")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 8, 0, -12)
+
+[node name="Bush4" parent="." unique_id=2008715508 instance=ExtResource("10_6wevv")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -17, 0, -6)
+
+[node name="Bush5" parent="." unique_id=753334825 instance=ExtResource("10_6wevv")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -12, 0, -9)
+
+[node name="Bush6" parent="." unique_id=1054539693 instance=ExtResource("10_6wevv")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 19, 0, -6)
 
 [connection signal="pressed" from="Ui/Start" to="." method="_on_start_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
