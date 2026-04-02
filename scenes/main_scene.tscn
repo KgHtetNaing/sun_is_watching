@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cflkp351lhtpt" path="res://scenes/music_manager.tscn" id="2_rt2n2"]
 [ext_resource type="PackedScene" uid="uid://1hyjr1t1utcx" path="res://scenes/homes.tscn" id="4_pu3yx"]
 [ext_resource type="PackedScene" uid="uid://cddnl525thr57" path="res://scenes/win_screen.tscn" id="5_gubc5"]
-[ext_resource type="Script" uid="uid://dd0xrfbjiqaif" path="res://scenes/escape_point.gd" id="5_rt2n2"]
+[ext_resource type="Script" uid="uid://dd0xrfbjiqaif" path="res://scripts/escape_point.gd" id="5_rt2n2"]
 [ext_resource type="Texture2D" uid="uid://oflr6i4vsgs4" path="res://art/Envi/bigbush.png" id="8_18nlu"]
 [ext_resource type="Texture2D" uid="uid://1svievppf4fk" path="res://art/Envi/exit.png" id="9_e1cbu"]
 [ext_resource type="PackedScene" uid="uid://cdvw2b43hrl8i" path="res://bush1.tscn" id="10_6wevv"]
@@ -90,7 +90,7 @@ transform = Transform3D(0.8687266, -0.49529195, 3.2362588e-09, 0.04036811, 0.070
 light_energy = 5.228
 
 [node name="Sun_beam" parent="." unique_id=487210576 instance=ExtResource("1_0f027")]
-transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, 0, -0.142663, 11.508905)
+transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, 0, 0.3, 11.509)
 
 [node name="Homes" type="Node" parent="." unique_id=406738710]
 
@@ -156,28 +156,28 @@ transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -0.25928497, 2.424749, 
 texture = ExtResource("8_18nlu")
 
 [node name="Bush1" parent="." unique_id=598733252 instance=ExtResource("10_6wevv")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -7, 0, -14)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -7, 0.02, -14)
 
 [node name="Bush2" parent="." unique_id=323357545 instance=ExtResource("10_6wevv")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 17.792366, 0, -16)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 17.792366, 0.02, -16)
 
 [node name="Bush3" parent="." unique_id=529166113 instance=ExtResource("10_6wevv")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 6, 0, -12)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 6, 0.02, -12)
 
 [node name="Bush4" parent="." unique_id=2008715508 instance=ExtResource("10_6wevv")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -10.655869, 0, -2)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -10.655869, 0.02, -2)
 
 [node name="Bush8" parent="." unique_id=2068673735 instance=ExtResource("10_6wevv")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -16.392448, 0, -9.887797)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -16.392448, 0.02, -9.887797)
 
 [node name="Bush5" parent="." unique_id=753334825 instance=ExtResource("10_6wevv")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -4.345478, 0, -8)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -4.345478, 0.02, -8)
 
 [node name="Bush6" parent="." unique_id=1054539693 instance=ExtResource("10_6wevv")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 14.412384, 0, 2)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 14.412384, 0.02, 2)
 
 [node name="Bush7" parent="." unique_id=1715572842 instance=ExtResource("10_6wevv")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 3.3030624, 0, -4.5876226)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 3.3030624, 0.02, -4.5876226)
 
 [connection signal="pressed" from="Ui/Start" to="." method="_on_start_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

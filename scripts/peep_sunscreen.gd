@@ -1,6 +1,7 @@
 extends CharacterBody3D
 @export var healthpoint = 150
 
+var blink_tween: Tween
 var speed = 3
 var running_speed = 10
 var target_position
@@ -51,12 +52,22 @@ func take_damage(amount):
 		return
 		
 	SfxManager.play_ouch()
+	blink_red()
 	healthpoint -= amount
 	print ("health ", healthpoint)
 	
 	if healthpoint <= 0:
 		run_back()
-		
+
+func blink_red():
+	if blink_tween:
+		blink_tween.kill()
+		sprite.modulate = Color.WHITE  # reset before new blink   
+	blink_tween = create_tween()
+	for i in 3:
+		blink_tween.tween_property(sprite, "modulate", Color.RED, 0.05)
+		blink_tween.tween_property(sprite, "modulate", Color.WHITE, 0.05)
+
 func run_back():
 	going_home = true
 	target_position = home_position
