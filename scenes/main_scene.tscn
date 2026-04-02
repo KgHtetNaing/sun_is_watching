@@ -7,13 +7,25 @@
 [ext_resource type="PackedScene" uid="uid://1hyjr1t1utcx" path="res://scenes/homes.tscn" id="4_pu3yx"]
 [ext_resource type="PackedScene" uid="uid://cddnl525thr57" path="res://scenes/win_screen.tscn" id="5_gubc5"]
 [ext_resource type="Script" uid="uid://dd0xrfbjiqaif" path="res://scripts/escape_point.gd" id="5_rt2n2"]
+[ext_resource type="Texture2D" uid="uid://bdjrmxbtm2pa" path="res://art/Ui/button-15.png" id="6_6u1mn"]
+[ext_resource type="Texture2D" uid="uid://dao8r5ip24vsh" path="res://art/Ui/button-17.png" id="7_bcnxi"]
 [ext_resource type="Texture2D" uid="uid://b8ieg05gbitsk" path="res://art/Envi/grass1.png" id="8_4w45t"]
+[ext_resource type="Texture2D" uid="uid://cct6wbfatwoh5" path="res://art/Ui/button-16.png" id="8_7nt27"]
 [ext_resource type="Texture2D" uid="uid://oflr6i4vsgs4" path="res://art/Envi/bigbush.png" id="8_18nlu"]
 [ext_resource type="Texture2D" uid="uid://1svievppf4fk" path="res://art/Envi/exit.png" id="9_e1cbu"]
 [ext_resource type="Texture2D" uid="uid://cq2r2uc8n7y2m" path="res://art/Envi/grass2.png" id="9_r6p65"]
 [ext_resource type="PackedScene" uid="uid://cdvw2b43hrl8i" path="res://bush1.tscn" id="10_6wevv"]
 [ext_resource type="Texture2D" uid="uid://cmxubd31ukevr" path="res://art/Envi/grass3.png" id="10_r6p65"]
 [ext_resource type="Texture2D" uid="uid://ddcqo2uqu3dxy" path="res://art/Envi/path.png" id="12_mngbo"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k6f3i"]
+texture = ExtResource("6_6u1mn")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xdqt8"]
+texture = ExtResource("7_bcnxi")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_adb74"]
+texture = ExtResource("8_7nt27")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6wevv"]
 shading_mode = 0
@@ -78,13 +90,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -23.0
-offset_top = -15.5
-offset_right = 23.0
-offset_bottom = 15.5
+offset_left = -176.81158
+offset_top = -50.0
+offset_right = 176.81158
+offset_bottom = 50.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Start"
+size_flags_horizontal = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_k6f3i")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_xdqt8")
+theme_override_styles/hover = SubResource("StyleBoxTexture_adb74")
 
 [node name="Timer" type="Timer" parent="." unique_id=971018918]
 process_mode = 3
