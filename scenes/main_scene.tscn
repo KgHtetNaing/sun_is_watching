@@ -7,9 +7,12 @@
 [ext_resource type="PackedScene" uid="uid://1hyjr1t1utcx" path="res://scenes/homes.tscn" id="4_pu3yx"]
 [ext_resource type="PackedScene" uid="uid://cddnl525thr57" path="res://scenes/win_screen.tscn" id="5_gubc5"]
 [ext_resource type="Script" uid="uid://dd0xrfbjiqaif" path="res://scripts/escape_point.gd" id="5_rt2n2"]
+[ext_resource type="Texture2D" uid="uid://b8ieg05gbitsk" path="res://art/Envi/grass1.png" id="8_4w45t"]
 [ext_resource type="Texture2D" uid="uid://oflr6i4vsgs4" path="res://art/Envi/bigbush.png" id="8_18nlu"]
 [ext_resource type="Texture2D" uid="uid://1svievppf4fk" path="res://art/Envi/exit.png" id="9_e1cbu"]
+[ext_resource type="Texture2D" uid="uid://cq2r2uc8n7y2m" path="res://art/Envi/grass2.png" id="9_r6p65"]
 [ext_resource type="PackedScene" uid="uid://cdvw2b43hrl8i" path="res://bush1.tscn" id="10_6wevv"]
+[ext_resource type="Texture2D" uid="uid://cmxubd31ukevr" path="res://art/Envi/grass3.png" id="10_r6p65"]
 [ext_resource type="Texture2D" uid="uid://ddcqo2uqu3dxy" path="res://art/Envi/path.png" id="12_mngbo"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6wevv"]
@@ -127,6 +130,56 @@ transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0,
 [node name="CollisionShape3D" type="CollisionShape3D" parent="land/StaticBody3D" unique_id=426016993]
 transform = Transform3D(0.9999986, 0, 0, 0, 0.9999986, 0, 0, 0, 0.9999986, -0.0021971546, -0.08129871, -0.0052795373)
 shape = SubResource("BoxShape3D_0f027")
+
+[node name="Grass" type="Sprite3D" parent="." unique_id=1959805515]
+transform = Transform3D(-1, -8.742278e-08, 3.821371e-15, 0, -4.371139e-08, -1, 8.742278e-08, -1, 4.371139e-08, -15.462429, 0.1, -5.434)
+billboard = 1
+texture = ExtResource("8_4w45t")
+
+[node name="Grass2" type="Sprite3D" parent="." unique_id=1935764562]
+transform = Transform3D(-1, -8.742278e-08, 3.821371e-15, 0, -4.371139e-08, -1, 8.742278e-08, -1, 4.371139e-08, 5.4545784, 0.1, -9.038935)
+billboard = 1
+texture = ExtResource("8_4w45t")
+
+[node name="Grass3" type="Sprite3D" parent="." unique_id=163785390]
+transform = Transform3D(-1, -8.742278e-08, 3.821371e-15, 0, -4.371139e-08, -1, 8.742278e-08, -1, 4.371139e-08, -3.1385803, 0.1, 1.4405284)
+billboard = 1
+texture = ExtResource("8_4w45t")
+
+[node name="Grass4" type="Sprite3D" parent="." unique_id=2017992186]
+transform = Transform3D(-1, -8.742278e-08, 3.821371e-15, 0, -4.371139e-08, -1, 8.742278e-08, -1, 4.371139e-08, 18.532948, 0.1, -5.1543703)
+billboard = 1
+texture = ExtResource("8_4w45t")
+
+[node name="Grass5" type="Sprite3D" parent="." unique_id=601816928]
+transform = Transform3D(-1, -8.742278e-08, 3.821371e-15, 0, -4.371139e-08, -1, 8.742278e-08, -1, 4.371139e-08, -23.596813, 0.1, -8.645788)
+billboard = 1
+texture = ExtResource("8_4w45t")
+
+[node name="Grass10" type="Sprite3D" parent="." unique_id=1927393733]
+transform = Transform3D(-1, -8.742278e-08, 3.821371e-15, 0, -4.371139e-08, -1, 8.742278e-08, -1, 4.371139e-08, 8.679401, 0.1, 1.1301794)
+billboard = 1
+texture = ExtResource("8_4w45t")
+
+[node name="Grass6" type="Sprite3D" parent="." unique_id=968750219]
+transform = Transform3D(-1, -8.742278e-08, 3.821371e-15, 0, -4.371139e-08, -1, 8.742278e-08, -1, 4.371139e-08, -12.889797, 0.1, -8.645788)
+billboard = 1
+texture = ExtResource("9_r6p65")
+
+[node name="Grass7" type="Sprite3D" parent="." unique_id=790837615]
+transform = Transform3D(-1, -8.742278e-08, 3.821371e-15, 0, -4.371139e-08, -1, 8.742278e-08, -1, 4.371139e-08, 2.7052002, 0.1, -2.05089)
+billboard = 1
+texture = ExtResource("9_r6p65")
+
+[node name="Grass8" type="Sprite3D" parent="." unique_id=1499667276]
+transform = Transform3D(-1, -8.742278e-08, 3.821371e-15, 0, -4.371139e-08, -1, 8.742278e-08, -1, 4.371139e-08, -17.312256, 0.1, 2.061222)
+billboard = 1
+texture = ExtResource("10_r6p65")
+
+[node name="Grass9" type="Sprite3D" parent="." unique_id=1224954481]
+transform = Transform3D(-1, -8.742278e-08, 3.821371e-15, 0, -4.371139e-08, -1, 8.742278e-08, -1, 4.371139e-08, 18.520313, 0.1, -13.244448)
+billboard = 1
+texture = ExtResource("10_r6p65")
 
 [node name="targetPosition" type="Marker3D" parent="." unique_id=950759872]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.14465642, 4.8935566)
