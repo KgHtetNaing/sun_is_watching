@@ -1,8 +1,43 @@
 [gd_scene format=3 uid="uid://bgbuap2hnj78u"]
 
 [ext_resource type="Script" uid="uid://dhft0n2s4nctd" path="res://scripts/shop.gd" id="1_1l46r"]
-[ext_resource type="Texture2D" uid="uid://c7rkdiq743a0p" path="res://icon.svg" id="2_032fp"]
+[ext_resource type="Texture2D" uid="uid://depibfw4xswl3" path="res://art/Upgrade/Upgrade-33.png" id="2_1v8qu"]
 [ext_resource type="Script" uid="uid://6pbbqp6vjhnn" path="res://scripts/upgrade_button.gd" id="3_2fc2m"]
+[ext_resource type="Texture2D" uid="uid://c1mxo0xqskhsh" path="res://art/Upgrade/Upgrade-39.png" id="3_44xle"]
+[ext_resource type="Texture2D" uid="uid://cfwmmexv6qw0i" path="res://art/Upgrade/Upgrade-36.png" id="4_24it5"]
+[ext_resource type="Texture2D" uid="uid://1pc361jvi7xk" path="res://art/Upgrade/Upgrade-34.png" id="6_7mqwv"]
+[ext_resource type="Texture2D" uid="uid://cxutojadjfvh6" path="res://art/Upgrade/Upgrade-40.png" id="7_gobkm"]
+[ext_resource type="Texture2D" uid="uid://cd7viunxy8ltr" path="res://art/Upgrade/Upgrade-38.png" id="8_j14q8"]
+[ext_resource type="Texture2D" uid="uid://dxbmn4tybexfn" path="res://art/Upgrade/Upgrade-35.png" id="9_5u241"]
+[ext_resource type="Texture2D" uid="uid://bsn1882u0205t" path="res://art/Upgrade/Upgrade-42.png" id="10_pqync"]
+[ext_resource type="Texture2D" uid="uid://ct4qak1g2a2c3" path="res://art/Upgrade/Upgrade-41.png" id="11_yuijs"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_aa4hd"]
+texture = ExtResource("2_1v8qu")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_68utx"]
+texture = ExtResource("3_44xle")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ru2r1"]
+texture = ExtResource("4_24it5")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lxs01"]
+texture = ExtResource("6_7mqwv")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6nbx6"]
+texture = ExtResource("7_gobkm")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mihhf"]
+texture = ExtResource("8_j14q8")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5lclc"]
+texture = ExtResource("9_5u241")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ouqob"]
+texture = ExtResource("10_pqync")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p0at6"]
+texture = ExtResource("11_yuijs")
 
 [node name="Shop" type="Control" unique_id=1227722593]
 process_mode = 3
@@ -16,52 +51,64 @@ script = ExtResource("1_1l46r")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=275518949]
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer" unique_id=1898892178]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -98.5
-offset_top = -225.5
-offset_right = 98.5
-offset_bottom = 225.5
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=717608603]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+color = Color(0.019639827, 0.041127454, 0.16073531, 0.69411767)
 
-[node name="UpgradeDmg" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=1749467096]
-layout_mode = 2
+[node name="UpgradeDmg" type="Button" parent="CanvasLayer" unique_id=1749467096]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 501.33334
+offset_top = 169.0
+offset_right = -501.33337
+offset_bottom = -395.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-text = "+DMG"
-icon = ExtResource("2_032fp")
+theme_override_styles/normal = SubResource("StyleBoxTexture_aa4hd")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_68utx")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ru2r1")
 script = ExtResource("3_2fc2m")
 upgrade_type = "damage"
 
-[node name="UpgradeSize" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=1628898795]
-layout_mode = 2
+[node name="UpgradeSize" type="Button" parent="CanvasLayer" unique_id=1628898795]
+offset_left = 501.0
+offset_top = 283.0
+offset_right = 778.333
+offset_bottom = 439.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
-text = "+Size"
-icon = ExtResource("2_032fp")
+theme_override_styles/normal = SubResource("StyleBoxTexture_lxs01")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_6nbx6")
+theme_override_styles/hover = SubResource("StyleBoxTexture_mihhf")
 script = ExtResource("3_2fc2m")
 upgrade_type = "size"
 
-[node name="UpgradeSpeed" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=904903480]
-layout_mode = 2
+[node name="UpgradeSpeed" type="Button" parent="CanvasLayer" unique_id=904903480]
+offset_left = 501.0
+offset_top = 397.0
+offset_right = 778.333
+offset_bottom = 553.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
-text = "+Speed"
-icon = ExtResource("2_032fp")
+theme_override_styles/normal = SubResource("StyleBoxTexture_5lclc")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ouqob")
+theme_override_styles/hover = SubResource("StyleBoxTexture_p0at6")
 script = ExtResource("3_2fc2m")
 upgrade_type = "speed"
 
-[connection signal="mouse_entered" from="CanvasLayer/VBoxContainer/UpgradeDmg" to="CanvasLayer/VBoxContainer/UpgradeDmg" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="CanvasLayer/VBoxContainer/UpgradeDmg" to="CanvasLayer/VBoxContainer/UpgradeDmg" method="_on_mouse_exited"]
-[connection signal="pressed" from="CanvasLayer/VBoxContainer/UpgradeDmg" to="CanvasLayer/VBoxContainer/UpgradeDmg" method="_on_pressed"]
-[connection signal="mouse_entered" from="CanvasLayer/VBoxContainer/UpgradeSize" to="CanvasLayer/VBoxContainer/UpgradeSize" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="CanvasLayer/VBoxContainer/UpgradeSize" to="CanvasLayer/VBoxContainer/UpgradeSize" method="_on_mouse_exited"]
-[connection signal="pressed" from="CanvasLayer/VBoxContainer/UpgradeSize" to="CanvasLayer/VBoxContainer/UpgradeSize" method="_on_pressed"]
-[connection signal="mouse_entered" from="CanvasLayer/VBoxContainer/UpgradeSpeed" to="CanvasLayer/VBoxContainer/UpgradeSpeed" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="CanvasLayer/VBoxContainer/UpgradeSpeed" to="CanvasLayer/VBoxContainer/UpgradeSpeed" method="_on_mouse_exited"]
-[connection signal="pressed" from="CanvasLayer/VBoxContainer/UpgradeSpeed" to="CanvasLayer/VBoxContainer/UpgradeSpeed" method="_on_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer/UpgradeDmg" to="CanvasLayer/UpgradeDmg" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/UpgradeDmg" to="CanvasLayer/UpgradeDmg" method="_on_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer/UpgradeDmg" to="CanvasLayer/UpgradeDmg" method="_on_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer/UpgradeSize" to="CanvasLayer/UpgradeSize" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/UpgradeSize" to="CanvasLayer/UpgradeSize" method="_on_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer/UpgradeSize" to="CanvasLayer/UpgradeSize" method="_on_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer/UpgradeSpeed" to="CanvasLayer/UpgradeSpeed" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/UpgradeSpeed" to="CanvasLayer/UpgradeSpeed" method="_on_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer/UpgradeSpeed" to="CanvasLayer/UpgradeSpeed" method="_on_pressed"]
