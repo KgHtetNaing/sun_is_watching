@@ -1,7 +1,162 @@
 [gd_scene format=3 uid="uid://cxcwvmdnls5d7"]
 
 [ext_resource type="Script" uid="uid://dyb1auwsdrlul" path="res://scripts/main_menu.gd" id="1_l6cm7"]
-[ext_resource type="Theme" uid="uid://okkchddtxnpv" path="res://art/Main_theme.tres" id="2_ekxnf"]
+[ext_resource type="Texture2D" uid="uid://dgv8oj77u16ih" path="res://art/Envi/Cloud-02.png" id="3_bqqt6"]
+[ext_resource type="Texture2D" uid="uid://h2u3gnuyvdvg" path="res://art/Envi/Cloud-03.png" id="4_wu84c"]
+[ext_resource type="Texture2D" uid="uid://b003ja51pk3vc" path="res://art/Envi/Cloud-05.png" id="5_1ajci"]
+[ext_resource type="Texture2D" uid="uid://bmq33reiemf2l" path="res://art/Envi/Cloud-04.png" id="5_8ln24"]
+[ext_resource type="Texture2D" uid="uid://cpld02nt51as4" path="res://art/Ui/button-06.png" id="5_oa1go"]
+[ext_resource type="Texture2D" uid="uid://c3tpnqv4rpnyb" path="res://art/Ui/button-12.png" id="6_oa1go"]
+[ext_resource type="Texture2D" uid="uid://cwxdvlkr8vil7" path="res://art/Ui/button-07.png" id="6_tbmy8"]
+[ext_resource type="Texture2D" uid="uid://dpi4d1hutnwmw" path="res://art/Ui/button-09.png" id="7_tbmy8"]
+[ext_resource type="Texture2D" uid="uid://cis5aocx8l4t7" path="res://art/Ui/button-13.png" id="10_7b55j"]
+[ext_resource type="Texture2D" uid="uid://btyj1ag1jx688" path="res://art/Ui/button-10.png" id="11_5pajh"]
+[ext_resource type="Texture2D" uid="uid://c3jnhml23t87t" path="res://art/Ui/button-08.png" id="12_j7ex8"]
+[ext_resource type="Texture2D" uid="uid://brk8icy0s85f8" path="res://art/Ui/button-14.png" id="13_a8gd2"]
+[ext_resource type="Texture2D" uid="uid://hl5r0dngnfwj" path="res://art/Ui/button-11.png" id="14_hstxw"]
+
+[sub_resource type="Animation" id="Animation_rtw2f"]
+resource_name = "Cloud2"
+length = 15.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 7.5, 15),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1130, 300), Vector2(967, 300), Vector2(1130, 300)]
+}
+
+[sub_resource type="Animation" id="Animation_oa1go"]
+resource_name = "Cloud3"
+length = 20.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Cloud3:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 10, 20),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(961.99994, 583), Vector2(1042.9999, 583), Vector2(961.99994, 583)]
+}
+
+[sub_resource type="Animation" id="Animation_8egab"]
+resource_name = "Cloud4"
+length = 20.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Cloud4:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(165.00002, 505), Vector2(362, 505)]
+}
+
+[sub_resource type="Animation" id="Animation_wu84c"]
+resource_name = "CloudMove"
+length = 15.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 7.5, 15),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(150, 240), Vector2(400, 240), Vector2(150, 240)]
+}
+
+[sub_resource type="Animation" id="Animation_8ln24"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(157, 240)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Cloud3:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(961.99994, 583)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Cloud4:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(165.00002, 505)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rtw2f"]
+_data = {
+&"Cloud2": SubResource("Animation_rtw2f"),
+&"Cloud3": SubResource("Animation_oa1go"),
+&"Cloud4": SubResource("Animation_8egab"),
+&"CloudMove": SubResource("Animation_wu84c"),
+&"RESET": SubResource("Animation_8ln24")
+}
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jk1qb"]
+texture = ExtResource("5_oa1go")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5dd4i"]
+texture = ExtResource("6_oa1go")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lgwnu"]
+texture = ExtResource("7_tbmy8")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gw5y6"]
+texture = ExtResource("6_tbmy8")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_svtp6"]
+texture = ExtResource("10_7b55j")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1dfpl"]
+texture = ExtResource("11_5pajh")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qywvv"]
+texture = ExtResource("12_j7ex8")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3wgol"]
+texture = ExtResource("13_a8gd2")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1acrt"]
+texture = ExtResource("14_hstxw")
 
 [node name="Main_menu" type="Control" unique_id=215569818]
 layout_mode = 3
@@ -21,7 +176,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.8392157, 0.7411765, 0.25882354, 1)
+color = Color(0.73333335, 0.94509804, 1, 1)
 
 [node name="CenterContainer" type="CenterContainer" parent="ColorRect" unique_id=480637296]
 layout_mode = 1
@@ -37,37 +192,95 @@ offset_bottom = 322.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=236424911]
+[node name="Cloud1" type="Sprite2D" parent="." unique_id=182665908]
+position = Vector2(157, 240)
+scale = Vector2(0.195, 0.195)
+texture = ExtResource("3_bqqt6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Cloud1" unique_id=74095560]
+libraries/ = SubResource("AnimationLibrary_rtw2f")
+autoplay = &"CloudMove"
+
+[node name="Cloud2" type="Sprite2D" parent="." unique_id=873712940]
+position = Vector2(157, 240)
+scale = Vector2(0.195, 0.195)
+texture = ExtResource("4_wu84c")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Cloud2" unique_id=1571622095]
+libraries/ = SubResource("AnimationLibrary_rtw2f")
+autoplay = &"Cloud2"
+
+[node name="Cloud3" type="Sprite2D" parent="." unique_id=2056387982]
+position = Vector2(961.99994, 583)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("5_8ln24")
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="Cloud3" unique_id=142455429]
+root_node = NodePath("../../Cloud2")
+libraries/ = SubResource("AnimationLibrary_rtw2f")
+autoplay = &"Cloud3"
+
+[node name="Cloud4" type="Sprite2D" parent="." unique_id=1731658019]
+position = Vector2(165.00002, 505)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("5_1ajci")
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="Cloud4" unique_id=2120855645]
+root_node = NodePath("../../Cloud2")
+libraries/ = SubResource("AnimationLibrary_rtw2f")
+autoplay = &"Cloud4"
+
+[node name="Start Game" type="Button" parent="." unique_id=1269828103]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.388
-anchor_top = 0.36600003
-anchor_right = 0.62100005
-anchor_bottom = 0.75100005
-offset_left = 0.023956299
-offset_top = -0.16802979
-offset_right = -102.48706
-offset_bottom = -95.64804
+anchor_left = 0.42400002
+anchor_top = 0.569
+anchor_right = 0.57600003
+anchor_bottom = 0.646
+offset_left = -0.22003174
+offset_top = 0.32000732
+offset_right = 0.2199707
+offset_bottom = -0.120025635
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 3
+theme_override_constants/h_separation = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_jk1qb")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_5dd4i")
+theme_override_styles/hover = SubResource("StyleBoxTexture_lgwnu")
+
+[node name="Setting" type="Button" parent="." unique_id=425276905]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.39000002
+anchor_top = 0.68500006
+anchor_right = 0.61
+anchor_bottom = 0.79
+offset_left = 0.5895996
+offset_top = -0.20004272
+offset_right = -0.58966064
+offset_bottom = 0.17401123
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(1.62, 1.62)
-theme_override_constants/separation = 35
+theme_override_styles/normal = SubResource("StyleBoxTexture_gw5y6")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_svtp6")
+theme_override_styles/hover = SubResource("StyleBoxTexture_1dfpl")
 
-[node name="Start Game" type="Button" parent="VBoxContainer" unique_id=1269828103]
-layout_mode = 2
-theme = ExtResource("2_ekxnf")
-theme_override_constants/h_separation = 0
-text = "Start"
+[node name="Quit" type="Button" parent="." unique_id=1226654440]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.39000002
+anchor_top = 0.68500006
+anchor_right = 0.61
+anchor_bottom = 0.79
+offset_left = 44.799988
+offset_top = 92.79996
+offset_right = -54.940247
+offset_bottom = 92.20001
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_qywvv")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_3wgol")
+theme_override_styles/hover = SubResource("StyleBoxTexture_1acrt")
 
-[node name="Setting" type="Button" parent="VBoxContainer" unique_id=2090453887]
-layout_mode = 2
-theme = ExtResource("2_ekxnf")
-text = "Setting
-"
-
-[node name="Quit" type="Button" parent="VBoxContainer" unique_id=1561899545]
-layout_mode = 2
-theme = ExtResource("2_ekxnf")
-text = "Quit"
-
-[connection signal="pressed" from="VBoxContainer/Start Game" to="." method="_on_start_game_pressed"]
+[connection signal="pressed" from="Start Game" to="." method="_on_start_game_pressed"]
