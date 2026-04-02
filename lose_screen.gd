@@ -1,5 +1,5 @@
 extends Control
-@onready var current_lvl = $VBoxContainer/HBoxContainer/current_lvl
+@onready var current_lvl = $CanvasLayer/HBoxContainer/current_lvl
 
 func _ready():
 	if get_tree().paused ==  true:
@@ -16,4 +16,4 @@ func _on_retry_pressed() -> void:
 
 
 func _on_menu_pressed() -> void:
-	get_tree().change_scene_to_file("res://main_menu.tscn")
+	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")

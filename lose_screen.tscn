@@ -1,6 +1,60 @@
 [gd_scene format=3 uid="uid://bendp87acl1u7"]
 
 [ext_resource type="Script" uid="uid://byia5cs8sx82r" path="res://lose_screen.gd" id="1_cbtnu"]
+[ext_resource type="Texture2D" uid="uid://45ucooks1mdg" path="res://art/Ui/LoseScreen-25.png" id="2_ed4nj"]
+[ext_resource type="Texture2D" uid="uid://b11x0jdvwvkay" path="res://art/Ui/button-27.png" id="3_14evm"]
+[ext_resource type="Texture2D" uid="uid://bey5kkvfads75" path="res://art/Ui/button-30.png" id="3_hd2tl"]
+[ext_resource type="Texture2D" uid="uid://bodsjak5pmob8" path="res://art/Ui/bubble-26.png" id="3_n2x1k"]
+[ext_resource type="Texture2D" uid="uid://dsjlpi20o6t0e" path="res://art/Ui/button-29.png" id="4_8gtgy"]
+[ext_resource type="Texture2D" uid="uid://d1puxl45cd8bu" path="res://art/Ui/button-32.png" id="4_n2x1k"]
+[ext_resource type="Texture2D" uid="uid://bkuqw4m201agd" path="res://art/Ui/button-28.png" id="5_pmgax"]
+[ext_resource type="Texture2D" uid="uid://dl4jw704kwqqn" path="res://art/Ui/button-31.png" id="5_rkxej"]
+[ext_resource type="Texture2D" uid="uid://nc7bxm62x8n5" path="res://art/peep/1.png" id="9_sx6kg"]
+[ext_resource type="Texture2D" uid="uid://c2eiqvlrh0qsm" path="res://art/peep/2.png" id="10_gkk2w"]
+[ext_resource type="Texture2D" uid="uid://cmvsgcavpb247" path="res://art/peep/3.png" id="11_l2ltv"]
+[ext_resource type="Texture2D" uid="uid://dwt2ryslh78gm" path="res://art/peep/4.png" id="12_wk1s3"]
+[ext_resource type="Texture2D" uid="uid://cwa6btls3k3as" path="res://art/peep/5.png" id="13_113ea"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q7col"]
+texture = ExtResource("3_hd2tl")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t1hw0"]
+texture = ExtResource("4_n2x1k")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_88pdp"]
+texture = ExtResource("5_rkxej")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_01jlt"]
+texture = ExtResource("3_14evm")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gsrht"]
+texture = ExtResource("4_8gtgy")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1fbfm"]
+texture = ExtResource("5_pmgax")
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t6phk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_sx6kg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_gkk2w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_l2ltv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_wk1s3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_113ea")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="loseScreen" type="Control" unique_id=1415134976]
 layout_mode = 3
@@ -11,48 +65,71 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_cbtnu")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=301688729]
-layout_mode = 0
-offset_top = 9.0
-offset_right = 1149.0
-offset_bottom = 653.0
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2024124789]
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer" unique_id=1504029171]
+position = Vector2(639.9608, 359.49997)
+scale = Vector2(0.23966669, 0.23966664)
+texture = ExtResource("2_ed4nj")
+
+[node name="Bubble26" type="Sprite2D" parent="CanvasLayer" unique_id=376564405]
+position = Vector2(869, 220)
+scale = Vector2(0.115, 0.115)
+texture = ExtResource("3_n2x1k")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer" unique_id=661381660]
+offset_top = 128.0
+offset_right = 1277.0
+offset_bottom = 151.0
 alignment = 1
 
-[node name="title" type="Label" parent="VBoxContainer" unique_id=172314139]
-layout_mode = 2
-text = "YOU LOSE!"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="subtitle" type="Label" parent="VBoxContainer" unique_id=737949822]
-layout_mode = 2
-text = "You are not hot enough"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=661381660]
-layout_mode = 2
-alignment = 1
-
-[node name="HighestLvl" type="Label" parent="VBoxContainer/HBoxContainer" unique_id=522799083]
+[node name="HighestLvl" type="Label" parent="CanvasLayer/HBoxContainer" unique_id=522799083]
 layout_mode = 2
 text = "Highest Level Reached :"
 
-[node name="current_lvl" type="Label" parent="VBoxContainer/HBoxContainer" unique_id=1376813108]
+[node name="current_lvl" type="Label" parent="CanvasLayer/HBoxContainer" unique_id=1376813108]
 layout_mode = 2
 text = "0"
 
-[node name="ButtonContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1660438703]
-layout_mode = 2
-alignment = 1
+[node name="Retry" type="Button" parent="CanvasLayer" unique_id=1345793513]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -285.0
+offset_top = 215.0
+offset_right = 285.0
+offset_bottom = 310.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_q7col")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_t1hw0")
+theme_override_styles/hover = SubResource("StyleBoxTexture_88pdp")
 
-[node name="Retry" type="Button" parent="VBoxContainer/ButtonContainer" unique_id=1345793513]
-layout_mode = 2
-text = "Retry"
+[node name="Menu" type="Button" parent="CanvasLayer" unique_id=198608306]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -83.0
+offset_top = 312.0
+offset_right = 347.43103
+offset_bottom = 383.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.381, 0.381)
+size_flags_horizontal = 4
+theme_override_styles/normal = SubResource("StyleBoxTexture_01jlt")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_gsrht")
+theme_override_styles/hover = SubResource("StyleBoxTexture_1fbfm")
 
-[node name="Menu" type="Button" parent="VBoxContainer/ButtonContainer" unique_id=198608306]
-layout_mode = 2
-text = "Main Menu"
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer" unique_id=473960571]
+position = Vector2(640, 398)
+scale = Vector2(0.246, 0.246)
+sprite_frames = SubResource("SpriteFrames_t6phk")
+autoplay = "default"
 
-[connection signal="pressed" from="VBoxContainer/ButtonContainer/Retry" to="." method="_on_retry_pressed"]
-[connection signal="pressed" from="VBoxContainer/ButtonContainer/Menu" to="." method="_on_menu_pressed"]
+[connection signal="pressed" from="CanvasLayer/Retry" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="CanvasLayer/Menu" to="." method="_on_menu_pressed"]
