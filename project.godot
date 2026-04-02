@@ -21,6 +21,11 @@ GameManager="*uid://bvhawfa2qht87"
 MusicManager="*uid://cflkp351lhtpt"
 SfxManager="*uid://b8se4t8m5krfj"
 
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+
 [global_group]
 
 enemies=""
