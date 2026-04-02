@@ -24,6 +24,13 @@ size = Vector3(1.9907227, 0.1694336, 2.0049438)
 [sub_resource type="BoxShape3D" id="BoxShape3D_pu3yx"]
 size = Vector3(80.38086, 1.5234375, 2.28833)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e1cbu"]
+shading_mode = 0
+albedo_color = Color(0.58431375, 1, 1, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_mngbo"]
+material = SubResource("StandardMaterial3D_e1cbu")
+
 [node name="MainScene" type="Node3D" unique_id=621533097]
 script = ExtResource("1_gubc5")
 
@@ -90,7 +97,7 @@ transform = Transform3D(0.8687266, -0.49529195, 3.2362588e-09, 0.04036811, 0.070
 light_energy = 5.228
 
 [node name="Sun_beam" parent="." unique_id=487210576 instance=ExtResource("1_0f027")]
-transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, 0, 0.3, 11.509)
+transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, 0, 0.3, -7.9288664)
 
 [node name="Homes" type="Node" parent="." unique_id=406738710]
 
@@ -110,7 +117,7 @@ transform = Transform3D(-1.993658, 0, -3.7727273, 0, 5.999999, 0, 5.6590915, 0, 
 transform = Transform3D(-5.1083293, 0, -2.0981426, 0, 5.999999, 0, 3.1472135, 0, -3.4055526, 23.860657, 0.64051056, -14.614639)
 
 [node name="land" type="MeshInstance3D" parent="." unique_id=1259494477]
-transform = Transform3D(57.9, 0, 0, 0, 17.14, 0, 0, 0, 17.14, 0.12204933, 0, -8.618975)
+transform = Transform3D(58.305, 0, 0, 0, 16.68, 0, 0, 0, 35.405, 0.12204933, 0, -8.618975)
 material_override = SubResource("StandardMaterial3D_6wevv")
 mesh = SubResource("PlaneMesh_8mm7a")
 
@@ -125,11 +132,11 @@ shape = SubResource("BoxShape3D_0f027")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.14465642, 4.8935566)
 
 [node name="escape_point" type="Node3D" parent="." unique_id=96602533]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 10.727788)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.282844, 11.439347)
 script = ExtResource("5_rt2n2")
 
 [node name="Area3D" type="Area3D" parent="escape_point" unique_id=2035122529]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1968994, 1.9180841)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.324188, 5.3457985)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="escape_point/Area3D" unique_id=1322436401]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3955078, -3.6079369, 1.5332775)
@@ -178,6 +185,10 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 14.412384, 0.02, 2)
 
 [node name="Bush7" parent="." unique_id=1715572842 instance=ExtResource("10_6wevv")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 3.3030624, 0.02, -4.5876226)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=253109864]
+transform = Transform3D(1.1062869e-13, 7.4921314e-07, 85.43, 57.9, -7.4921314e-07, 0, 2.5308896e-06, 17.14, -3.7342638e-06, 0.12204933, 2.9014587, -34.117783)
+mesh = SubResource("PlaneMesh_mngbo")
 
 [connection signal="pressed" from="Ui/Start" to="." method="_on_start_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
