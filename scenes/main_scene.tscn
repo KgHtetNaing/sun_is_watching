@@ -103,7 +103,7 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_adb74")
 
 [node name="Timer" type="Timer" parent="." unique_id=971018918]
 process_mode = 3
-wait_time = 5.0
+wait_time = 30.0
 one_shot = true
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=704493747]
@@ -200,15 +200,16 @@ texture = ExtResource("10_r6p65")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.14465642, 4.8935566)
 
 [node name="escape_point" type="Node3D" parent="." unique_id=96602533]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.282844, 11.439347)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.11309314, 10.457715)
 script = ExtResource("5_rt2n2")
 
 [node name="Area3D" type="Area3D" parent="escape_point" unique_id=2035122529]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.324188, 5.3457985)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1690161, -0.944108)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="escape_point/Area3D" unique_id=1322436401]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3955078, -3.6079369, 1.5332775)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3955078, -0.5090835, 0.41828156)
 shape = SubResource("BoxShape3D_pu3yx")
+debug_color = Color(0.9976148, 0, 0.17210817, 0.41960785)
 
 [node name="exit" type="Sprite3D" parent="." unique_id=654392101]
 transform = Transform3D(-0.80000013, -4.431173e-08, 6.600236e-15, 0, -1.282769e-08, -1, 1.2079666e-07, -0.29346332, 4.371139e-08, -24.392136, 0.22, 5.3943396)
