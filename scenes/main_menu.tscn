@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cxcwvmdnls5d7"]
 
 [ext_resource type="Script" uid="uid://dyb1auwsdrlul" path="res://scripts/main_menu.gd" id="1_l6cm7"]
+[ext_resource type="Texture2D" uid="uid://b87emv1w6fe87" path="res://art/Ray-44.png" id="2_5pajh"]
 [ext_resource type="Texture2D" uid="uid://dgv8oj77u16ih" path="res://art/Envi/Cloud-02.png" id="3_bqqt6"]
 [ext_resource type="Texture2D" uid="uid://h2u3gnuyvdvg" path="res://art/Envi/Cloud-03.png" id="4_wu84c"]
 [ext_resource type="Texture2D" uid="uid://b003ja51pk3vc" path="res://art/Envi/Cloud-05.png" id="5_1ajci"]
@@ -14,6 +15,44 @@
 [ext_resource type="Texture2D" uid="uid://c3jnhml23t87t" path="res://art/Ui/button-08.png" id="12_j7ex8"]
 [ext_resource type="Texture2D" uid="uid://brk8icy0s85f8" path="res://art/Ui/button-14.png" id="13_a8gd2"]
 [ext_resource type="Texture2D" uid="uid://hl5r0dngnfwj" path="res://art/Ui/button-11.png" id="14_hstxw"]
+[ext_resource type="Texture2D" uid="uid://bm124xy6pblw" path="res://art/LOGO-43.png" id="15_7b55j"]
+
+[sub_resource type="Animation" id="Animation_j7ex8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Ray44:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.93375117]
+}
+
+[sub_resource type="Animation" id="Animation_a8gd2"]
+resource_name = "Spinray"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Ray44:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.93375117]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hstxw"]
+_data = {
+&"RESET": SubResource("Animation_j7ex8"),
+&"Spinray": SubResource("Animation_a8gd2")
+}
 
 [sub_resource type="Animation" id="Animation_rtw2f"]
 resource_name = "Cloud2"
@@ -192,6 +231,16 @@ offset_bottom = 322.5
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="Ray44" type="Sprite2D" parent="." unique_id=62014488]
+position = Vector2(730, 154)
+rotation = 0.93375117
+texture = ExtResource("2_5pajh")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Ray44" unique_id=866651096]
+root_node = NodePath("../../Logo43")
+libraries/ = SubResource("AnimationLibrary_hstxw")
+autoplay = &"Spinray"
+
 [node name="Cloud1" type="Sprite2D" parent="." unique_id=182665908]
 position = Vector2(157, 240)
 scale = Vector2(0.195, 0.195)
@@ -282,5 +331,10 @@ grow_vertical = 2
 theme_override_styles/normal = SubResource("StyleBoxTexture_qywvv")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_3wgol")
 theme_override_styles/hover = SubResource("StyleBoxTexture_1acrt")
+
+[node name="Logo43" type="Sprite2D" parent="." unique_id=1680988364]
+position = Vector2(634, 197)
+scale = Vector2(0.1871851, 0.1871851)
+texture = ExtResource("15_7b55j")
 
 [connection signal="pressed" from="Start Game" to="." method="_on_start_game_pressed"]
