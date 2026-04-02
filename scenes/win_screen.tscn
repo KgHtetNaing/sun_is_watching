@@ -1,22 +1,29 @@
 [gd_scene format=3 uid="uid://cddnl525thr57"]
 
 [ext_resource type="Script" uid="uid://djp0qpq6u5oac" path="res://scripts/win_screen.gd" id="1_wv5lq"]
+[ext_resource type="Texture2D" uid="uid://dhe7p0gddrcwb" path="res://art/Ui/WinScreen-18.png" id="2_erk2x"]
+[ext_resource type="Texture2D" uid="uid://dsy5ipmfq5cf2" path="res://art/Ui/button-19.png" id="3_0lrm4"]
+[ext_resource type="Texture2D" uid="uid://bseusd0mnobd7" path="res://art/Ui/button-20.png" id="4_6s1kg"]
+[ext_resource type="Texture2D" uid="uid://ds8nut4ftve1a" path="res://art/Ui/button-21.png" id="5_bqn3h"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_s508f"]
-font_size = 60
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qnnn4"]
+texture = ExtResource("3_0lrm4")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_doie2"]
+texture = ExtResource("4_6s1kg")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r6ob7"]
+texture = ExtResource("5_bqn3h")
 
 [node name="WinScreen" type="CanvasLayer" unique_id=1488543200]
 process_mode = 3
 layer = 2
 script = ExtResource("1_wv5lq")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=200537826]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.22745098, 0.22745098, 0.22745098, 0.8117647)
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=975166566]
+position = Vector2(640.52106, 360.50003)
+scale = Vector2(0.24033341, 0.24033333)
+texture = ExtResource("2_erk2x")
 
 [node name="Control" type="Control" parent="." unique_id=2144213873]
 layout_mode = 3
@@ -26,29 +33,14 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control" unique_id=2004158751]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -32.0
-offset_top = -17.5
-offset_right = 32.0
-offset_bottom = 17.5
-grow_horizontal = 2
-grow_vertical = 2
+[node name="continue" type="Button" parent="Control" unique_id=288580786]
+layout_mode = 0
+offset_left = 531.21533
+offset_top = 494.0
+offset_right = 748.7847
+offset_bottom = 539.4241
+theme_override_styles/normal = SubResource("StyleBoxTexture_qnnn4")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_doie2")
+theme_override_styles/hover = SubResource("StyleBoxTexture_r6ob7")
 
-[node name="Label" type="Label" parent="Control/VBoxContainer" unique_id=1049604609]
-layout_mode = 2
-text = "You Win"
-label_settings = SubResource("LabelSettings_s508f")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="continue" type="Button" parent="Control/VBoxContainer" unique_id=288580786]
-layout_mode = 2
-text = "Continue"
-
-[connection signal="pressed" from="Control/VBoxContainer/continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="Control/continue" to="." method="_on_continue_pressed"]

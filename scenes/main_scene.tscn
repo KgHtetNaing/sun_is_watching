@@ -85,6 +85,7 @@ process_mode = 3
 
 [node name="Start" type="Button" parent="Ui" unique_id=286935616]
 process_mode = 3
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -103,7 +104,7 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_adb74")
 
 [node name="Timer" type="Timer" parent="." unique_id=971018918]
 process_mode = 3
-wait_time = 20.0
+wait_time = 5.0
 one_shot = true
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=704493747]
@@ -115,7 +116,7 @@ transform = Transform3D(0.8687266, -0.49529195, 3.2362588e-09, 0.04036811, 0.070
 light_energy = 5.228
 
 [node name="Sun_beam" parent="." unique_id=487210576 instance=ExtResource("1_0f027")]
-transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, 0, 0.3, -7.9288664)
+transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, -0.8632469, 0.3, -7.9288664)
 
 [node name="Homes" type="Node" parent="." unique_id=406738710]
 
