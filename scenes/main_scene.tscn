@@ -14,7 +14,7 @@
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6wevv"]
 shading_mode = 0
-albedo_color = Color(0, 0.65986085, 0.28064495, 1)
+albedo_color = Color(0.21960784, 0.65882355, 0.30980393, 1)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_8mm7a"]
 
@@ -28,7 +28,7 @@ size = Vector3(80.38086, 1.5234375, 2.28833)
 script = ExtResource("1_gubc5")
 
 [node name="path" type="Sprite3D" parent="." unique_id=445556181]
-transform = Transform3D(-0.25999996, 5.0268092e-08, -9.935563e-16, 0, -2.5134046e-08, -0.25999996, -2.272992e-08, -0.5749999, 1.136496e-08, 0, 0.02, -6.134)
+transform = Transform3D(-0.25999996, 5.0268092e-08, -9.935563e-16, 0, -2.5134046e-08, -0.25999996, -2.272992e-08, -0.5749999, 1.136496e-08, -0.5577278, 0.02, -6.134)
 alpha_cut = 1
 texture = ExtResource("12_mngbo")
 
@@ -110,7 +110,7 @@ transform = Transform3D(-1.993658, 0, -3.7727273, 0, 5.999999, 0, 5.6590915, 0, 
 transform = Transform3D(-5.1083293, 0, -2.0981426, 0, 5.999999, 0, 3.1472135, 0, -3.4055526, 23.860657, 0.64051056, -14.614639)
 
 [node name="land" type="MeshInstance3D" parent="." unique_id=1259494477]
-transform = Transform3D(42.64, 0, 0, 0, 17.14, 0, 0, 0, 17.14, 0.12204933, 0, -3.6031132)
+transform = Transform3D(57.9, 0, 0, 0, 17.14, 0, 0, 0, 17.14, 0.12204933, 0, -8.618975)
 material_override = SubResource("StandardMaterial3D_6wevv")
 mesh = SubResource("PlaneMesh_8mm7a")
 
@@ -152,51 +152,7 @@ transform = Transform3D(-0.80000013, -4.431173e-08, 6.600236e-15, 0, -1.282769e-
 texture = ExtResource("9_e1cbu")
 
 [node name="Bg1" type="Sprite3D" parent="." unique_id=235761513]
-transform = Transform3D(0.718, 0, 0, 0, 0.32763124, 0, 0, 0, 0.5, -9.423143, 2.424749, -20.773384)
-texture = ExtResource("8_18nlu")
-
-[node name="Bg2" type="Sprite3D" parent="." unique_id=129109396]
-transform = Transform3D(0.718, 0, 0, 0, 0.32763124, 0, 0, 0, 0.5, -3.0942264, 2.424749, -20.773384)
-texture = ExtResource("8_18nlu")
-
-[node name="Bg3" type="Sprite3D" parent="." unique_id=546886858]
-transform = Transform3D(0.718, 0, 0, 0, 0.32763124, 0, 0, 0, 0.5, 3.1612031, 2.424749, -20.773384)
-texture = ExtResource("8_18nlu")
-
-[node name="Bg4" type="Sprite3D" parent="." unique_id=353473432]
-transform = Transform3D(0.718, 0, 0, 0, 0.32763124, 0, 0, 0, 0.5, 9.490121, 2.424749, -20.773384)
-texture = ExtResource("8_18nlu")
-
-[node name="Bg5" type="Sprite3D" parent="." unique_id=981153875]
-transform = Transform3D(0.718, 0, 0, 0, 0.32763124, 0, 0, 0, 0.5, -34.600727, 2.424749, -20.773384)
-texture = ExtResource("8_18nlu")
-
-[node name="Bg6" type="Sprite3D" parent="." unique_id=1916062987]
-transform = Transform3D(0.718, 0, 0, 0, 0.32763124, 0, 0, 0, 0.5, -28.27181, 2.424749, -20.773384)
-texture = ExtResource("8_18nlu")
-
-[node name="Bg7" type="Sprite3D" parent="." unique_id=2028024752]
-transform = Transform3D(0.718, 0, 0, 0, 0.32763124, 0, 0, 0, 0.5, -22.01638, 2.424749, -20.773384)
-texture = ExtResource("8_18nlu")
-
-[node name="Bg8" type="Sprite3D" parent="." unique_id=1637671915]
-transform = Transform3D(0.718, 0, 0, 0, 0.32763124, 0, 0, 0, 0.5, -15.687461, 2.424749, -20.773384)
-texture = ExtResource("8_18nlu")
-
-[node name="Bg9" type="Sprite3D" parent="." unique_id=1839284798]
-transform = Transform3D(0.718, 0, 0, 0, 0.32763124, 0, 0, 0, 0.5, 15.636472, 2.424749, -20.773384)
-texture = ExtResource("8_18nlu")
-
-[node name="Bg10" type="Sprite3D" parent="." unique_id=80221489]
-transform = Transform3D(0.718, 0, 0, 0, 0.32763124, 0, 0, 0, 0.5, 21.965387, 2.424749, -20.773384)
-texture = ExtResource("8_18nlu")
-
-[node name="Bg11" type="Sprite3D" parent="." unique_id=255141865]
-transform = Transform3D(0.718, 0, 0, 0, 0.32763124, 0, 0, 0, 0.5, 28.220818, 2.424749, -20.773384)
-texture = ExtResource("8_18nlu")
-
-[node name="Bg12" type="Sprite3D" parent="." unique_id=851720217]
-transform = Transform3D(0.718, 0, 0, 0, 0.32763124, 0, 0, 0, 0.5, 34.549736, 2.424749, -20.773384)
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -0.25928497, 2.424749, -24.583504)
 texture = ExtResource("8_18nlu")
 
 [node name="Bush1" parent="." unique_id=598733252 instance=ExtResource("10_6wevv")]
@@ -211,8 +167,11 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 6, 0, -12)
 [node name="Bush4" parent="." unique_id=2008715508 instance=ExtResource("10_6wevv")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -10.655869, 0, -2)
 
+[node name="Bush8" parent="." unique_id=2068673735 instance=ExtResource("10_6wevv")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -16.392448, 0, -9.887797)
+
 [node name="Bush5" parent="." unique_id=753334825 instance=ExtResource("10_6wevv")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -3.4690552, 0, -8)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -4.345478, 0, -8)
 
 [node name="Bush6" parent="." unique_id=1054539693 instance=ExtResource("10_6wevv")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 14.412384, 0, 2)
