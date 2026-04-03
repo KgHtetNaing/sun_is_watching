@@ -165,19 +165,19 @@ transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, -0.8632469, 0.3, -7.9288664)
 
 [node name="Homes" type="Node" parent="." unique_id=406738710]
 
-[node name="homes" parent="Homes" unique_id=1353727017 instance=ExtResource("4_pu3yx")]
+[node name="homes" parent="Homes" unique_id=1353727017 groups=["spawner"] instance=ExtResource("4_pu3yx")]
 transform = Transform3D(4.023569, 0, -2.9672942, 0, 5.999999, 0, 4.450941, 0, 2.6823792, -24.309341, 0.64051056, -14.776619)
 
-[node name="homes2" parent="Homes" unique_id=1440411430 instance=ExtResource("4_pu3yx")]
+[node name="homes2" parent="Homes" unique_id=1440411430 groups=["spawner"] instance=ExtResource("4_pu3yx")]
 transform = Transform3D(1.1091632, 0, -3.9310582, 0, 5.999999, 0, 5.896588, 0, 0.7394419, -12.241633, 0.64051056, -17.911146)
 
-[node name="homes3" parent="Homes" unique_id=1459252020 instance=ExtResource("4_pu3yx")]
+[node name="homes3" parent="Homes" unique_id=1459252020 groups=["spawner"] instance=ExtResource("4_pu3yx")]
 transform = Transform3D(7.154927e-08, 0, -3.999999, 0, 5.9999995, 0, 5.999999, 0, 4.7699512e-08, 0, 0.64051056, -16.956789)
 
-[node name="homes4" parent="Homes" unique_id=978068549 instance=ExtResource("4_pu3yx")]
+[node name="homes4" parent="Homes" unique_id=978068549 groups=["spawner"] instance=ExtResource("4_pu3yx")]
 transform = Transform3D(-1.993658, 0, -3.7727273, 0, 5.999999, 0, 5.6590915, 0, -1.329105, 12.269815, 0.64051056, -17.364513)
 
-[node name="homes5" parent="Homes" unique_id=570072887 instance=ExtResource("4_pu3yx")]
+[node name="homes5" parent="Homes" unique_id=570072887 groups=["spawner"] instance=ExtResource("4_pu3yx")]
 transform = Transform3D(-5.1083293, 0, -2.0981426, 0, 5.999999, 0, 3.1472135, 0, -3.4055526, 23.860657, 0.64051056, -14.614639)
 
 [node name="land" type="MeshInstance3D" parent="." unique_id=1259494477]

@@ -30,14 +30,17 @@ func _on_show_win_screen() -> void:
 
 func _on_win_continue():
 	print("Win continue pressed")
+	
+	print("LEVEL NOW:", GameManager.current_level)
+	
+	GameManager.reset_day()
+	
 	win_screen.hide()
 	get_tree().paused = true
-	print("Loading shop...")
+	
 	var shop_scene = preload("res://scenes/shop.tscn").instantiate()
-	print("Shop instantiated")
 	$Ui.add_child(shop_scene)
-	print("Shop added to UI")
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+
 func _process(delta: float) -> void:
 	if not get_tree().paused:
 		timer_label.text = str(int(timer.time_left)+1)
@@ -55,9 +58,14 @@ func _on_timer_timeout() -> void:
 
 func _on_start_pressed() -> void:
 	print("Game Started")
+	print("START PRESSED - LEVEL:", GameManager.current_level)
+	GameManager.day_ended = false 
 	get_tree().paused = false
 	timer.wait_time = 10.0
 	timer.start()
+	var spawners = get_tree().get_nodes_in_group("spawner")
+	for s in spawners:
+		s.on_new_level()
 	print("Timer started, wait time: ", timer.wait_time)
 	start_ui.visible = false
 	$Ui/TutorialSprite.visible = false

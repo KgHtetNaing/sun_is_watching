@@ -12,11 +12,20 @@ var default_enemy = preload("res://scenes/peep.tscn")
 
 func _ready():
 	print ("Timer has started")
+	print("Spawner instance:", self)
 	if enemy_scene.is_empty():
 		enemy_scene.append(default_enemy)
 	update_difficulity()
 	spawn_person()
-	spawn_timer.wait_time = randf_range(1.0 , 2.0)
+	spawn_timer.wait_time = randf_range(0.5 , 1.5)
+	spawn_timer.start()
+
+func on_new_level():
+	print("Spawner updating for NEW LEVEL:", GameManager.current_level)
+	
+	update_difficulity()
+	
+	spawn_timer.wait_time = randf_range(0.5, 1.5)
 	spawn_timer.start()
 
 func spawn_person():
@@ -24,7 +33,7 @@ func spawn_person():
 		return
 	if GameManager.day_ended:
 		return
-	var spawn_count = 1 + int(GameManager.current_level / 3)
+	var spawn_count = 1 + int(GameManager.current_level / 2)
 	for i in spawn_count:
 		var random_enemy =  randi() % enemy_scene.size()
 		var person = enemy_scene[random_enemy].instantiate()
@@ -40,8 +49,8 @@ func _on_spawn_timer_timeout() -> void:
 		spawn_timer.stop()
 		return
 	spawn_person()
-	var current_wait =  3.0 - (GameManager.current_level * 0.2)
-	spawn_timer.wait_time = clamp(current_wait , 0.5 ,3.0)
+	var current_wait =  1.5 - (GameManager.current_level * 0.1)
+	spawn_timer.wait_time = clamp(current_wait , 0.4 ,1.5)
 	print ("current_wait" , current_wait)
 	update_difficulity()
 	print ("Enemy scene length" ,len(enemy_scene))
