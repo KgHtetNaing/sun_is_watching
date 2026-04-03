@@ -13,8 +13,13 @@ func _ready() -> void:
 	MusicManager.play_music()
 	timer_label.visible = false
 	escapee_label.visible = false
+	GameManager.show_win_screen.connect(_on_show_win_screen)
 
+func _on_show_win_screen() -> void:
+	get_tree().paused = true
+	win_screen.visible = true
 	
+
 func _on_win_continue():
 	print("Go to shop")
 	win_screen.hide()
@@ -30,8 +35,12 @@ func _process(delta: float) -> void:
 
 func _on_timer_timeout() -> void:
 	print("Day Ended")
-	get_tree().paused = true
-	win_screen.visible = true
+	GameManager.day_ended = true
+	var enemies = get_tree().get_nodes_in_group("enemies")
+	print("Enemies found: ", enemies.size())
+	enemies.map(func(e): e.run_back())
+	# Tell all enemies to go home
+	get_tree().get_nodes_in_group("enemies").map(func(e): e.run_back())
 
 
 

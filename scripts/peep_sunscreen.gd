@@ -13,7 +13,7 @@ var home_position: Vector3
 func _ready():
 	pick_new_target()
 	sprite.play("2walk")
-	
+	GameManager.register_enemy()
 	
 func _physics_process(delta):
 	
@@ -28,7 +28,7 @@ func _physics_process(delta):
 		sprite.play("2walk_back")
 		speed = running_speed
 		if new_dir.length() < 0.5:
-			destroy_body()			
+			destroy_body()
 			
 	else:		
 		if direction.length() < 1:
@@ -74,9 +74,11 @@ func run_back():
 	
 func destroy_body():
 	print ("reached home")
+	GameManager.enemy_gone()
 	queue_free()
 
 func sucessfully_escape():
 	GameManager.add_escape()
+	GameManager.enemy_gone()
 	queue_free()	
 		

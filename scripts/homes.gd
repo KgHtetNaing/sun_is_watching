@@ -21,7 +21,8 @@ func _ready():
 func spawn_person():
 	if enemy_scene.is_empty():
 		return
-		
+	if GameManager.day_ended:
+		return
 	var random_enemy =  randi() % enemy_scene.size()
 	var person = enemy_scene[random_enemy].instantiate()	
 	get_parent().add_child.call_deferred(person)
@@ -30,11 +31,13 @@ func spawn_person():
 	person.home_position = spawn_point.global_position
 
 func _on_spawn_timer_timeout() -> void:
+	if GameManager.day_ended:
+		spawn_timer.stop()
+		return
 	spawn_person()
 	var current_wait =  10.0 - (GameManager.current_level * 0.5)
 	spawn_timer.wait_time = clamp(current_wait , 1.5 ,10.0)
 	print ("current_wait" , current_wait)
-	
 	update_difficulity()
 	print ("Enemy scene length" ,len(enemy_scene))
 
