@@ -150,8 +150,7 @@ text = "00"
 
 [node name="Timer" type="Timer" parent="." unique_id=971018918]
 process_mode = 3
-wait_time = 60.0
-one_shot = true
+wait_time = 5.0
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=704493747]
 transform = Transform3D(1, 0, 0, 0, 0.7584756, 0.65170157, 0, -0.65170157, 0.7584756, -0.2062149, 10.400873, 8.6769905)

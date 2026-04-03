@@ -28,15 +28,14 @@ func _on_pressed() -> void:
 	
 	
 	#send signal to gamemanager to restart the timer
-	GameManager.emit_signal("start_game_requested")
+	#GameManager.emit_signal("start_game_requested")
 	
 	#remove the UI and increase the level in gamemanager
-	get_parent().queue_free() 
 	GameManager.current_level += 1
 	print ("Current Level" , GameManager.current_level)
 	remove_people()
-	
-	#unpause and go back to the game scene
+	GameManager.reset_day()
+	get_parent().queue_free()
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://scenes/main_game.tscn")
 	

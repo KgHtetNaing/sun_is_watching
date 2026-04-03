@@ -80,5 +80,5 @@ func destroy_body():
 func sucessfully_escape():
 	GameManager.add_escape()
 	GameManager.enemy_gone()
-	queue_free()	
+	queue_free()
 		

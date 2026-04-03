@@ -11,8 +11,10 @@ extends MeshInstance3D
 
 func _ready():
 	print ("Timer has started")
+	print("Enemy scene array size on ready: ", enemy_scene.size())
+	update_difficulity()
 	spawn_person()
-	spawn_timer.wait_time = randf_range(1.0 , 6.0)
+	spawn_timer.wait_time = randf_range(1.0 , 2.0)
 	spawn_timer.start()
 
 	
@@ -42,6 +44,7 @@ func _on_spawn_timer_timeout() -> void:
 	print ("Enemy scene length" ,len(enemy_scene))
 
 func update_difficulity():
+	print("Updating difficulty, current level: ", GameManager.current_level)
 	var peep_hat = preload("res://scenes/peep_sunscreen.tscn")
 	var peep_umbrella = preload("res://scenes/peep_umbrella.tscn")
 	var peep_skater = preload("res://scenes/peep_skater.tscn")
@@ -50,7 +53,6 @@ func update_difficulity():
 		if not enemy_scene.has(peep_hat):
 			enemy_scene.append(peep_hat)
 			print ("Peep_hat added")
-
 		
 	if GameManager.current_level >=4:
 		if not enemy_scene.has(peep_umbrella):
@@ -61,3 +63,4 @@ func update_difficulity():
 		if not enemy_scene.has(peep_skater):
 			enemy_scene.append(peep_skater)
 			print("Peep_skater added")
+	print("Enemy scene size after update: ", enemy_scene.size())

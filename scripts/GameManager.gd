@@ -20,7 +20,12 @@ func add_escape():
 		
 func register_enemy():
 	enemies_alive += 1
-	
+
+func reset_day():
+	day_ended = false
+	enemies_alive = 0
+	escapee = 0
+
 func enemy_gone():
 	enemies_alive -= 1
 	print("Enemy gone, remaining: ", enemies_alive, " day_ended: ", day_ended)
