@@ -17,6 +17,8 @@
 [ext_resource type="PackedScene" uid="uid://cdvw2b43hrl8i" path="res://bush1.tscn" id="10_6wevv"]
 [ext_resource type="Texture2D" uid="uid://cmxubd31ukevr" path="res://art/Envi/grass3.png" id="10_r6p65"]
 [ext_resource type="Texture2D" uid="uid://ddcqo2uqu3dxy" path="res://art/Envi/path.png" id="12_mngbo"]
+[ext_resource type="Texture2D" uid="uid://ess154tkdvbk" path="res://art/Envi/tree1.png" id="18_7nt27"]
+[ext_resource type="Texture2D" uid="uid://d0vv5euwdl3hg" path="res://art/Envi/tree2.png" id="19_k6f3i"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k6f3i"]
 texture = ExtResource("6_6u1mn")
@@ -234,6 +236,12 @@ texture = ExtResource("8_18nlu")
 [node name="Bush1" parent="." unique_id=598733252 instance=ExtResource("10_6wevv")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -7, 0.02, -14)
 
+[node name="Bush9" parent="." unique_id=774941492 instance=ExtResource("10_6wevv")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -4.5020866, 0.02, -19.043076)
+
+[node name="Bush10" parent="." unique_id=516715118 instance=ExtResource("10_6wevv")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -18.061108, 0.02, -15.492195)
+
 [node name="Bush2" parent="." unique_id=323357545 instance=ExtResource("10_6wevv")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 17.792366, 0.02, -16)
 
@@ -241,16 +249,16 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 17.792366, 0.02, -16)
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 6, 0.02, -12)
 
 [node name="Bush4" parent="." unique_id=2008715508 instance=ExtResource("10_6wevv")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -10.655869, 0.02, -2)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -10.168254, 0.02, -2)
 
 [node name="Bush8" parent="." unique_id=2068673735 instance=ExtResource("10_6wevv")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -16.392448, 0.02, -9.887797)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -24.630013, 0.02, -9.887797)
 
 [node name="Bush5" parent="." unique_id=753334825 instance=ExtResource("10_6wevv")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -4.345478, 0.02, -8)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -4.345478, 0.02, -7.1816797)
 
 [node name="Bush6" parent="." unique_id=1054539693 instance=ExtResource("10_6wevv")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 14.412384, 0.02, 2)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 15.587814, 0.02, -0.6003952)
 
 [node name="Bush7" parent="." unique_id=1715572842 instance=ExtResource("10_6wevv")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 3.3030624, 0.02, -4.5876226)
@@ -258,6 +266,26 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 3.3030624, 0.02, -4.587
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=253109864]
 transform = Transform3D(1.1062869e-13, 7.4921314e-07, 85.43, 57.9, -7.4921314e-07, 0, 2.5308896e-06, 17.14, -3.7342638e-06, 0.12204933, 2.9014587, -34.117783)
 mesh = SubResource("PlaneMesh_mngbo")
+
+[node name="Tree" type="Sprite3D" parent="." unique_id=1821088033]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 6.6243668, 4.496448, -20.46584)
+texture = ExtResource("18_7nt27")
+
+[node name="Tree2" type="Sprite3D" parent="." unique_id=484313650]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -20.120556, 4.496448, -17.82565)
+texture = ExtResource("18_7nt27")
+
+[node name="Tree3" type="Sprite3D" parent="." unique_id=1907232212]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 21.1096, 4.496448, -6.1488876)
+texture = ExtResource("18_7nt27")
+
+[node name="Tree4" type="Sprite3D" parent="." unique_id=771883144]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 19.53809, 4.496448, -16.948978)
+texture = ExtResource("19_k6f3i")
+
+[node name="Tree5" type="Sprite3D" parent="." unique_id=1755826343]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -6.9579506, 4.496448, -20.548397)
+texture = ExtResource("19_k6f3i")
 
 [connection signal="pressed" from="Ui/Start" to="." method="_on_start_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -12,10 +12,26 @@
 [ext_resource type="Texture2D" uid="uid://dpi4d1hutnwmw" path="res://art/Ui/button-09.png" id="7_tbmy8"]
 [ext_resource type="Texture2D" uid="uid://cis5aocx8l4t7" path="res://art/Ui/button-13.png" id="10_7b55j"]
 [ext_resource type="Texture2D" uid="uid://btyj1ag1jx688" path="res://art/Ui/button-10.png" id="11_5pajh"]
+[ext_resource type="Texture2D" uid="uid://3rcvwhjlbomr" path="res://art/Ui/MainMenu-01.png" id="12_a8gd2"]
 [ext_resource type="Texture2D" uid="uid://c3jnhml23t87t" path="res://art/Ui/button-08.png" id="12_j7ex8"]
 [ext_resource type="Texture2D" uid="uid://brk8icy0s85f8" path="res://art/Ui/button-14.png" id="13_a8gd2"]
 [ext_resource type="Texture2D" uid="uid://hl5r0dngnfwj" path="res://art/Ui/button-11.png" id="14_hstxw"]
 [ext_resource type="Texture2D" uid="uid://bm124xy6pblw" path="res://art/LOGO-43.png" id="15_7b55j"]
+[ext_resource type="Texture2D" uid="uid://dd1nqilvd1nlx" path="res://art/Ui/sunray-45.png" id="17_1dfpl"]
+[ext_resource type="Texture2D" uid="uid://dei0oq054bi6g" path="res://art/peepumbrella/Umbrellapeep-1.png" id="18_svtp6"]
+[ext_resource type="Texture2D" uid="uid://b0ofne7xnnubq" path="res://art/peepumbrella/Umbrellapeep-2.png" id="19_1dfpl"]
+[ext_resource type="Texture2D" uid="uid://dgprnuhdyoqtb" path="res://art/peepumbrella/Umbrellapeep-3.png" id="20_qywvv"]
+[ext_resource type="Texture2D" uid="uid://dlupewafic3si" path="res://art/peepumbrella/Umbrellapeep-4.png" id="21_3wgol"]
+[ext_resource type="Texture2D" uid="uid://casb1u6ofde01" path="res://art/peepumbrella/Umbrellapeep-5.png" id="22_1acrt"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gw5y6"]
+texture = ExtResource("6_tbmy8")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_svtp6"]
+texture = ExtResource("10_7b55j")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1dfpl"]
+texture = ExtResource("11_5pajh")
 
 [sub_resource type="Animation" id="Animation_j7ex8"]
 length = 0.001
@@ -35,6 +51,7 @@ tracks/0/keys = {
 [sub_resource type="Animation" id="Animation_a8gd2"]
 resource_name = "Spinray"
 length = 10.0
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -65,10 +82,10 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 7.5, 15),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 7.5),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(1130, 300), Vector2(967, 300), Vector2(1130, 300)]
+"values": [Vector2(950.9999, 92), Vector2(1185, 92)]
 }
 
 [sub_resource type="Animation" id="Animation_oa1go"]
@@ -82,10 +99,10 @@ tracks/0/path = NodePath("../Cloud3:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 10, 20),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(961.99994, 583), Vector2(1042.9999, 583), Vector2(961.99994, 583)]
+"values": [Vector2(993, 248.00002), Vector2(1217, 248.00002)]
 }
 
 [sub_resource type="Animation" id="Animation_8egab"]
@@ -102,7 +119,24 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 10),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(165.00002, 505), Vector2(362, 505)]
+"values": [Vector2(393.00003, 295), Vector2(54.00003, 295)]
+}
+
+[sub_resource type="Animation" id="Animation_vr8o3"]
+resource_name = "Cloud5"
+length = 30.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Cloud5:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(510.1733, 434), Vector2(793, 434)]
 }
 
 [sub_resource type="Animation" id="Animation_wu84c"]
@@ -116,10 +150,10 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 7.5, 15),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 7.5),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(150, 240), Vector2(400, 240), Vector2(150, 240)]
+"values": [Vector2(150, 128), Vector2(400, 128)]
 }
 
 [sub_resource type="Animation" id="Animation_8ln24"]
@@ -139,26 +173,38 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../Cloud3:position")
+tracks/1/path = NodePath("../Cloud4:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(961.99994, 583)]
+"values": [Vector2(165.00002, 505)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("../Cloud4:position")
+tracks/2/path = NodePath("../Cloud3:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(165.00002, 505)]
+"values": [Vector2(993, 248.00002)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Cloud5:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(510.1733, 434)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rtw2f"]
@@ -166,8 +212,106 @@ _data = {
 &"Cloud2": SubResource("Animation_rtw2f"),
 &"Cloud3": SubResource("Animation_oa1go"),
 &"Cloud4": SubResource("Animation_8egab"),
+&"Cloud5": SubResource("Animation_vr8o3"),
 &"CloudMove": SubResource("Animation_wu84c"),
 &"RESET": SubResource("Animation_8ln24")
+}
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1a85y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_svtp6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_1dfpl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_qywvv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_3wgol")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_1acrt")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_hl5e0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1350, 592)]
+}
+
+[sub_resource type="Animation" id="Animation_engjn"]
+resource_name = "WalkMenu"
+length = 30.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 24.933332),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1350, 592), Vector2(-79, 592)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6h3lr"]
+_data = {
+&"RESET": SubResource("Animation_hl5e0"),
+&"WalkMenu": SubResource("Animation_engjn")
+}
+
+[sub_resource type="Animation" id="Animation_qywvv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1584, 311)]
+}
+
+[sub_resource type="Animation" id="Animation_3wgol"]
+resource_name = "Ray_Menu"
+length = 30.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 30),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1584, 311), Vector2(-179.99988, 311)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1acrt"]
+_data = {
+&"RESET": SubResource("Animation_qywvv"),
+&"Ray_Menu": SubResource("Animation_3wgol")
 }
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jk1qb"]
@@ -178,15 +322,6 @@ texture = ExtResource("6_oa1go")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lgwnu"]
 texture = ExtResource("7_tbmy8")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gw5y6"]
-texture = ExtResource("6_tbmy8")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_svtp6"]
-texture = ExtResource("10_7b55j")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1dfpl"]
-texture = ExtResource("11_5pajh")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qywvv"]
 texture = ExtResource("12_j7ex8")
@@ -208,96 +343,6 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("1_l6cm7")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1428764637]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.73333335, 0.94509804, 1, 1)
-
-[node name="CenterContainer" type="CenterContainer" parent="ColorRect" unique_id=480637296]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -157.95251
-offset_top = -322.5
-offset_right = 157.95251
-offset_bottom = 322.5
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Ray44" type="Sprite2D" parent="." unique_id=62014488]
-position = Vector2(730, 154)
-rotation = 0.93375117
-texture = ExtResource("2_5pajh")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Ray44" unique_id=866651096]
-root_node = NodePath("../../Logo43")
-libraries/ = SubResource("AnimationLibrary_hstxw")
-autoplay = &"Spinray"
-
-[node name="Cloud1" type="Sprite2D" parent="." unique_id=182665908]
-position = Vector2(157, 240)
-scale = Vector2(0.195, 0.195)
-texture = ExtResource("3_bqqt6")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Cloud1" unique_id=74095560]
-libraries/ = SubResource("AnimationLibrary_rtw2f")
-autoplay = &"CloudMove"
-
-[node name="Cloud2" type="Sprite2D" parent="." unique_id=873712940]
-position = Vector2(157, 240)
-scale = Vector2(0.195, 0.195)
-texture = ExtResource("4_wu84c")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Cloud2" unique_id=1571622095]
-libraries/ = SubResource("AnimationLibrary_rtw2f")
-autoplay = &"Cloud2"
-
-[node name="Cloud3" type="Sprite2D" parent="." unique_id=2056387982]
-position = Vector2(961.99994, 583)
-scale = Vector2(0.05, 0.05)
-texture = ExtResource("5_8ln24")
-
-[node name="AnimationPlayer2" type="AnimationPlayer" parent="Cloud3" unique_id=142455429]
-root_node = NodePath("../../Cloud2")
-libraries/ = SubResource("AnimationLibrary_rtw2f")
-autoplay = &"Cloud3"
-
-[node name="Cloud4" type="Sprite2D" parent="." unique_id=1731658019]
-position = Vector2(165.00002, 505)
-scale = Vector2(0.05, 0.05)
-texture = ExtResource("5_1ajci")
-
-[node name="AnimationPlayer2" type="AnimationPlayer" parent="Cloud4" unique_id=2120855645]
-root_node = NodePath("../../Cloud2")
-libraries/ = SubResource("AnimationLibrary_rtw2f")
-autoplay = &"Cloud4"
-
-[node name="Start Game" type="Button" parent="." unique_id=1269828103]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.42400002
-anchor_top = 0.569
-anchor_right = 0.57600003
-anchor_bottom = 0.646
-offset_left = -0.22003174
-offset_top = 0.32000732
-offset_right = 0.2199707
-offset_bottom = -0.120025635
-grow_horizontal = 2
-grow_vertical = 0
-size_flags_vertical = 3
-theme_override_constants/h_separation = 0
-theme_override_styles/normal = SubResource("StyleBoxTexture_jk1qb")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_5dd4i")
-theme_override_styles/hover = SubResource("StyleBoxTexture_lgwnu")
-
 [node name="Setting" type="Button" parent="." unique_id=425276905]
 layout_mode = 1
 anchors_preset = -1
@@ -315,26 +360,138 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_gw5y6")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_svtp6")
 theme_override_styles/hover = SubResource("StyleBoxTexture_1dfpl")
 
-[node name="Quit" type="Button" parent="." unique_id=1226654440]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1604682362]
 layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.73333335, 0.94509804, 1, 1)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=272078208]
+
+[node name="Ray44" type="Sprite2D" parent="CanvasLayer" unique_id=62014488]
+position = Vector2(730, 154)
+rotation = 0.93375117
+scale = Vector2(0.9999999, 0.9999999)
+texture = ExtResource("2_5pajh")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Ray44" unique_id=866651096]
+root_node = NodePath("../../Logo43")
+libraries/ = SubResource("AnimationLibrary_hstxw")
+autoplay = &"Spinray"
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer" unique_id=1187372908]
+position = Vector2(639.99994, 360)
+scale = Vector2(0.23996997, 0.23996991)
+texture = ExtResource("12_a8gd2")
+
+[node name="Cloud1" type="Sprite2D" parent="CanvasLayer" unique_id=182665908]
+position = Vector2(157, 240)
+scale = Vector2(0.09162916, 0.091629155)
+texture = ExtResource("3_bqqt6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Cloud1" unique_id=74095560]
+libraries/ = SubResource("AnimationLibrary_rtw2f")
+autoplay = &"CloudMove"
+
+[node name="Cloud2" type="Sprite2D" parent="CanvasLayer" unique_id=873712940]
+position = Vector2(157, 240)
+scale = Vector2(0.06662538, 0.06662538)
+texture = ExtResource("4_wu84c")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Cloud2" unique_id=1571622095]
+libraries/ = SubResource("AnimationLibrary_rtw2f")
+autoplay = &"Cloud2"
+
+[node name="Cloud3" type="Sprite2D" parent="CanvasLayer" unique_id=2056387982]
+position = Vector2(993, 248.00002)
+scale = Vector2(0.023903482, 0.023903482)
+texture = ExtResource("5_8ln24")
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="CanvasLayer/Cloud3" unique_id=142455429]
+root_node = NodePath("../../Cloud2")
+libraries/ = SubResource("AnimationLibrary_rtw2f")
+autoplay = &"Cloud3"
+
+[node name="Cloud4" type="Sprite2D" parent="CanvasLayer" unique_id=1731658019]
+position = Vector2(165.00002, 505)
+scale = Vector2(0.018408664, 0.018408664)
+texture = ExtResource("5_1ajci")
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="CanvasLayer/Cloud4" unique_id=2120855645]
+root_node = NodePath("../../Cloud2")
+libraries/ = SubResource("AnimationLibrary_rtw2f")
+autoplay = &"Cloud4"
+
+[node name="Cloud5" type="Sprite2D" parent="CanvasLayer" unique_id=1696636876]
+position = Vector2(510.1733, 434)
+scale = Vector2(0.018408664, 0.018408664)
+texture = ExtResource("5_1ajci")
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="CanvasLayer/Cloud5" unique_id=1265574261]
+root_node = NodePath("../../Cloud2")
+libraries/ = SubResource("AnimationLibrary_rtw2f")
+autoplay = &"Cloud5"
+
+[node name="Umbre" type="AnimatedSprite2D" parent="CanvasLayer" unique_id=127910387]
+position = Vector2(1350, 592)
+scale = Vector2(0.0777126, 0.0777126)
+sprite_frames = SubResource("SpriteFrames_1a85y")
+autoplay = "default"
+frame_progress = 0.63912916
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Umbre" unique_id=734972653]
+libraries/ = SubResource("AnimationLibrary_6h3lr")
+autoplay = &"WalkMenu"
+
+[node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer" unique_id=855857820]
+position = Vector2(1584, 311)
+scale = Vector2(0.14432058, 0.24787687)
+texture = ExtResource("17_1dfpl")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Sprite2D2" unique_id=1276720412]
+libraries/ = SubResource("AnimationLibrary_1acrt")
+autoplay = &"Ray_Menu"
+
+[node name="Logo43" type="Sprite2D" parent="CanvasLayer" unique_id=1680988364]
+position = Vector2(634, 197)
+scale = Vector2(0.1871851, 0.1871851)
+texture = ExtResource("15_7b55j")
+
+[node name="Start Game" type="Button" parent="CanvasLayer" unique_id=1269828103]
+anchors_preset = -1
+anchor_left = 0.42400002
+anchor_top = 0.569
+anchor_right = 0.57600003
+anchor_bottom = 0.646
+offset_left = -0.22003174
+offset_top = -24.679993
+offset_right = 0.2199707
+offset_bottom = -25.120026
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 3
+theme_override_constants/h_separation = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_jk1qb")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_5dd4i")
+theme_override_styles/hover = SubResource("StyleBoxTexture_lgwnu")
+
+[node name="Quit" type="Button" parent="CanvasLayer" unique_id=1226654440]
 anchors_preset = -1
 anchor_left = 0.39000002
 anchor_top = 0.68500006
 anchor_right = 0.61
 anchor_bottom = 0.79
-offset_left = 44.799988
-offset_top = 92.79996
-offset_right = -54.940247
-offset_bottom = 92.20001
+offset_left = 76.32233
+offset_top = -32.200043
+offset_right = -86.46265
+offset_bottom = -58.799988
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/normal = SubResource("StyleBoxTexture_qywvv")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_3wgol")
 theme_override_styles/hover = SubResource("StyleBoxTexture_1acrt")
 
-[node name="Logo43" type="Sprite2D" parent="." unique_id=1680988364]
-position = Vector2(634, 197)
-scale = Vector2(0.1871851, 0.1871851)
-texture = ExtResource("15_7b55j")
-
-[connection signal="pressed" from="Start Game" to="." method="_on_start_game_pressed"]
+[connection signal="pressed" from="CanvasLayer/Start Game" to="." method="_on_start_game_pressed"]

@@ -1,7 +1,9 @@
 extends Control
 
+@onready var sprite = $CanvasLayer/Umbre
 func _ready():
 	MusicManager.play_music()
+	sprite.play("default")
 
 
 func _on_start_game_pressed() -> void:
