@@ -7,7 +7,6 @@ extends Node3D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	print("Current level on ready: ", GameManager.current_level)
-	print("day_ended on ready: ", GameManager.day_ended)
 	win_screen.hide()
 	timer_label.visible = false
 	escapee_label.visible = false
@@ -48,17 +47,14 @@ func _process(delta: float) -> void:
 func _on_timer_timeout() -> void:
 	print("Day Ended")
 	GameManager.day_ended = true
+	timer.stop()
 	var enemies = get_tree().get_nodes_in_group("enemies")
 	print("Enemies found: ", enemies.size())
 	enemies.map(func(e): e.run_back())
 
 
-
-
-
 func _on_start_pressed() -> void:
 	print("Game Started")
-	print("Timer wait time before start: ", timer.wait_time)
 	get_tree().paused = false
 	timer.wait_time = 10.0
 	timer.start()
