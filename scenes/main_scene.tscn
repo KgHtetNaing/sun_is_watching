@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cddnl525thr57" path="res://scenes/win_screen.tscn" id="5_gubc5"]
 [ext_resource type="Script" uid="uid://dd0xrfbjiqaif" path="res://scripts/escape_point.gd" id="5_rt2n2"]
 [ext_resource type="Texture2D" uid="uid://bdjrmxbtm2pa" path="res://art/Ui/button-15.png" id="6_6u1mn"]
+[ext_resource type="Texture2D" uid="uid://slccv5naotki" path="res://art/Ui/Tuto-22.png" id="6_k6f3i"]
 [ext_resource type="Texture2D" uid="uid://dao8r5ip24vsh" path="res://art/Ui/button-17.png" id="7_bcnxi"]
 [ext_resource type="Texture2D" uid="uid://b8ieg05gbitsk" path="res://art/Envi/grass1.png" id="8_4w45t"]
 [ext_resource type="Texture2D" uid="uid://cct6wbfatwoh5" path="res://art/Ui/button-16.png" id="8_7nt27"]
@@ -84,6 +85,12 @@ texture = ExtResource("12_mngbo")
 process_mode = 3
 
 [node name="WinScreen" parent="Ui" unique_id=1488543200 instance=ExtResource("5_gubc5")]
+visible = false
+
+[node name="Sprite2D" type="Sprite2D" parent="Ui" unique_id=541421324]
+position = Vector2(641, 359.9865)
+scale = Vector2(0.2400091, 0.24000901)
+texture = ExtResource("6_k6f3i")
 
 [node name="Start" type="Button" parent="Ui" unique_id=286935616]
 process_mode = 3
@@ -92,10 +99,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -176.81158
-offset_top = -50.0
-offset_right = 176.81158
-offset_bottom = 50.0
+offset_left = -102.55072
+offset_top = 124.0
+offset_right = 102.55072
+offset_bottom = 182.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 0
