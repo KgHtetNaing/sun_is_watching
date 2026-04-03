@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://cq2r2uc8n7y2m" path="res://art/Envi/grass2.png" id="9_r6p65"]
 [ext_resource type="PackedScene" uid="uid://cdvw2b43hrl8i" path="res://bush1.tscn" id="10_6wevv"]
 [ext_resource type="Texture2D" uid="uid://cmxubd31ukevr" path="res://art/Envi/grass3.png" id="10_r6p65"]
+[ext_resource type="FontFile" uid="uid://q854rp2kesgt" path="res://art/Fonts/Mitr-SemiBold.ttf" id="10_xdqt8"]
 [ext_resource type="Texture2D" uid="uid://ddcqo2uqu3dxy" path="res://art/Envi/path.png" id="12_mngbo"]
 [ext_resource type="Texture2D" uid="uid://ess154tkdvbk" path="res://art/Envi/tree1.png" id="18_7nt27"]
 [ext_resource type="Texture2D" uid="uid://d0vv5euwdl3hg" path="res://art/Envi/tree2.png" id="19_k6f3i"]
@@ -85,9 +86,8 @@ texture = ExtResource("12_mngbo")
 process_mode = 3
 
 [node name="WinScreen" parent="Ui" unique_id=1488543200 instance=ExtResource("5_gubc5")]
-visible = false
 
-[node name="Sprite2D" type="Sprite2D" parent="Ui" unique_id=541421324]
+[node name="TutorialSprite" type="Sprite2D" parent="Ui" unique_id=541421324]
 position = Vector2(641, 359.9865)
 scale = Vector2(0.2400091, 0.24000901)
 texture = ExtResource("6_k6f3i")
@@ -110,9 +110,31 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_k6f3i")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_xdqt8")
 theme_override_styles/hover = SubResource("StyleBoxTexture_adb74")
 
+[node name="TimerLabel" type="Label" parent="Ui" unique_id=964376814]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -74.0
+offset_top = -382.0
+offset_right = 74.0
+offset_bottom = -225.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.37254903)
+theme_override_colors/font_outline_color = Color(1, 0.80784315, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 10
+theme_override_constants/shadow_outline_size = 10
+theme_override_fonts/font = ExtResource("10_xdqt8")
+theme_override_font_sizes/font_size = 100
+text = "00"
+
 [node name="Timer" type="Timer" parent="." unique_id=971018918]
 process_mode = 3
-wait_time = 3.0
+wait_time = 60.0
 one_shot = true
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=704493747]

@@ -2,6 +2,7 @@ extends Node3D
 @onready var timer = $Timer
 @onready var win_screen = $Ui/WinScreen
 @onready var start_ui = $Ui/Start
+@onready var timer_label = $Ui/TimerLabel
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	win_screen.hide()
@@ -9,6 +10,7 @@ func _ready() -> void:
 	win_screen.continue_pressed.connect(_on_win_continue)
 	GameManager.start_game_requested.connect(_on_start_pressed)
 	MusicManager.play_music()
+	timer_label.visible = false
 
 	
 func _on_win_continue():
@@ -19,7 +21,8 @@ func _on_win_continue():
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if not get_tree().paused:
+		timer_label.text = str(int(timer.time_left)+1)
 
 
 func _on_timer_timeout() -> void:
@@ -34,3 +37,5 @@ func _on_start_pressed() -> void:
 	get_tree().paused = false
 	timer.start()
 	start_ui.visible = false
+	$Ui/TutorialSprite.visible = false
+	timer_label.visible = true
