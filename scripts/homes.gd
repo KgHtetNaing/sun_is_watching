@@ -49,8 +49,8 @@ func _on_spawn_timer_timeout() -> void:
 		spawn_timer.stop()
 		return
 	spawn_person()
-	var current_wait =  1.5 - (GameManager.current_level * 0.1)
-	spawn_timer.wait_time = clamp(current_wait , 0.4 ,1.5)
+	var current_wait =  10.0 - (GameManager.current_level * 0.5)
+	spawn_timer.wait_time = clamp(current_wait , 0.5 ,10.0)
 	print ("current_wait" , current_wait)
 	update_difficulity()
 	print ("Enemy scene length" ,len(enemy_scene))
