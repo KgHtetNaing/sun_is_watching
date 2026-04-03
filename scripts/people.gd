@@ -27,9 +27,9 @@ func _physics_process(delta):
 		sprite.play("1walk_back")
 		speed = running_speed
 		if new_dir.length() < 0.5:
-			destroy_body()			
+			destroy_body()
 			
-	else:		
+	else:
 		if direction.length() < 1:
 			finding_escape()
 		

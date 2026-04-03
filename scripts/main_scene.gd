@@ -3,14 +3,16 @@ extends Node3D
 @onready var win_screen = $Ui/WinScreen
 @onready var start_ui = $Ui/Start
 @onready var timer_label = $Ui/TimerLabel
+@onready var escapee_label = $Ui/EscapeeLabel
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	win_screen.hide()
-	get_tree().paused = true	
+	get_tree().paused = true
 	win_screen.continue_pressed.connect(_on_win_continue)
 	GameManager.start_game_requested.connect(_on_start_pressed)
 	MusicManager.play_music()
 	timer_label.visible = false
+	escapee_label.visible = false
 
 	
 func _on_win_continue():
@@ -23,6 +25,7 @@ func _on_win_continue():
 func _process(delta: float) -> void:
 	if not get_tree().paused:
 		timer_label.text = str(int(timer.time_left)+1)
+		escapee_label.text = str(GameManager.escapee) + "/10"
 
 
 func _on_timer_timeout() -> void:
@@ -39,3 +42,4 @@ func _on_start_pressed() -> void:
 	start_ui.visible = false
 	$Ui/TutorialSprite.visible = false
 	timer_label.visible = true
+	escapee_label.visible = true
