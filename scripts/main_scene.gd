@@ -61,7 +61,7 @@ func _on_start_pressed() -> void:
 	print("START PRESSED - LEVEL:", GameManager.current_level)
 	GameManager.day_ended = false 
 	get_tree().paused = false
-	timer.wait_time = 10.0
+	timer.wait_time = 60.0
 	timer.start()
 	var spawners = get_tree().get_nodes_in_group("spawner")
 	for s in spawners:
