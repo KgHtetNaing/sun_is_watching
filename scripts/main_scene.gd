@@ -10,6 +10,8 @@ func _ready() -> void:
 	win_screen.hide()
 	timer_label.visible = false
 	escapee_label.visible = false
+	GameManager.escapee = 0
+	print ("total Escapee", GameManager.escapee)
 	GameManager.show_win_screen.connect(_on_show_win_screen)
 	GameManager.start_game_requested.connect(_on_start_pressed)
 	win_screen.continue_pressed.connect(_on_win_continue)

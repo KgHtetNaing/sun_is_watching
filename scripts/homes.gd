@@ -16,17 +16,17 @@ func _ready():
 	if enemy_scene.is_empty():
 		enemy_scene.append(default_enemy)
 	update_difficulity()
-	spawn_person()
-	spawn_timer.wait_time = randf_range(0.5 , 1.5)
+	#spawn_person()
+	#spawn_timer.wait_time = randf_range(0.3, 2.0)
 	spawn_timer.start()
+	
 
 func on_new_level():
 	print("Spawner updating for NEW LEVEL:", GameManager.current_level)
 	
 	update_difficulity()
 	
-	spawn_timer.wait_time = randf_range(0.5, 1.5)
-	spawn_timer.start()
+
 
 func spawn_person():
 	if enemy_scene.is_empty():
@@ -50,8 +50,9 @@ func _on_spawn_timer_timeout() -> void:
 		return
 	spawn_person()
 	var current_wait =  10.0 - (GameManager.current_level * 0.5)
-	spawn_timer.wait_time = clamp(current_wait , 0.5 ,10.0)
+	current_wait = clamp(current_wait , 0.5 ,10.0)
 	print ("current_wait" , current_wait)
+	spawn_timer.wait_time = randf_range(current_wait * 0.7, current_wait * 1.3)
 	update_difficulity()
 	print ("Enemy scene length" ,len(enemy_scene))
 	

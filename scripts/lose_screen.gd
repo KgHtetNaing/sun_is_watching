@@ -6,6 +6,8 @@ func _ready():
 
 func _on_retry_pressed() -> void:
 	GameManager.current_level = 1
+
 	get_tree().change_scene_to_file("res://scenes/main_scene.tscn")
 	MusicManager.play_music()
+	
 	

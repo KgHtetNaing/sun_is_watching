@@ -30,7 +30,6 @@ enemy_scene = Array[PackedScene]([ExtResource("2_ef8kr")])
 
 [node name="spawn_timer" type="Timer" parent="." unique_id=2012562378]
 wait_time = 0.342
-autostart = true
 
 [node name="spawnPoint" type="Marker3D" parent="." unique_id=1634484428]
 
