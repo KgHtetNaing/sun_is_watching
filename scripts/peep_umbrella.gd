@@ -1,5 +1,5 @@
 extends CharacterBody3D
-@export var healthpoint = 300
+@export var healthpoint = 350
 
 var blink_tween: Tween
 var speed = 1

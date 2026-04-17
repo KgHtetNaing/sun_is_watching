@@ -3,12 +3,13 @@ extends Node
 var day_ended = false
 signal show_win_screen
 
-var damage := 100
-var size := 0.6
+var damage := 60
+var size := 0.8
 var speed := 0.6
 var escapee = 0
-var current_level = 1
+var current_level = 5
 var enemies_alive = 0
+
 
 signal start_game_requested #to restart the timer when new game start
 

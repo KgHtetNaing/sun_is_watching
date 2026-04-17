@@ -45,7 +45,12 @@ func pick_new_target():
 	)
 
 func finding_escape():
-	target_position = escape_point.global_position
+	if escape_point != null:
+		target_position = escape_point.global_position
+	else:
+		print("Warning: Peep cannot find escape_point!")
+		# Fallback: just walk forward or delete
+		run_back()
 	
 func take_damage(amount):
 	if going_home:

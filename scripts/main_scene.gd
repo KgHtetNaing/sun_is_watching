@@ -4,6 +4,7 @@ extends Node3D
 @onready var start_ui = $Ui/Start
 @onready var timer_label = $Ui/TimerLabel
 @onready var escapee_label = $Ui/EscapeeLabel
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	print("Current level on ready: ", GameManager.current_level)
@@ -45,9 +46,12 @@ func _on_win_continue():
 
 func _process(delta: float) -> void:
 	if not get_tree().paused:
-		timer_label.text = str(int(timer.time_left)+1)
+		if GameManager.current_level >= 6:
+			timer_label.hide()
+		else:	
+			timer_label.text = str(int(timer.time_left)+1)
 		escapee_label.text = str(GameManager.escapee) + "/10"
-
+	
 
 func _on_timer_timeout() -> void:
 	print("Day Ended")
@@ -63,8 +67,13 @@ func _on_start_pressed() -> void:
 	print("START PRESSED - LEVEL:", GameManager.current_level)
 	GameManager.day_ended = false 
 	get_tree().paused = false
-	timer.wait_time = 60.0
+	
+	
+	timer.wait_time = 5.0
 	timer.start()
+	
+	
+	
 	var spawners = get_tree().get_nodes_in_group("spawner")
 	for s in spawners:
 		s.on_new_level()
@@ -73,3 +82,4 @@ func _on_start_pressed() -> void:
 	$Ui/TutorialSprite.visible = false
 	timer_label.visible = true
 	escapee_label.visible = true
+	

@@ -1,8 +1,8 @@
 extends Button
 
 @export var upgrade_type: String
-@export var amount_dmg: float = 10
-@export var amount_size: float = 0.5
+@export var amount_dmg: float = 8
+@export var amount_size: float = 0.25
 @export var amount_speed: float = 0.5
 
 func _ready():
@@ -38,10 +38,16 @@ func _on_pressed() -> void:
 	get_parent().queue_free()
 	get_tree().change_scene_to_file("res://scenes/main_game.tscn")
 	
+	if GameManager.current_level >= 6:
+		get_tree().call_group("main_timer" , "stop_the_clock")
+		print ("stopping the timer")
+	
 func remove_people():
 	#people.tscn is added to group("enemies")
 	var people =  get_tree().get_nodes_in_group("enemies")
 	for i in people:
 		i.queue_free()
+		
+
 	
 	

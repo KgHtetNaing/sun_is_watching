@@ -6,6 +6,10 @@ var peep_hat = preload("res://scenes/peep_sunscreen.tscn")
 var peep_umbrella = preload("res://scenes/peep_umbrella.tscn")
 var peep_skater = preload("res://scenes/peep_skater.tscn")
 var default_enemy = preload("res://scenes/peep.tscn")
+
+var final_peep_scene =preload("res://scenes/final_peep.tscn")
+var final_trigger = false
+static var boss_spawned = false
 #enemy scenes are put into array in home -> inspector -> enemy_scene array
 @export var enemy_scene : Array[PackedScene] = []
 
@@ -45,15 +49,27 @@ func spawn_person():
 		print("Enemy scene:", enemy_scene[random_enemy])
 
 func _on_spawn_timer_timeout() -> void:
+	
+	if GameManager.current_level>=6:
+		spawn_timer.stop()
+		if not final_trigger:
+			trigger_final_day()
+			
+		return
+		
 	if GameManager.day_ended:
 		spawn_timer.stop()
 		return
+		
+	#event trigger
+	
 	spawn_person()
-	var current_wait =  10.0 - (GameManager.current_level * 0.5)
+	var current_wait =  10.0 - GameManager.current_level 
 	current_wait = clamp(current_wait , 0.5 ,10.0)
 	print ("current_wait" , current_wait)
-	spawn_timer.wait_time = randf_range(current_wait * 0.7, current_wait * 1.3)
+	spawn_timer.wait_time = randf_range(current_wait * 0.6, current_wait * 1.2)
 	update_difficulity()
+	spawn_timer.start()
 	print ("Enemy scene length" ,len(enemy_scene))
 	
 
@@ -64,11 +80,29 @@ func update_difficulity():
 			enemy_scene.append(peep_hat)
 			print ("Peep_hat added")
 		
-	if GameManager.current_level >= 4 and not enemy_scene.has(peep_umbrella):
+	if GameManager.current_level >= 3 and not enemy_scene.has(peep_umbrella):
 		enemy_scene.append(peep_umbrella)
 		print("Peep_umbrella added")
 		#
-	if GameManager.current_level >= 6 and not enemy_scene.has(peep_skater):
+	if GameManager.current_level >= 4 and not enemy_scene.has(peep_skater):
 		enemy_scene.append(peep_skater)
 		print("Peep_skater added")
 	print("Enemy scene size after update: ", enemy_scene.size())
+
+func trigger_final_day():
+	
+	print ("I am spawning final peep")
+	final_trigger = true
+	spawn_timer.stop()
+	
+	# 3. Clear the array (Nuclear Option)
+	enemy_scene.clear() 
+	print ( "enemy scene length" , enemy_scene.size())
+	#print("Array cleared: No more regular peeps can spawn.")
+	#
+	#print ("Final day triggered")
+	if is_in_group("final_house"):
+		var final_peep = final_peep_scene.instantiate()
+		get_parent().add_child(final_peep)
+		final_peep.global_position = spawn_point.global_position
+		final_peep.home_position = spawn_point.global_position

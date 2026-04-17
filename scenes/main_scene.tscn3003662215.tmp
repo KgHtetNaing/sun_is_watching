@@ -167,7 +167,7 @@ transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, -0.8632469, 0.3, -7.9288664)
 
 [node name="Homes" type="Node" parent="." unique_id=406738710]
 
-[node name="homes" parent="Homes" unique_id=1353727017 groups=["final_house", "spawner"] instance=ExtResource("4_pu3yx")]
+[node name="homes" parent="Homes" unique_id=1353727017 groups=["spawner"] instance=ExtResource("4_pu3yx")]
 transform = Transform3D(4.023569, 0, -2.9672942, 0, 5.999999, 0, 4.450941, 0, 2.6823792, -24.309341, 0.64051056, -14.776619)
 
 [node name="homes2" parent="Homes" unique_id=1440411430 groups=["spawner"] instance=ExtResource("4_pu3yx")]
@@ -334,7 +334,7 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -6.9579506, 4.496448, -
 texture = ExtResource("19_k6f3i")
 
 [node name="final_pos" type="Marker3D" parent="." unique_id=87654966 groups=["final_pos"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7619982, -5.2693243)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.6830368, -5.2693243)
 
 [connection signal="pressed" from="Ui/Start" to="." method="_on_start_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
