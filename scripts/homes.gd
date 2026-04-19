@@ -31,7 +31,7 @@ func on_new_level():
 	print("Spawner updating for NEW LEVEL:", GameManager.current_level)
 	
 	update_difficulity()
-	
+	spawn_timer.start() 
 
 
 func spawn_person():
@@ -40,7 +40,7 @@ func spawn_person():
 	if GameManager.day_ended:
 		return
 	var spawn_count = 1 + int(GameManager.current_level / 2)
-	for i in spawn_count:
+	for i in range(spawn_count):
 		var random_enemy =  randi() % enemy_scene.size()
 		var person = enemy_scene[random_enemy].instantiate()
 		get_tree().current_scene.add_child(person)
