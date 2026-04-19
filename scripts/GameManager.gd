@@ -9,7 +9,7 @@ var speed := 0.6
 var escapee = 0
 var current_level = 1
 var enemies_alive = 0
-var round_timer = 10.0
+var round_timer = 30.0
 
 
 signal start_game_requested #to restart the timer when new game start
