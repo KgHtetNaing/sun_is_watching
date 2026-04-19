@@ -247,7 +247,7 @@ texture = ExtResource("10_r6p65")
 [node name="targetPosition" type="Marker3D" parent="." unique_id=950759872]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.14465642, 4.8935566)
 
-[node name="escape_point" type="Node3D" parent="." unique_id=96602533]
+[node name="escape_point" type="Node3D" parent="." unique_id=96602533 groups=["escape_point"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.11309314, 10.457715)
 script = ExtResource("5_rt2n2")
 

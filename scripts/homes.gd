@@ -29,10 +29,11 @@ func _ready():
 
 func on_new_level():
 	print("Spawner updating for NEW LEVEL:", GameManager.current_level)
-	
 	update_difficulity()
-	
-
+	final_trigger = false
+	if not spawn_timer.is_stopped():
+		spawn_timer.stop()
+	spawn_timer.start()
 
 func spawn_person():
 	if enemy_scene.is_empty():
@@ -44,7 +45,9 @@ func spawn_person():
 		var random_enemy =  randi() % enemy_scene.size()
 		var person = enemy_scene[random_enemy].instantiate()
 		get_tree().current_scene.add_child(person)
-		person.escape_point = $"../../escape_point"
+		var escape_nodes = get_tree().get_nodes_in_group("escape_point")
+		if not escape_nodes.is_empty():
+			person.escape_point = escape_nodes[0]
 		person.global_position = spawn_point.global_position
 		person.home_position = spawn_point.global_position
 		print("Spawning enemy index:", random_enemy)

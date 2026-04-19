@@ -33,6 +33,7 @@ enemies=""
 final_pos=""
 main_timer=""
 houses=""
+escape_point=""
 
 [physics]
 
