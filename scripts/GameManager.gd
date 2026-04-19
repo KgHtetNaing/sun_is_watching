@@ -3,12 +3,13 @@ extends Node
 var day_ended = false
 signal show_win_screen
 
-var damage := 60
+var damage := 100
 var size := 0.8
 var speed := 0.6
 var escapee = 0
-var current_level = 0
+var current_level = 1
 var enemies_alive = 0
+var round_timer = 30.0
 
 
 signal start_game_requested #to restart the timer when new game start
@@ -33,3 +34,9 @@ func enemy_gone():
 	if enemies_alive <= 0 and day_ended:
 		print("Emitting win screen!")
 		show_win_screen.emit()
+		
+
+func start_next_level():
+	current_level += 1
+	# This is your loop! It forces EVERY house to update its bag of peeps.
+	get_tree().call_group("houses", "on_new_level")

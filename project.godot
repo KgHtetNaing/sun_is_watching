@@ -25,12 +25,14 @@ SfxManager="*uid://b8se4t8m5krfj"
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
+window/size/borderless=true
 
 [global_group]
 
 enemies=""
 final_pos=""
 main_timer=""
+houses=""
 
 [physics]
 
