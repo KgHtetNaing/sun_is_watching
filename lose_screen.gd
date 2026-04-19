@@ -12,7 +12,7 @@ func _ready():
 
 
 func _on_retry_pressed() -> void:
-	get_tree().reload_current_scene()
+	get_tree().change_scene_to_file("res://scenes/main_scene.tscn")
 
 
 func _on_menu_pressed() -> void:
