@@ -69,7 +69,7 @@ func _on_start_pressed() -> void:
 	get_tree().paused = false
 	
 	
-	timer.wait_time = 5.0
+	timer.wait_time = 60.0
 	timer.start()
 	
 	

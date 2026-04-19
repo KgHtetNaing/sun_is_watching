@@ -7,7 +7,7 @@ var damage := 60
 var size := 0.8
 var speed := 0.6
 var escapee = 0
-var current_level = 5
+var current_level = 0
 var enemies_alive = 0
 
 
