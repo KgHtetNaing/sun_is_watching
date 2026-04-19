@@ -3,7 +3,7 @@ extends Node
 var day_ended = false
 signal show_win_screen
 
-var damage := 100
+var damage := 150
 var size := 0.8
 var speed := 0.6
 var escapee = 0
