@@ -75,8 +75,6 @@ size = Vector2(3, 3)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_m5luo"]
 
-[sub_resource type="QuadMesh" id="QuadMesh_hssaq"]
-
 [node name="People" type="CharacterBody3D" unique_id=131521429 groups=["enemies"]]
 collision_mask = 2
 script = ExtResource("1_hssaq")
@@ -103,8 +101,7 @@ shape = SubResource("CapsuleShape3D_m5luo")
 
 [node name="Dialog Box" type="MeshInstance3D" parent="." unique_id=1584426626]
 transform = Transform3D(5, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.5028687, 0)
-mesh = SubResource("QuadMesh_hssaq")
 
 [node name="Label3D" type="Label3D" parent="Dialog Box" unique_id=1603411444]
-transform = Transform3D(1, 0, 0, 0, 1.6, 0, 0, 0, 1, 0, 0, 0)
-text = "We give up"
+transform = Transform3D(1, 0, 0, 0, 3, 0, 0, 0, 1, 0, 0, 0)
+text = "We give up. You are too hot to handle."

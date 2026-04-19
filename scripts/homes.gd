@@ -102,7 +102,17 @@ func trigger_final_day():
 	#
 	#print ("Final day triggered")
 	if is_in_group("final_house"):
+		print("SUCCESS: This is the final house!")
+		
 		var final_peep = final_peep_scene.instantiate()
-		get_parent().add_child(final_peep)
-		final_peep.global_position = spawn_point.global_position
-		final_peep.home_position = spawn_point.global_position
+		get_tree().current_scene.add_child(final_peep)
+		
+		# Use 'self.global_position' so we don't rely on a 'spawn_point' node
+		final_peep.global_position = self.global_position
+		final_peep.home_position = self.global_position
+		
+		print("Peep spawned at: ", final_peep.global_position)
+	else:
+		print("DEBUG: House ", name, " is not in the group 'final_house'")
+		# If this house isn't the boss house, it should just go away
+		#queue_free()
