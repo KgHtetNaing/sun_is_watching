@@ -50,7 +50,7 @@ func finding_escape():
 	else:
 		print("Warning: Peep cannot find escape_point!")
 		# Fallback: just walk forward or delete
-		run_back()
+		#run_back()
 	
 func take_damage(amount):
 	if going_home:

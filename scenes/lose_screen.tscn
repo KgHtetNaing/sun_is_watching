@@ -1,97 +1,135 @@
-[gd_scene format=3 uid="uid://d3fw2beohv4q5"]
+[gd_scene format=3 uid="uid://bendp87acl1u7"]
 
-[ext_resource type="Script" uid="uid://clxav8cq1inw0" path="res://scripts/lose_screen.gd" id="1_uglf1"]
+[ext_resource type="Script" uid="uid://byia5cs8sx82r" path="res://scripts/lose_screen.gd" id="1_383t0"]
+[ext_resource type="Texture2D" uid="uid://45ucooks1mdg" path="res://art/Ui/LoseScreen-25.png" id="2_t4sam"]
+[ext_resource type="Texture2D" uid="uid://bodsjak5pmob8" path="res://art/Ui/bubble-26.png" id="3_7ndme"]
+[ext_resource type="Texture2D" uid="uid://bey5kkvfads75" path="res://art/Ui/button-30.png" id="4_2m2oe"]
+[ext_resource type="Texture2D" uid="uid://d1puxl45cd8bu" path="res://art/Ui/button-32.png" id="5_fjobq"]
+[ext_resource type="Texture2D" uid="uid://dl4jw704kwqqn" path="res://art/Ui/button-31.png" id="6_1nf4j"]
+[ext_resource type="Texture2D" uid="uid://b11x0jdvwvkay" path="res://art/Ui/button-27.png" id="7_jnwvw"]
+[ext_resource type="Texture2D" uid="uid://dsjlpi20o6t0e" path="res://art/Ui/button-29.png" id="8_nu7m4"]
+[ext_resource type="Texture2D" uid="uid://bkuqw4m201agd" path="res://art/Ui/button-28.png" id="9_r2vwx"]
+[ext_resource type="Texture2D" uid="uid://nc7bxm62x8n5" path="res://art/peep/1.png" id="10_hqpvv"]
+[ext_resource type="Texture2D" uid="uid://c2eiqvlrh0qsm" path="res://art/peep/2.png" id="11_5hukf"]
+[ext_resource type="Texture2D" uid="uid://cmvsgcavpb247" path="res://art/peep/3.png" id="12_m8cm4"]
+[ext_resource type="Texture2D" uid="uid://dwt2ryslh78gm" path="res://art/peep/4.png" id="13_cnat3"]
+[ext_resource type="Texture2D" uid="uid://cwa6btls3k3as" path="res://art/peep/5.png" id="14_qpewd"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uglf1"]
-bg_color = Color(0.70560455, 0.37027636, 0.18776155, 1)
-border_width_left = 10
-border_width_top = 5
-border_width_right = 10
-border_width_bottom = 5
-border_color = Color(0.7058824, 0.36862746, 0.1882353, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-shadow_color = Color(0.35915577, 0.17558458, 0.07739537, 1)
-shadow_size = 2
-shadow_offset = Vector2(1, 4)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q7col"]
+texture = ExtResource("4_2m2oe")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1n1m7"]
-bg_color = Color(0.4325989, 0.35637146, 0.7006675, 1)
-border_width_left = 10
-border_width_top = 5
-border_width_right = 10
-border_width_bottom = 5
-border_color = Color(0.43137255, 0.35686275, 0.7019608, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-corner_detail = 9
-shadow_color = Color(0.27271175, 0.22188184, 0.45344034, 1)
-shadow_size = 2
-shadow_offset = Vector2(1, 4)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t1hw0"]
+texture = ExtResource("5_fjobq")
 
-[node name="LoseScreen" type="Control" unique_id=774815783]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_88pdp"]
+texture = ExtResource("6_1nf4j")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_01jlt"]
+texture = ExtResource("7_jnwvw")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gsrht"]
+texture = ExtResource("8_nu7m4")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1fbfm"]
+texture = ExtResource("9_r2vwx")
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t6phk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_hqpvv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_5hukf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_m8cm4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_cnat3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_qpewd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="loseScreen" type="Control" unique_id=1415134976]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_uglf1")
+script = ExtResource("1_383t0")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1038150594]
-layout_mode = 0
-offset_right = 1152.0
-offset_bottom = 647.0
-color = Color(0.1764706, 0.1764706, 0.15294118, 1)
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2024124789]
 
-[node name="CenterContainer" type="CenterContainer" parent="." unique_id=2144545169]
-layout_mode = 0
-offset_left = 276.0
-offset_top = -2.0
-offset_right = 889.0
-offset_bottom = 595.0
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer" unique_id=1504029171]
+position = Vector2(639.9608, 359.49997)
+scale = Vector2(0.23966669, 0.23966664)
+texture = ExtResource("2_t4sam")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=1382781249]
+[node name="Bubble26" type="Sprite2D" parent="CanvasLayer" unique_id=376564405]
+position = Vector2(869, 220)
+scale = Vector2(0.115, 0.115)
+texture = ExtResource("3_7ndme")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer" unique_id=661381660]
+offset_top = 128.0
+offset_right = 1277.0
+offset_bottom = 151.0
+alignment = 1
+
+[node name="HighestLvl" type="Label" parent="CanvasLayer/HBoxContainer" unique_id=522799083]
 layout_mode = 2
-theme_override_constants/separation = 36
+text = "Highest Level Reached :"
 
-[node name="Title" type="Label" parent="CenterContainer/VBoxContainer" unique_id=1676235831]
+[node name="current_lvl" type="Label" parent="CanvasLayer/HBoxContainer" unique_id=1376813108]
 layout_mode = 2
-theme_override_font_sizes/font_size = 38
-text = "You are not hot enough!"
-horizontal_alignment = 1
-vertical_alignment = 1
+text = "0"
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="CenterContainer/VBoxContainer" unique_id=886284768]
-layout_mode = 2
-theme_override_constants/separation = 300
+[node name="Retry" type="Button" parent="CanvasLayer" unique_id=1345793513]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -285.0
+offset_top = 215.0
+offset_right = 285.0
+offset_bottom = 310.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_q7col")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_t1hw0")
+theme_override_styles/hover = SubResource("StyleBoxTexture_88pdp")
 
-[node name="level_reached" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer2" unique_id=427734042]
-layout_mode = 2
-text = "Level Reached :"
+[node name="Menu" type="Button" parent="CanvasLayer" unique_id=198608306]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -83.0
+offset_top = 312.0
+offset_right = 347.43103
+offset_bottom = 383.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.381, 0.381)
+size_flags_horizontal = 4
+theme_override_styles/normal = SubResource("StyleBoxTexture_01jlt")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_gsrht")
+theme_override_styles/hover = SubResource("StyleBoxTexture_1fbfm")
 
-[node name="current_level" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer2" unique_id=598197836]
-layout_mode = 2
-text = "1"
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer" unique_id=473960571]
+position = Vector2(640, 398)
+scale = Vector2(0.246, 0.246)
+sprite_frames = SubResource("SpriteFrames_t6phk")
+autoplay = "default"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer" unique_id=1069532356]
-layout_mode = 2
-theme_override_constants/separation = 60
-
-[node name="Retry" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer" unique_id=1936098170]
-layout_mode = 2
-theme_override_font_sizes/font_size = 16
-theme_override_styles/normal = SubResource("StyleBoxFlat_uglf1")
-text = "Retry
-"
-
-[node name="Main Menu" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer" unique_id=1881896105]
-layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_1n1m7")
-text = "Main Menu"
-
-[connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer/Retry" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="CanvasLayer/Retry" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="CanvasLayer/Menu" to="." method="_on_menu_pressed"]

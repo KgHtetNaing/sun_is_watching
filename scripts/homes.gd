@@ -29,9 +29,9 @@ func _ready():
 
 func on_new_level():
 	print("Spawner updating for NEW LEVEL:", GameManager.current_level)
-	
 	update_difficulity()
-	
+	final_trigger = false
+	spawn_timer.start()
 
 
 func spawn_person():
@@ -43,10 +43,12 @@ func spawn_person():
 	for i in spawn_count:
 		var random_enemy =  randi() % enemy_scene.size()
 		var person = enemy_scene[random_enemy].instantiate()
-		get_tree().current_scene.add_child(person)
-		person.escape_point = $"../../escape_point"
-		person.global_position = spawn_point.global_position
 		person.home_position = spawn_point.global_position
+		var escape_nodes = get_tree().get_nodes_in_group("escape_point")
+		if not escape_nodes.is_empty():
+			person.escape_point = escape_nodes[0]
+		get_tree().current_scene.add_child(person)
+		person.global_position = spawn_point.global_position
 		print("Spawning enemy index:", random_enemy)
 		print("Enemy scene:", enemy_scene[random_enemy])
 
@@ -66,7 +68,7 @@ func _on_spawn_timer_timeout() -> void:
 	#event trigger
 	
 	spawn_person()
-	var current_wait =  10.0 - GameManager.current_level 
+	var current_wait =  7.0 - GameManager.current_level 
 	current_wait = clamp(current_wait , 0.5 ,10.0)
 	print ("current_wait" , current_wait)
 	spawn_timer.wait_time = randf_range(current_wait * 0.6, current_wait * 1.2)

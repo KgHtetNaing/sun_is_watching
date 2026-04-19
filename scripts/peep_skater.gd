@@ -44,7 +44,8 @@ func pick_new_target():
 	)
 
 func finding_escape():
-	target_position = escape_point.global_position
+	if escape_point != null:
+		target_position = escape_point.global_position
 	
 func take_damage(amount):
 	if going_home:

@@ -1,7 +1,7 @@
 extends Button
 
 @export var upgrade_type: String
-@export var amount_dmg: float = 8
+@export var amount_dmg: float = 50
 @export var amount_size: float = 0.25
 @export var amount_speed: float = 0.5
 

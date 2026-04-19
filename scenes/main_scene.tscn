@@ -15,7 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://oflr6i4vsgs4" path="res://art/Envi/bigbush.png" id="8_18nlu"]
 [ext_resource type="Texture2D" uid="uid://1svievppf4fk" path="res://art/Envi/exit.png" id="9_e1cbu"]
 [ext_resource type="Texture2D" uid="uid://cq2r2uc8n7y2m" path="res://art/Envi/grass2.png" id="9_r6p65"]
-[ext_resource type="PackedScene" uid="uid://cdvw2b43hrl8i" path="res://bush1.tscn" id="10_6wevv"]
+[ext_resource type="PackedScene" uid="uid://cdvw2b43hrl8i" path="res://scenes/bush1.tscn" id="10_6wevv"]
 [ext_resource type="Texture2D" uid="uid://cmxubd31ukevr" path="res://art/Envi/grass3.png" id="10_r6p65"]
 [ext_resource type="FontFile" uid="uid://q854rp2kesgt" path="res://art/Fonts/Mitr-SemiBold.ttf" id="10_xdqt8"]
 [ext_resource type="Script" uid="uid://dpsnd6g48pt6r" path="res://scenes/timer.gd" id="11_adb74"]
@@ -247,7 +247,7 @@ texture = ExtResource("10_r6p65")
 [node name="targetPosition" type="Marker3D" parent="." unique_id=950759872]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.14465642, 4.8935566)
 
-[node name="escape_point" type="Node3D" parent="." unique_id=96602533]
+[node name="escape_point" type="Node3D" parent="." unique_id=96602533 groups=["escape_point"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.11309314, 10.457715)
 script = ExtResource("5_rt2n2")
 

@@ -45,6 +45,7 @@ func _physics_process(delta):
 			start_talking()
 		elif state == "Going_home":
 			print ("Peep arrived home")
+			GameManager.current_level = 1
 			get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 			queue_free()
 	
