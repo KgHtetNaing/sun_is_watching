@@ -79,6 +79,7 @@ func _on_start_pressed() -> void:
 		s.on_new_level()
 	print("Timer started, wait time: ", timer.wait_time)
 	start_ui.visible = false
+	$Ui/Tutorial.visible = false
 	$Ui/TutorialSprite.visible = false
 	timer_label.visible = true
 	escapee_label.visible = true

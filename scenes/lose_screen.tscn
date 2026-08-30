@@ -51,7 +51,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("14_qpewd")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
@@ -92,31 +92,32 @@ layout_mode = 2
 text = "0"
 
 [node name="Retry" type="Button" parent="CanvasLayer" unique_id=1345793513]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -285.0
-offset_top = 215.0
-offset_right = 285.0
-offset_bottom = 310.0
+anchors_preset = -1
+anchor_left = 0.277
+anchor_top = 0.799
+anchor_right = 0.72300005
+anchor_bottom = 0.93100005
+offset_left = 0.44000244
+offset_top = -0.2800293
+offset_right = -0.44006348
+offset_bottom = -0.32006836
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/normal = SubResource("StyleBoxTexture_q7col")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_t1hw0")
 theme_override_styles/hover = SubResource("StyleBoxTexture_88pdp")
+metadata/_edit_use_anchors_ = true
 
 [node name="Menu" type="Button" parent="CanvasLayer" unique_id=198608306]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -83.0
-offset_top = 312.0
-offset_right = 347.43103
-offset_bottom = 383.0
+anchors_preset = -1
+anchor_left = 0.43500003
+anchor_top = 0.933
+anchor_right = 0.563
+anchor_bottom = 0.9710001
+offset_left = 0.19995117
+offset_top = 0.23999023
+offset_right = 266.79102
+offset_bottom = 43.879944
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.381, 0.381)
@@ -124,6 +125,7 @@ size_flags_horizontal = 4
 theme_override_styles/normal = SubResource("StyleBoxTexture_01jlt")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_gsrht")
 theme_override_styles/hover = SubResource("StyleBoxTexture_1fbfm")
+metadata/_edit_use_anchors_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer" unique_id=473960571]
 position = Vector2(640, 398)

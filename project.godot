@@ -12,7 +12,7 @@ config_version=5
 
 config/name="sun_is_watching"
 run/main_scene="uid://cxcwvmdnls5d7"
-config/features=PackedStringArray("4.6", "GL Compatibility")
+config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
@@ -26,6 +26,9 @@ SfxManager="*uid://b8se4t8m5krfj"
 window/size/viewport_width=1280
 window/size/viewport_height=720
 window/size/borderless=true
+display/window/stretch/mode="2d"
+display/window/stretch/aspect="keep"
+display/window/stretch/scale=1
 
 [global_group]
 

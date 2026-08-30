@@ -89,36 +89,50 @@ process_mode = 3
 [node name="WinScreen" parent="Ui" unique_id=1488543200 instance=ExtResource("5_gubc5")]
 
 [node name="TutorialSprite" type="Sprite2D" parent="Ui" unique_id=541421324]
+visible = false
 position = Vector2(641, 359.9865)
 scale = Vector2(0.2400091, 0.24000901)
 texture = ExtResource("6_k6f3i")
 
+[node name="Tutorial" type="TextureRect" parent="Ui" unique_id=557328371]
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.99700004
+offset_right = 0.16003418
+offset_bottom = 2.1599731
+texture = ExtResource("6_k6f3i")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
 [node name="Start" type="Button" parent="Ui" unique_id=286935616]
 process_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -102.55072
-offset_top = 138.0
-offset_right = 102.55072
-offset_bottom = 196.0
+anchors_preset = -1
+anchor_left = 0.42000002
+anchor_top = 0.69200003
+anchor_right = 0.58000004
+anchor_bottom = 0.772
+offset_left = -0.15075684
+offset_top = -0.24002075
+offset_right = 0.1506958
+offset_bottom = 0.15997314
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 0
 theme_override_styles/normal = SubResource("StyleBoxTexture_k6f3i")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_xdqt8")
 theme_override_styles/hover = SubResource("StyleBoxTexture_adb74")
+metadata/_edit_use_anchors_ = true
 
 [node name="TimerLabel" type="Label" parent="Ui" unique_id=964376814]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -598.0
-offset_top = 536.0
-offset_right = -450.0
-offset_bottom = 693.0
+anchors_preset = -1
+anchor_left = 0.033
+anchor_top = 0.744
+anchor_right = 0.148
+anchor_bottom = 0.9620001
+offset_left = -0.23999786
+offset_top = 0.32000732
+offset_right = 0.55999756
+offset_bottom = 0.35992432
 grow_horizontal = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.37254903)
 theme_override_colors/font_outline_color = Color(1, 0.80784315, 0, 1)
@@ -129,17 +143,18 @@ theme_override_constants/shadow_outline_size = 10
 theme_override_fonts/font = ExtResource("10_xdqt8")
 theme_override_font_sizes/font_size = 100
 text = "00"
+metadata/_edit_use_anchors_ = true
 
 [node name="EscapeeLabel" type="Label" parent="Ui" unique_id=1771005986]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = 420.0
-offset_top = -181.0
-offset_right = 568.0
-offset_bottom = -24.0
+anchors_preset = -1
+anchor_left = 0.82800007
+anchor_top = 0.749
+anchor_right = 0.94400007
+anchor_bottom = 0.96700007
+offset_left = 0.15991211
+offset_top = -0.2800293
+offset_right = -0.32006836
+offset_bottom = -0.24005127
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_colors/font_color = Color(1, 0.80784315, 0, 1)
@@ -148,6 +163,7 @@ theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("10_xdqt8")
 theme_override_font_sizes/font_size = 100
 text = "00"
+metadata/_edit_use_anchors_ = true
 
 [node name="Timer" type="Timer" parent="." unique_id=971018918 groups=["main_timer"]]
 process_mode = 3
