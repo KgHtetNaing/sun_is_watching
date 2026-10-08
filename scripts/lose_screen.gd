@@ -12,10 +12,9 @@ func _ready():
 
 
 func _on_retry_pressed() -> void:
-	GameManager.current_level = 1
+	GameManager.reset_run()
 	get_tree().change_scene_to_file("res://scenes/main_scene.tscn")
 
-
 func _on_menu_pressed() -> void:
-	GameManager.current_level = 1
+	GameManager.reset_run()
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
