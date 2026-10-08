@@ -1,7 +1,7 @@
 extends CharacterBody3D
 class_name Peep
 
-@export var healthpoint: float = 100.0
+@export var healthpoint: float = 450.0
 @export var speed: float = 3.0
 @export var running_speed: float = 10.0
 @export var escape_point: Node3D

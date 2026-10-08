@@ -30,10 +30,10 @@ func populate_cards() -> void:
 
 func create_card_ui(data: Dictionary, index: int) -> Control:
 	var card_button = Button.new()
-	card_button.custom_minimum_size = Vector2(280, 400)
+	card_button.custom_minimum_size = Vector2(290, 430)
 	card_button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	card_button.size_flags_vertical = Control.SIZE_SHRINK_CENTER
-	card_button.pivot_offset = Vector2(140, 200)
+	card_button.pivot_offset = Vector2(145, 215)
 	card_button.flat = true
 	
 	# Background Panel
@@ -42,27 +42,28 @@ func create_card_ui(data: Dictionary, index: int) -> Control:
 	panel.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	
 	# StyleBox for Card
+	var rarity_col = data.get("rarity_color", Color.WHITE)
 	var normal_style = StyleBoxFlat.new()
-	normal_style.bg_color = Color(0.08, 0.1, 0.18, 0.92)
+	normal_style.bg_color = Color(0.07, 0.09, 0.16, 0.94)
 	normal_style.set_corner_radius_all(16)
 	normal_style.border_width_left = 3
 	normal_style.border_width_right = 3
 	normal_style.border_width_top = 3
 	normal_style.border_width_bottom = 3
-	normal_style.border_color = data.get("rarity_color", Color.WHITE)
-	normal_style.shadow_color = Color(0, 0, 0, 0.5)
-	normal_style.shadow_size = 12
-	normal_style.content_margin_left = 18
-	normal_style.content_margin_right = 18
-	normal_style.content_margin_top = 18
-	normal_style.content_margin_bottom = 18
+	normal_style.border_color = rarity_col
+	normal_style.shadow_color = Color(0, 0, 0, 0.6)
+	normal_style.shadow_size = 14
+	normal_style.content_margin_left = 16
+	normal_style.content_margin_right = 16
+	normal_style.content_margin_top = 16
+	normal_style.content_margin_bottom = 16
 	panel.add_theme_stylebox_override("panel", normal_style)
 	card_button.add_child(panel)
 	
 	# Vertical Layout Inside Card
 	var vbox = VBoxContainer.new()
 	vbox.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
-	vbox.add_theme_constant_override("separation", 12)
+	vbox.add_theme_constant_override("separation", 10)
 	panel.add_child(vbox)
 	
 	# Top Rarity Badge + Rank Tag
@@ -71,8 +72,8 @@ func create_card_ui(data: Dictionary, index: int) -> Control:
 	
 	var rarity_label = Label.new()
 	rarity_label.text = "✦ " + str(data.get("rarity", "Common")).to_upper()
-	rarity_label.add_theme_color_override("font_color", data.get("rarity_color", Color.WHITE))
-	rarity_label.add_theme_font_size_override("font_size", 14)
+	rarity_label.add_theme_color_override("font_color", rarity_col)
+	rarity_label.add_theme_font_size_override("font_size", 13)
 	top_bar.add_child(rarity_label)
 	
 	var spacer = Control.new()
@@ -81,15 +82,15 @@ func create_card_ui(data: Dictionary, index: int) -> Control:
 	
 	var rank_label = Label.new()
 	var rank = data.get("current_rank", 0)
-	rank_label.text = "NEW" if rank == 0 else "LV. " + str(rank + 1)
-	rank_label.add_theme_color_override("font_color", Color(1.0, 0.9, 0.4) if rank == 0 else Color(0.7, 1.0, 0.7))
+	rank_label.text = "NEW!" if rank == 0 else "LV. " + str(rank + 1)
+	rank_label.add_theme_color_override("font_color", Color(1.0, 0.9, 0.3) if rank == 0 else Color(0.4, 1.0, 0.6))
 	rank_label.add_theme_font_size_override("font_size", 13)
 	top_bar.add_child(rank_label)
 	vbox.add_child(top_bar)
 	
 	# Card Icon
 	var icon_rect = TextureRect.new()
-	icon_rect.custom_minimum_size = Vector2(100, 100)
+	icon_rect.custom_minimum_size = Vector2(85, 85)
 	icon_rect.size_flags_horizontal = Control.SIZE_SHRINK_CENTER
 	icon_rect.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 	icon_rect.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
@@ -102,7 +103,7 @@ func create_card_ui(data: Dictionary, index: int) -> Control:
 	var name_label = Label.new()
 	name_label.text = data.get("name", "Upgrade")
 	name_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	name_label.add_theme_font_size_override("font_size", 20)
+	name_label.add_theme_font_size_override("font_size", 19)
 	name_label.add_theme_color_override("font_color", Color(1.0, 0.95, 0.85))
 	name_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	vbox.add_child(name_label)
@@ -110,24 +111,50 @@ func create_card_ui(data: Dictionary, index: int) -> Control:
 	# Horizontal Divider
 	var hsep = HSeparator.new()
 	var sep_style = StyleBoxLine.new()
-	sep_style.color = Color(1, 1, 1, 0.2)
+	sep_style.color = Color(1, 1, 1, 0.15)
 	hsep.add_theme_stylebox_override("separator", sep_style)
 	vbox.add_child(hsep)
 	
-	# Description
+	# Description (Lore / Explanation)
 	var desc_label = Label.new()
 	desc_label.text = data.get("description", "")
 	desc_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	desc_label.vertical_alignment = VERTICAL_ALIGNMENT_TOP
-	desc_label.add_theme_font_size_override("font_size", 14)
-	desc_label.add_theme_color_override("font_color", Color(0.85, 0.88, 0.95, 0.9))
+	desc_label.add_theme_font_size_override("font_size", 13)
+	desc_label.add_theme_color_override("font_color", Color(0.8, 0.84, 0.92, 0.85))
 	desc_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	desc_label.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	vbox.add_child(desc_label)
 	
+	# Stats Box (Highlighted Stats)
+	if data.has("stats") and not str(data["stats"]).is_empty():
+		var stats_panel = PanelContainer.new()
+		var stats_style = StyleBoxFlat.new()
+		stats_style.bg_color = Color(0.12, 0.16, 0.28, 0.8)
+		stats_style.set_corner_radius_all(8)
+		stats_style.border_width_left = 1
+		stats_style.border_width_right = 1
+		stats_style.border_width_top = 1
+		stats_style.border_width_bottom = 1
+		stats_style.border_color = Color(rarity_col.r, rarity_col.g, rarity_col.b, 0.4)
+		stats_style.content_margin_left = 8
+		stats_style.content_margin_right = 8
+		stats_style.content_margin_top = 6
+		stats_style.content_margin_bottom = 6
+		stats_panel.add_theme_stylebox_override("panel", stats_style)
+		
+		var stats_label = Label.new()
+		stats_label.text = data.get("stats", "")
+		stats_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+		stats_label.add_theme_font_size_override("font_size", 13)
+		stats_label.add_theme_color_override("font_color", Color(0.4, 1.0, 0.55))
+		stats_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+		stats_panel.add_child(stats_label)
+		vbox.add_child(stats_panel)
+	
 	# Select Button / Hint
 	var select_hint = Label.new()
-	select_hint.text = "CLICK TO CHOOSE"
+	select_hint.text = "CLICK TO SELECT"
 	select_hint.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	select_hint.add_theme_font_size_override("font_size", 12)
 	select_hint.add_theme_color_override("font_color", Color(1.0, 0.85, 0.3, 0.7))
@@ -143,7 +170,7 @@ func create_card_ui(data: Dictionary, index: int) -> Control:
 	# Hover Animations
 	card_button.mouse_entered.connect(func():
 		var tween = create_tween().set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
-		tween.tween_property(card_button, "scale", Vector2(1.06, 1.06), 0.12)
+		tween.tween_property(card_button, "scale", Vector2(1.05, 1.05), 0.12)
 		normal_style.border_width_left = 5
 		normal_style.border_width_right = 5
 		normal_style.border_width_top = 5

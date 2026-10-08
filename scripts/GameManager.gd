@@ -34,7 +34,8 @@ const UPGRADE_CATALOG: Array[Dictionary] = [
 		"name": "Solar Intensity",
 		"rarity": "Common",
 		"rarity_color": Color(0.35, 0.75, 1.0),
-		"description": "Increases base solar beam damage by +100 DPS.",
+		"description": "Intensifies solar radiation to overheat peeps much faster.",
+		"stats": "• Beam Damage: +100 DPS",
 		"icon_path": "res://art/Upgrade/hotter.png"
 	},
 	{
@@ -42,7 +43,8 @@ const UPGRADE_CATALOG: Array[Dictionary] = [
 		"name": "Expanding Corona",
 		"rarity": "Common",
 		"rarity_color": Color(0.35, 0.75, 1.0),
-		"description": "Increases solar beam radius by +25%.",
+		"description": "Expands the beam's burning footprint across the map.",
+		"stats": "• Beam Radius: +25%",
 		"icon_path": "res://art/Upgrade/bigger.png"
 	},
 	{
@@ -50,15 +52,17 @@ const UPGRADE_CATALOG: Array[Dictionary] = [
 		"name": "Solar Swiftness",
 		"rarity": "Common",
 		"rarity_color": Color(0.35, 0.75, 1.0),
-		"description": "Increases beam tracking speed by +30%.",
+		"description": "Enhances beam responsiveness to swiftly track moving targets.",
+		"stats": "• Tracking Speed: +30%",
 		"icon_path": "res://art/Upgrade/faster.png"
 	},
 	{
-		"id": "sticky_heat",
-		"name": "Sticky Heat",
+		"id": "sticky_sun",
+		"name": "Sticky Sun",
 		"rarity": "Rare",
 		"rarity_color": Color(1.0, 0.68, 0.15),
-		"description": "Scorching heat weighs peeps down, slowing movement by 35% inside the beam.",
+		"description": "Heavy solar pressure weighs down anyone caught under the beam.",
+		"stats": "• Peep Speed: -10% (In Beam)",
 		"icon_path": "res://art/TooHotIcon-01.png"
 	},
 	{
@@ -66,7 +70,8 @@ const UPGRADE_CATALOG: Array[Dictionary] = [
 		"name": "Magnifying Focus",
 		"rarity": "Rare",
 		"rarity_color": Color(1.0, 0.68, 0.15),
-		"description": "Focusing on a single target continuously ramps up damage up to +150%.",
+		"description": "Concentrates light on a target, continuously amplifying heat.",
+		"stats": "• Damage Ramp: Up to +150%",
 		"icon_path": "res://art/Ray-44.png"
 	},
 	{
@@ -74,7 +79,8 @@ const UPGRADE_CATALOG: Array[Dictionary] = [
 		"name": "Sunburn",
 		"rarity": "Epic",
 		"rarity_color": Color(0.88, 0.35, 0.95),
-		"description": "Inflicts severe sunburn, dealing lingering burn damage for 3s after leaving beam.",
+		"description": "Inflicts severe sunburn that keeps burning after exiting the beam.",
+		"stats": "• Lingering DoT: 30% DPS (3s)",
 		"icon_path": "res://art/Ui/sunray-45.png"
 	}
 ]
@@ -102,13 +108,14 @@ func apply_upgrade(id: String) -> void:
 			size += 0.25
 		"speed":
 			speed += 0.3
-		"sticky_heat":
-			slow_factor = min(0.35 + (current_rank - 1) * 0.15, 0.70)
+		"sticky_sun", "sticky_heat":
+			slow_factor = min(0.10 * current_rank, 0.60)
 		"magnifying_focus":
 			magnifying_rate = 0.35 + (current_rank - 1) * 0.20
 		"sunburn":
 			sunburn_ratio = 0.30 + (current_rank - 1) * 0.15
 			sunburn_duration = 3.0 + (current_rank - 1) * 0.5
+
 
 func reset_run() -> void:
 	current_level = 1

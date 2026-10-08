@@ -1,0 +1,215 @@
+[gd_scene format=3 uid="uid://bqw3vy58k2nmr"]
+
+[ext_resource type="Script" uid="uid://cx4x2m3u2h7n1" path="res://scripts/journal.gd" id="1_journal"]
+[ext_resource type="FontFile" uid="uid://q854rp2kesgt" path="res://art/Fonts/Mitr-SemiBold.ttf" id="2_font"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_main"]
+bg_color = Color(0.04, 0.06, 0.12, 0.95)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 0.75, 0.2, 0.8)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_color = Color(0, 0, 0, 0.7)
+shadow_size = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_inner"]
+bg_color = Color(0.06, 0.08, 0.16, 0.8)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.3, 0.4, 0.6, 0.3)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn"]
+bg_color = Color(0.18, 0.22, 0.35, 0.9)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0.75, 0.2, 0.8)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="Journal" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_journal")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 10
+
+[node name="DimOverlay" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.01, 0.02, 0.06, 0.75)
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer"]
+unique_name_in_owner = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -480.0
+offset_top = -290.0
+offset_right = 480.0
+offset_bottom = 290.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_main")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 28
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 28
+theme_override_constants/margin_bottom = 24
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="HeaderVBox" type="VBoxContainer" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="TitleLabel" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/HeaderVBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.85, 0.25, 1)
+theme_override_colors/font_outline_color = Color(0.9, 0.45, 0.1, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 32
+text = "SOLAR JOURNAL"
+horizontal_alignment = 1
+
+[node name="SubtitleLabel" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/HeaderVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7, 0.8, 0.95, 0.8)
+theme_override_font_sizes/font_size = 13
+text = "CURRENT RUN OVERVIEW  •  PRESS [J] OR [ESC] TO CLOSE"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ContentHBox" type="HBoxContainer" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 24
+
+[node name="LeftPanel" type="PanelContainer" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/ContentHBox"]
+custom_minimum_size = Vector2(340, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_inner")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/ContentHBox/LeftPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBox" type="VBoxContainer" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/ContentHBox/LeftPanel/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="StatsHeader" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/ContentHBox/LeftPanel/MarginContainer/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.9, 0.5, 1)
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 18
+text = "☀️ CURRENT STATS"
+
+[node name="HSeparator" type="HSeparator" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/ContentHBox/LeftPanel/MarginContainer/VBox"]
+layout_mode = 2
+
+[node name="StatsList" type="VBoxContainer" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/ContentHBox/LeftPanel/MarginContainer/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 10
+
+[node name="RightPanel" type="PanelContainer" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/ContentHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_inner")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/ContentHBox/RightPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBox" type="VBoxContainer" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/ContentHBox/RightPanel/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 12
+
+[node name="BlessingsHeader" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/ContentHBox/RightPanel/MarginContainer/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.9, 0.5, 1)
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 18
+text = "✦ ACTIVE BLESSINGS"
+
+[node name="HSeparator" type="HSeparator" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/ContentHBox/RightPanel/MarginContainer/VBox"]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/ContentHBox/RightPanel/MarginContainer/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="UpgradesList" type="VBoxContainer" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/ContentHBox/RightPanel/MarginContainer/VBox/ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 8
+
+[node name="EmptyLabel" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/ContentHBox/RightPanel/MarginContainer/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0.65, 0.7, 0.85, 0.6)
+theme_override_font_sizes/font_size = 14
+text = "✦ No Solar Blessings Acquired Yet
+
+Clear Day 1 to select your first upgrade card!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FooterHBox" type="HBoxContainer" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 2
+
+[node name="CloseButton" type="Button" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/FooterHBox"]
+custom_minimum_size = Vector2(130, 36)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.95, 0.85, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_btn")
+text = "CLOSE [J]"
+
+[connection signal="pressed" from="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/FooterHBox/CloseButton" to="." method="_on_close_button_pressed"]

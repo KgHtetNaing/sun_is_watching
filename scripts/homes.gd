@@ -16,65 +16,65 @@ static var boss_spawned = false
 
 func _ready():
 	enemy_scene = enemy_scene.duplicate()
-	print ("Timer has started")
+	print("Timer has started")
 	print("Spawner instance:", self)
 	if enemy_scene.is_empty():
 		enemy_scene.append(default_enemy)
 	
 	update_difficulity()
-	#spawn_person()
-	#spawn_timer.wait_time = randf_range(0.3, 2.0)
+	# Random initial stagger so houses don't fire at the exact same moment
+	spawn_timer.wait_time = randf_range(1.5, 5.0)
 	spawn_timer.start()
-	
 
 func on_new_level():
 	print("Spawner updating for NEW LEVEL:", GameManager.current_level)
 	update_difficulity()
 	final_trigger = false
+	spawn_timer.wait_time = randf_range(1.0, 4.0)
 	spawn_timer.start()
-
 
 func spawn_person():
 	if enemy_scene.is_empty():
 		update_difficulity()
 	if GameManager.day_ended:
 		return
-	var spawn_count = 1 + int(GameManager.current_level / 2)
-	for i in spawn_count:
-		var random_enemy =  randi() % enemy_scene.size()
-		var person = enemy_scene[random_enemy].instantiate()
-		person.home_position = spawn_point.global_position
-		var escape_nodes = get_tree().get_nodes_in_group("escape_point")
-		if not escape_nodes.is_empty():
-			person.escape_point = escape_nodes[0]
-		get_tree().current_scene.add_child(person)
-		person.global_position = spawn_point.global_position
-		print("Spawning enemy index:", random_enemy)
-		print("Enemy scene:", enemy_scene[random_enemy])
+		
+	# Spawn 1 peep per house trigger for controlled, tactical pacing
+	var random_enemy = randi() % enemy_scene.size()
+	var person = enemy_scene[random_enemy].instantiate()
+	person.home_position = spawn_point.global_position
+	
+	var escape_nodes = get_tree().get_nodes_in_group("escape_point")
+	if not escape_nodes.is_empty():
+		person.escape_point = escape_nodes[0]
+		
+	get_tree().current_scene.add_child(person)
+	person.global_position = spawn_point.global_position
+	
+	# Slight health scaling per level
+	if "healthpoint" in person:
+		person.healthpoint *= (1.0 + (GameManager.current_level - 1) * 0.12)
+		
+	print("Spawning enemy index:", random_enemy)
 
 func _on_spawn_timer_timeout() -> void:
-	
-	if GameManager.current_level>=6:
+	if GameManager.current_level >= 6:
 		spawn_timer.stop()
 		if not final_trigger:
 			get_tree().call_group("houses", "trigger_final_day")
-			
 		return
 		
 	if GameManager.day_ended:
 		spawn_timer.stop()
 		return
 		
-	#event trigger
-	
 	spawn_person()
-	var current_wait =  7.0 - GameManager.current_level 
-	current_wait = clamp(current_wait , 0.5 ,10.0)
-	print ("current_wait" , current_wait)
-	spawn_timer.wait_time = randf_range(current_wait * 0.6, current_wait * 1.2)
-	#update_difficulity()
+	
+	# Comfortable spawn interval per house (4.5 to 7.5 seconds)
+	var base_wait = max(4.0, 7.5 - GameManager.current_level * 0.4)
+	spawn_timer.wait_time = randf_range(base_wait * 0.85, base_wait * 1.25)
 	spawn_timer.start()
-	print ("Enemy scene length" ,len(enemy_scene))
+
 	
 
 func update_difficulity():

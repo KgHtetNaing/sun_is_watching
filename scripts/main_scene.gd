@@ -5,6 +5,9 @@ extends Node3D
 @onready var timer_label = $Ui/TimerLabel
 @onready var escapee_label = $Ui/EscapeeLabel
 
+var journal_scene = preload("res://scenes/journal.tscn")
+var journal_instance: Control
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	print("Current level on ready: ", GameManager.current_level)
@@ -18,13 +21,34 @@ func _ready() -> void:
 	win_screen.continue_pressed.connect(_on_win_continue)
 	MusicManager.play_music()
 	
+	# Instantiate Journal overlay
+	journal_instance = journal_scene.instantiate()
+	$Ui.add_child(journal_instance)
+	
+	# Add HUD prompt for Journal
+	var journal_hint = Label.new()
+	journal_hint.text = "[J] JOURNAL"
+	journal_hint.anchors_preset = Control.PRESET_TOP_RIGHT
+	journal_hint.anchor_left = 1.0
+	journal_hint.anchor_right = 1.0
+	journal_hint.offset_left = -170.0
+	journal_hint.offset_top = 20.0
+	journal_hint.offset_right = -30.0
+	journal_hint.offset_bottom = 50.0
+	journal_hint.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
+	journal_hint.add_theme_color_override("font_color", Color(1.0, 0.88, 0.35, 0.8))
+	journal_hint.add_theme_font_size_override("font_size", 16)
+	$Ui.add_child(journal_hint)
+	
 	if GameManager.current_level > 1:
+
 		# Skip start screen on level 2+
 		_on_start_pressed()
 	else:
 		get_tree().paused = true
 		win_screen.hide()
 		start_ui.visible = true
+
 
 func _on_show_win_screen() -> void:
 	get_tree().paused = true
