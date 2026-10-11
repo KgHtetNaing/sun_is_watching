@@ -35,7 +35,7 @@ texture = ExtResource("10_7b55j")
 texture = ExtResource("11_5pajh")
 
 [sub_resource type="Animation" id="Animation_j7ex8"]
-length = 0.001
+length = 30.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -43,10 +43,10 @@ tracks/0/path = NodePath("../Ray44:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 30),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.93375117]
+"values": [0.93375117, -10.201449]
 }
 
 [sub_resource type="Animation" id="Animation_a8gd2"]
@@ -253,12 +253,12 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1350, 592)]
+"values": [Vector2(2003, 877)]
 }
 
-[sub_resource type="Animation" id="Animation_engjn"]
-resource_name = "WalkMenu"
-length = 30.0
+[sub_resource type="Animation" id="Animation_1acrt"]
+resource_name = "Walk"
+length = 25.066668
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -266,15 +266,20 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 24.933332),
+"times": PackedFloat32Array(0, 25.033333),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(1350, 592), Vector2(-79, 592)]
+"values": [Vector2(2003, 877), Vector2(-118, 877)]
 }
+
+[sub_resource type="Animation" id="Animation_engjn"]
+resource_name = "WalkMenu"
+length = 30.0
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6h3lr"]
 _data = {
 &"RESET": SubResource("Animation_hl5e0"),
+&"Walk": SubResource("Animation_1acrt"),
 &"WalkMenu": SubResource("Animation_engjn")
 }
 
@@ -287,10 +292,10 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(0.033333335),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1584, 311)]
+"values": [Vector2(1931, -54)]
 }
 
 [sub_resource type="Animation" id="Animation_3wgol"]
@@ -303,10 +308,10 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 30, 30.066668),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 30),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(1406, 131), Vector2(-464, 131), Vector2(-479, 152)]
+"values": [Vector2(2036, 0), Vector2(-1001, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1acrt"]
@@ -374,24 +379,24 @@ metadata/_edit_use_anchors_ = true
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=272078208]
 
 [node name="Sprite2D3" type="Sprite2D" parent="CanvasLayer" unique_id=748378546]
-position = Vector2(642, 559.25336)
-scale = Vector2(0.106835686, 0.103435315)
+position = Vector2(964.99994, 750)
+scale = Vector2(0.40328872, 0.39045283)
 texture = ExtResource("5_qywvv")
 
 [node name="Ray44" type="Sprite2D" parent="CanvasLayer" unique_id=62014488]
-position = Vector2(730, 154)
+position = Vector2(949, 252)
 rotation = 0.93375117
 scale = Vector2(0.9999999, 0.9999999)
 texture = ExtResource("2_5pajh")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Ray44" unique_id=866651096]
-root_node = NodePath("")
+root_node = NodePath("../../Umbre")
 libraries/ = SubResource("AnimationLibrary_hstxw")
 autoplay = &"Spinray"
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer" unique_id=1187372908]
-position = Vector2(639.99994, 360)
-scale = Vector2(0.23996997, 0.23996991)
+position = Vector2(962.74725, 541.5226)
+scale = Vector2(0.36098507, 0.36098495)
 texture = ExtResource("12_a8gd2")
 
 [node name="Cloud1" type="Sprite2D" parent="CanvasLayer" unique_id=182665908]
@@ -443,24 +448,24 @@ libraries/ = SubResource("AnimationLibrary_rtw2f")
 autoplay = &"Cloud5"
 
 [node name="Umbre" type="AnimatedSprite2D" parent="CanvasLayer" unique_id=127910387]
-position = Vector2(1350, 592)
-scale = Vector2(0.0777126, 0.0777126)
+position = Vector2(2003, 877)
+scale = Vector2(0.11962363, 0.1196236)
 sprite_frames = SubResource("SpriteFrames_1a85y")
 autoplay = "default"
 frame_progress = 0.63912916
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Umbre" unique_id=734972653]
 libraries/ = SubResource("AnimationLibrary_6h3lr")
-autoplay = &"WalkMenu"
+autoplay = &"Walk"
 
 [node name="TextureRect2" type="TextureRect" parent="CanvasLayer" unique_id=832091352]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 1584.0
-offset_top = 311.0
-offset_right = 649.0
-offset_bottom = 371.61682
+offset_left = 1931.0
+offset_top = -54.0
+offset_right = 996.02466
+offset_bottom = 6.616699
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("17_1dfpl")
@@ -471,13 +476,13 @@ libraries/ = SubResource("AnimationLibrary_1acrt")
 autoplay = &"Ray_Menu"
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer" unique_id=1814993974]
-anchors_preset = 15
+anchors_preset = -1
 anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 251.0
-offset_top = -185.0
-offset_right = -264.0
-offset_bottom = -140.0
+anchor_bottom = 1.1490741
+offset_left = 256.0
+offset_top = -351.0
+offset_right = -259.0
+offset_bottom = -306.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4

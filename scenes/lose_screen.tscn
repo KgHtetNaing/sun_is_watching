@@ -68,19 +68,24 @@ script = ExtResource("1_383t0")
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2024124789]
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer" unique_id=1504029171]
-position = Vector2(639.9608, 359.49997)
-scale = Vector2(0.23966669, 0.23966664)
+position = Vector2(960.88995, 540)
+scale = Vector2(0.36000007, 0.35999995)
 texture = ExtResource("2_t4sam")
 
 [node name="Bubble26" type="Sprite2D" parent="CanvasLayer" unique_id=376564405]
-position = Vector2(869, 220)
-scale = Vector2(0.115, 0.115)
+position = Vector2(1288.0001, 336.9044)
+scale = Vector2(0.1710078, 0.17100778)
 texture = ExtResource("3_7ndme")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer" unique_id=661381660]
-offset_top = 128.0
-offset_right = 1277.0
-offset_bottom = 151.0
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 321.5
+offset_top = 228.0
+offset_right = -321.5
+offset_bottom = -829.0
+grow_horizontal = 2
 alignment = 1
 
 [node name="HighestLvl" type="Label" parent="CanvasLayer/HBoxContainer" unique_id=522799083]
@@ -128,8 +133,8 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_1fbfm")
 metadata/_edit_use_anchors_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer" unique_id=473960571]
-position = Vector2(640, 398)
-scale = Vector2(0.246, 0.246)
+position = Vector2(948, 578)
+scale = Vector2(0.388625, 0.388625)
 sprite_frames = SubResource("SpriteFrames_t6phk")
 autoplay = "default"
 

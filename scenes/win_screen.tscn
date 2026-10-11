@@ -50,13 +50,13 @@ layer = 2
 script = ExtResource("1_wv5lq")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=975166566]
-position = Vector2(640.52106, 360.50003)
-scale = Vector2(0.24033341, 0.24033333)
+position = Vector2(961.4502, 541.00006)
+scale = Vector2(0.3606668, 0.3606667)
 texture = ExtResource("2_r6ob7")
 
 [node name="Bubble24" type="Sprite2D" parent="." unique_id=257759339]
-position = Vector2(869.00006, 220)
-scale = Vector2(0.1151793, 0.11517926)
+position = Vector2(1342.3894, 322.81863)
+scale = Vector2(0.13647479, 0.13647474)
 texture = ExtResource("3_o8vhx")
 offset = Vector2(-314, -46)
 
@@ -86,8 +86,8 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_r6ob7")
 metadata/_edit_use_anchors_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=840360171]
-position = Vector2(640.00006, 398.00003)
-scale = Vector2(0.24609375, 0.24609375)
+position = Vector2(986.00006, 575.00006)
+scale = Vector2(0.41064456, 0.41064456)
 sprite_frames = SubResource("SpriteFrames_wtw0j")
 autoplay = "default"
 
